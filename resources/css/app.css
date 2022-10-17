@@ -1,5 +1,9 @@
-@import "./main/css/bootstrap.min.css";
+/*@import "./main/css/bootstrap.min.css";
 
 @import "./main/css/icons.min.css";
 
-@import "./main/css/app.css";
+@import "./main/css/app.css";*/
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;

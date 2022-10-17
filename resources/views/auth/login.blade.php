@@ -6,6 +6,7 @@
     <meta charset="utf-8" />
     <title>Login | Facturis</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
     <meta name="robots" content="noindex, nofollow" />
     <link rel="shortcut icon" href="{{ asset('assets/images/favicon.ico') }}">
     <meta content="app_creator" name="Elmarzougui Abdelghafour" />
@@ -17,132 +18,48 @@
 </head>
 
 <body>
-    <div class="account-pages my-5 pt-sm-5">
-        <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-md-8 col-lg-6 col-xl-5">
-                    <div class="card overflow-hidden">
-                        <div class="bg-primary bg-soft">
-                            <div class="row">
-                                <div class="col-7">
-                                    <div class="text-primary p-4">
-                                        <h5 class="text-primary">Se connecter</h5>
-
-                                    </div>
-                                </div>
-                                <div class="col-5 align-self-end">
-                                    <img src="{{ Vite::asset('resources/images/profile-img.png') }}" alt=""
-                                        class="img-fluid">
-                                </div>
-                            </div>
-                        </div>
-                        <div class="card-body pt-0">
-                            <div class="auth-logo">
-                                <a href="{{ route('home') }}" class="auth-logo-light">
-                                    <div class="avatar-md profile-user-wid mb-4">
-                                        <span class="avatar-title rounded-circle bg-light">
-                                            <img src="{{ Vite::asset('resources/images/logo_app.png') }}" alt=""
-                                                class="rounded-circle" height="34">
-                                        </span>
-                                    </div>
-                                </a>
-
-                                <a href="{{ route('home') }}" class="auth-logo-dark">
-                                    <div class="avatar-md profile-user-wid mb-4">
-                                        <span class="avatar-title rounded-circle bg-light">
-                                            <img src="{{ Vite::asset('resources/images/logo_app.png') }}" alt=""
-                                                class="rounded-circle" height="50">
-                                        </span>
-                                    </div>
-                                </a>
-                            </div>
-                            <div class="p-2">
-                                @if (session('success'))
-                                    <div class="alert alert-success">
-                                        {{ session('success') }}
-                                    </div>
-                                @endif
-                                @if ($errors->any())
-                                    @foreach ($errors->all() as $error)
-                                        <div class="alert alert-danger">{{ $error }}</div>
-                                    @endforeach
-                                @endif
-                                <form  class="form-horizontal"
-                                    action="" method="post">
-                                    @csrf
-                                    <div class="mb-3">
-                                        <label for="email" class="form-label">Email</label>
-                                        <input type="email" name="email"
-                                            class="form-control  @error('email') is-invalid @enderror" id="email"
-                                            placeholder="Enter email" value="{{old('email')}}">
-
-                                        @error('email')
-                                            <span class="invalid-feedback" role="alert">
-                                                <strong>{{ $message }}</strong>
-                                            </span>
-                                        @enderror
-
-                                    </div>
-                                    <div class="mb-3">
-                                        <label class="form-label">Mot de password</label>
-                                        <div class="input-group auth-pass-inputgroup">
-                                            <input type="password" name="password"
-                                                class="form-control @error('password') is-invalid @enderror"
-                                                placeholder="Enter password" value="" aria-label="Password"
-                                                aria-describedby="password-addon">
-                                            <button class="btn btn-light " type="button" id="password-addon"><i
-                                                    class="mdi mdi-eye-outline"></i></button>
-                                            @error('password')
-                                                <span class="invalid-feedback" role="alert">
-                                                    <strong>{{ $message }}</strong>
-                                                </span>
-                                            @enderror
-
-                                        </div>
-                                    </div>
-
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" name="remember"
-                                            id="remember-check" {{ old('remember') ? 'checked' : '' }}>
-                                        <label class="form-check-label" for="remember-check">
-                                            Se souvenir de moi
-                                        </label>
-                                    </div>
-
-                                    <div class="mt-3 d-grid">
-                                        <button class="btn btn-primary waves-effect waves-light" type="submit">Se connecter
-                                        </button>
-                                    </div>
-
-                                    @if (Route::has('forgotpassword'))
-                                        <div class="mt-4 text-center">
-                                            <a href="{{ route('forgotpassword') }}" class="text-muted">
-                                                <i class="mdi mdi-lock me-1"></i>
-                                                Mot de passe oublié ?
-                                            </a>
-                                        </div>
-                                    @endif
-                                </form>
-                            </div>
-
-                        </div>
-                    </div>
-                    <div class="mt-5 text-center">
-
-                        <div>
-
-                            <script>
-                                document.write(new Date().getFullYear())
-                            </script>
-                            Facturis <i class="mdi mdi-heart text-danger"></i> by WEDO APP
-
-                        </div>
-                    </div>
-
-                </div>
+    <section class="bg-gray-50 min-h-screen flex items-center justify-center">
+        <!-- login container -->
+        <div class="bg-gray-100 flex rounded-2xl shadow-lg max-w-3xl p-5 items-center">
+          <!-- form -->
+          <div class="md:w-1/2 px-8 md:px-16">
+            <h2 class="font-bold text-2xl text-[#002D74]">Se connecter</h2>
+            <p class="text-xs mt-4 text-[#002D74]">If you are already a member, easily log in</p>
+      
+            <form action="" method="post" class="flex flex-col gap-4"> 
+                @csrf
+              <input class="p-2 mt-8 rounded-xl border" type="email" name="email" placeholder="Email">
+              <div class="relative">
+                <input class="p-2 rounded-xl border w-full" type="password" name="password" placeholder="Password">
+                <x-facturis.form.icons.eye/>
+              </div>
+              <button class="bg-[#002D74] rounded-xl text-white py-2 hover:scale-105 duration-300">Login</button>
+            </form>
+      
+            <div class="mt-6 grid grid-cols-3 items-center text-gray-400">
+              <hr class="border-gray-400">
+              <p class="text-center text-sm">OR</p>
+              <hr class="border-gray-400">
             </div>
+    
+            <x-facturis.form.icons.google/>
+
+            <div class="mt-5 text-xs border-b border-[#002D74] py-4 text-[#002D74]">
+              <a href="#">Forgot your password?</a>
+            </div>
+      
+            <div class="mt-3 text-xs flex justify-between items-center text-[#002D74]">
+              <p>Don't have an account?</p>
+              <button class="py-2 px-5 bg-white border rounded-xl hover:scale-110 duration-300">Register</button>
+            </div>
+          </div>
+      
+          <!-- image -->
+          <div class="md:block hidden w-1/2">
+            <img class="rounded-2xl" src="{{ Vite::asset('resources/images/screen.png') }}">
+          </div>
         </div>
-    </div>
+      </section>
 </body>
 
 </html>
