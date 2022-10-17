@@ -18,8 +18,6 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/try', function () {
-    $blog = new Blog();
-
-    return $blog->tryBlog();
-});
+Route::get('/home',function(){
+    return "Home";
+})->name('home');
