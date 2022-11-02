@@ -1,9 +1,22 @@
-/*@import "./main/css/bootstrap.min.css";
+/***Vendor css files facturis **/
 
-@import "./main/css/icons.min.css";
+/****************** Master Files ***************/
 
-@import "./main/css/app.css";*/
+@import "vendors.min.css";
 
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "bootstrap.min.css";
+@import "bootstrap-extended.css";
+@import "colors.css";
+@import "components.css";
+@import "themes/dark-layout.css";
+@import "themes/bordered-layout.css";
+@import "themes/semi-dark-layout.css";
+@import "themes/dark-layout.css";
+
+@import "core/menu/menu-types/vertical-menu.css";
+
+/**************** End Master Files **************/
+
+@import "core/menu/menu-types/vertical-menu.css";
+@import "plugins/forms/form-validation.css";
+@import "pages/authentication.css";

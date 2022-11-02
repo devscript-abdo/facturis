@@ -1,18 +1,12 @@
 import './bootstrap';
 
+import './vendors.min';
+import './core/app-menu';
+import './core/app';
+import './scripts/pages/auth-login';
 
-/*import {jQuery} from 'jquery';
-window.$ = jQuery;*/
-
-import('./main/bootstrap.bundle.min');
-
-import('./main/metisMenu.min');
-
-import('./main/simplebar.min');
-
-import('./main/waves.min');
-
-import('./main');
+import './scripts/pages/auth-login';
+import './forms/validation/jquery.validate.min';
 
 import.meta.glob([
     '../images/**',
