@@ -6,12 +6,12 @@ use App\Traits\UuidGenerator;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class City extends Model
+class Category extends Model
 {
     use HasFactory;
     use UuidGenerator;
 
-        /**
+    /**
      * The attributes that are mass assignable.
      *
      * @var array<int, string>
