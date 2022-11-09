@@ -34,7 +34,7 @@ class UserSeeder extends Seeder
             [
                 'nom'=>'Yassine',
                 'prenom'=>'HARIT',
-                'age'=>29,
+                'age'=>24,
                 'email'=>'yassine@haymacproduction.ma',
                 'email_verified_at'=>now(),
                 'address'=>'casablanca ain chok',
