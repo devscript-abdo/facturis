@@ -8,7 +8,7 @@
 
 ### Premium Owners
 
-- **[WeDoApp SARL](https://wedoapp.ma/)**
+- **[WEDO APP SARL](https://wedoapp.ma/)**
 - **[HaymacProduction](https://haymacproduction.ma/)**
 
 

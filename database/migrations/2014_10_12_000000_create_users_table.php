@@ -16,8 +16,8 @@ return new class extends Migration
         Schema::create('users', function (Blueprint $table) {
             $table->id();
             $table->uuid();
-            $table->string('nom',30);
-            $table->string('prenom',30);
+            $table->string('nom',30)->nullable();
+            $table->string('prenom',30)->nullable();
             $table->string('age',10)->nullable();
             $table->longText('address')->nullable();
             $table->string('telephone',20)->unique()->nullable();
@@ -30,6 +30,7 @@ return new class extends Migration
             $table->rememberToken();
 
             $table->foreignId('city_id')->nullable();
+            $table->foreignId('category_id')->nullable();
             
             $table->timestamps();
             $table->timestamp('added_at')->useCurrent();

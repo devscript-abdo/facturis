@@ -31,7 +31,8 @@ class User extends Authenticatable
         'password',
         'added_at',
         'active',
-        'city_id'
+        'city_id',
+        'category_id'
     ];
 
     /**
