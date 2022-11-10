@@ -13,30 +13,32 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('users', function (Blueprint $table) {
+        Schema::create('clients', function (Blueprint $table) {
             $table->id();
             $table->uuid();
+
             $table->string('nom',30)->nullable();
             $table->string('prenom',30)->nullable();
-            $table->string('age',10)->nullable();
+
             $table->longText('address')->nullable();
             $table->string('telephone',20)->unique()->nullable();
             $table->string('avatar')->nullable();
-
-            $table->string('username')->unique()->nullable();
             $table->string('email')->unique();
-            $table->timestamp('email_verified_at')->nullable();
-            $table->string('password');
-            $table->rememberToken();
 
             $table->foreignId('city_id')->nullable();
             $table->foreignId('category_id')->nullable();
+
+            $table->string('company',100)->nullable();
+            $table->string('rc',10)->nullable();
+            $table->string('ice',20)->unique();
             
             $table->timestamps();
             $table->timestamp('added_at')->useCurrent();
-            $table->timestamp('changed_password_at')->nullable();
+        
             $table->boolean('active')->default(true);
             $table->softDeletes();
+
+            $table->timestamps();
         });
     }
 
@@ -47,6 +49,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('users');
+        Schema::dropIfExists('clients');
     }
 };

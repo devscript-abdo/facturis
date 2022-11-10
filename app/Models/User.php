@@ -30,6 +30,7 @@ class User extends Authenticatable
         'email',
         'password',
         'added_at',
+        'changed_password_at',
         'active',
         'city_id',
         'category_id'
