@@ -14,12 +14,40 @@ trait Nl2br {
     {
         $this->attributes['condition'] = nl2br($value);
     }*/
+
      /**
-     * Get the user's first name.
+     * Get the condition.
      *
      * @return \Illuminate\Database\Eloquent\Casts\Attribute
      */
     protected function condition(): Attribute
+    {
+        return Attribute::make(
+            get : fn ($value) => str_replace('<br />',"\n",$value),
+            set : fn ($value) => nl2br($value),
+        );
+    }
+
+
+    /**
+     * Get the App\Models\Facturis\CRM\Article::class description.
+     *
+     * @return \Illuminate\Database\Eloquent\Casts\Attribute
+     */
+    protected function description(): Attribute
+    {
+        return Attribute::make(
+            get : fn ($value) => str_replace('<br />',"\n",$value),
+            set : fn ($value) => nl2br($value),
+        );
+    }
+
+    /**
+     * Get the App\Models\Facturis\CRM\Article::class designation.
+     *
+     * @return \Illuminate\Database\Eloquent\Casts\Attribute
+     */
+    protected function designation(): Attribute
     {
         return Attribute::make(
             get : fn ($value) => str_replace('<br />',"\n",$value),
