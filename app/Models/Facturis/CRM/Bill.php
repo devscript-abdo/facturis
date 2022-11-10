@@ -46,14 +46,24 @@ class Bill extends Model
         return $this->belongsTo(Invoice::class,'billable_id');
     }
 
+ 
     public static function boot()
     {
-        parent::boot();
 
         static::creating(function($model){
-            $number = self::max('id') + 1;
-            $model->code = str_pad($number,5,0,STR_PAD_LEFT);
-            $model->full_number = 'REGL-'. str_pad($number,5,0,STR_PAD_LEFT);
+
+          if(self::count()<= 0)
+          {
+            $number = getDocument()->bill_start;
+
+          }else{
+            $number = ($model->max('code') + 1);
+          }
+          
+          $code = str_pad($number,5,0,STR_PAD_LEFT);
+          $model->code = $code;
+          $model->full_number = getDocument()->bill_prefix . $code;
+
         });
     }
 }
