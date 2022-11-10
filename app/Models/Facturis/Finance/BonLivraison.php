@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Models\Facturis\CRM;
+namespace App\Models\Facturis\Finance;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;

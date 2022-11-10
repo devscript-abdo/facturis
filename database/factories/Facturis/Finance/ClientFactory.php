@@ -1,13 +1,13 @@
 <?php
 
-namespace Database\Factories\Facturis\CRM;
+namespace Database\Factories\Facturis\Finance;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
- * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Facturis\CRM\BC>
+ * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Facturis\Finance\Client>
  */
-class BCFactory extends Factory
+class ClientFactory extends Factory
 {
     /**
      * Define the model's default state.

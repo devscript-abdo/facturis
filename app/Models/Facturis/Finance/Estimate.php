@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Models\Facturis\CRM;
+namespace App\Models\Facturis\Finance;
 
 use App\Traits\GetModelByUuid;
 use App\Traits\Nl2br;
@@ -12,10 +12,10 @@ use Illuminate\Database\Eloquent\Model;
 class Estimate extends Model
 {
     use HasFactory;
-    use GetModelByUuid;
-    use UuidGenerator;
-    use PriceFormatter;
-    use Nl2br;
+    //use GetModelByUuid;
+    //use UuidGenerator;
+    //use PriceFormatter;
+    //use Nl2br;
 
 
     protected $fillable = [

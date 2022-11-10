@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Models\Facturis\CRM;
+namespace App\Models\Facturis\Finance;
 
 use App\Models\Facturis\Tools\Email;
 use App\Models\Facturis\Tools\Telephone;

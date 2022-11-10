@@ -1,11 +1,11 @@
 <?php
 
-namespace Database\Factories\Facturis\CRM;
+namespace Database\Factories\Facturis\Finance;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
- * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Facturis\CRM\Bill>
+ * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Facturis\Finance\Bill>
  */
 class BillFactory extends Factory
 {
