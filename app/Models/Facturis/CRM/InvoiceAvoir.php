@@ -1,0 +1,88 @@
+<?php
+
+namespace App\Models\Facturis\CRM;
+
+use App\Traits\GetModelByUuid;
+use App\Traits\Nl2br;
+use App\Traits\PriceFormatter;
+use App\Traits\UuidGenerator;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Model;
+
+class InvoiceAvoir extends Model
+{
+    use HasFactory;
+
+    use GetModelByUuid;
+    use UuidGenerator;
+    use Nl2br;
+    use PriceFormatter;
+
+    protected $fillable = [
+        'client_id',
+        'client_uuid',
+        'invoice_id',
+        'invoice_uuid',
+        'invoice_number',
+        'code',
+        'full_number',
+        'bl_code',
+        'bc_code',
+        'ht_price',
+        'total_price',
+        'tax_price',
+        'invoice_date',
+        'due_date',
+        'payment_date',
+        'admin_notes',
+        'client_notes',
+        'condition',
+        'active'
+    ];
+
+    protected $casts = [
+        'due_date'=>'date:Y-m-d',
+        'invoice_date'=>'date:Y-m-d',
+        'active'=>'boolean'
+    ];
+
+    public function invoice()
+    {
+        return $this->belongsTo(Invoice::class);
+    }
+
+    public function client()
+    {
+        return $this->belongsTo(Client::class);
+    }
+
+    public function articles()
+    {
+        return $this->morphMany(Article::class,'articleable');
+    }
+
+    public function bill()
+    {
+        return $this->morphOne(Bill::class,'billable')->withDefault();
+    }
+
+    public static function boot()
+    {
+
+        static::creating(function($model){
+
+          if(self::count()<= 0)
+          {
+            $number = getDocument()->invoice_avoir_start;
+
+          }else{
+            $number = ($model->max('code') + 1);
+          }
+
+          $code = str_pad($number,5,0,STR_PAD_LEFT);
+          $model->code = $code;
+          $model->full_number = getDocument()->invoice_avoir_prefix . $code;
+
+        });
+    }
+}

@@ -10,6 +10,9 @@ class CreateDocumentSettings extends SettingsMigration
         $this->migrator->add('document.invoice_prefix', 'FACT-');
         $this->migrator->add('document.invoice_start', 1);
 
+        $this->migrator->add('document.invoice_avoir_prefix', 'FACT-AVOIR-');
+        $this->migrator->add('document.invoice_avoir_start', 1);
+
         $this->migrator->add('document.estimate_prefix', 'DEVIS-');
         $this->migrator->add('document.estimate__start', 1);
 
