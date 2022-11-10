@@ -8,6 +8,8 @@ return [
      */
     'settings' => [
         App\Settings\GeneralSettings::class,
+        App\Settings\CompanySettings::class,
+        App\Settings\DocumentSettings::class,
     ],
 
     /*

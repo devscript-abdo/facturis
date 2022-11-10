@@ -46,7 +46,11 @@
             "Database\\Seeders\\": "database/seeders/",
             "Facturis\\": "modules/"
 
-        }
+        },
+        "files" : [
+            "helpers/CompanyHelpers.php",
+            "helpers/DocumentHelpers.php"
+        ]
     },
     "autoload-dev": {
         "psr-4": {
