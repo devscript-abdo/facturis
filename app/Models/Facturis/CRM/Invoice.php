@@ -3,6 +3,7 @@
 namespace App\Models\Facturis\CRM;
 
 use App\Traits\GetModelByUuid;
+use App\Traits\PriceFormatter;
 use App\Traits\UuidGenerator;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
@@ -12,6 +13,7 @@ class Invoice extends Model
     use HasFactory;
     use UuidGenerator;
     use GetModelByUuid;
+    use PriceFormatter;
 
     protected $fillable = [
         'client_id',

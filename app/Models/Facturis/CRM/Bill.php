@@ -3,6 +3,7 @@
 namespace App\Models\Facturis\CRM;
 
 use App\Traits\GetModelByUuid;
+use App\Traits\PriceFormatter;
 use App\Traits\UuidGenerator;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
@@ -12,6 +13,7 @@ class Bill extends Model
     use HasFactory;
     use GetModelByUuid;
     use UuidGenerator;
+    use PriceFormatter;
 
     protected $fillable = [
         'code',
@@ -42,21 +44,6 @@ class Bill extends Model
     public function invoice()
     {
         return $this->belongsTo(Invoice::class,'billable_id');
-    }
-
-    public function getFormatedHtPriceAttribute()
-    {
-        return number_format($this->ht_price,2);
-    }
-
-    public function getFormatedTaxPriceAttribute()
-    {
-        return number_format($this->tax_price,2);
-    }
-
-    public function getFormatedTotalPriceAttribute()
-    {
-        return number_format($this->total_price,2);
     }
 
     public static function boot()
