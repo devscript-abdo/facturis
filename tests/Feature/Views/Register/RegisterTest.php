@@ -22,5 +22,7 @@ class RegisterTest extends TestCase
         $view->assertSee('Définissez un mot de passe');
         $view->assertSee('Confirmer votre mot de passe');
         $view->assertSee('Créer mon compte et continuer');
+
+    
     }
 }
