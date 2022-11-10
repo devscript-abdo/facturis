@@ -2,10 +2,59 @@
 
 namespace App\Models\Facturis\CRM;
 
+use App\Traits\GetModelByUuid;
+use App\Traits\UuidGenerator;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
 class Invoice extends Model
 {
     use HasFactory;
+    use UuidGenerator;
+    use GetModelByUuid;
+
+    protected $fillable = [
+        'client_id',
+        'client_uuid',
+        'code',
+        'full_number',
+        'bl_code',
+        'bc_code',
+        'ht_price',
+        'total_price',
+        'tax_price',
+        'invoice_date',
+        'due_date',
+        'payment_date',
+        'admin_notes',
+        'client_notes',
+        'condition',
+        'active'
+    ];
+
+    protected $casts = [
+        'due_date'=>'date:Y-m-d',
+        'invoice_date'=>'date:Y-m-d',
+        'active'=>'boolean'
+    ];
+
+    public function estimate()
+    {
+        return $this->hasOne(Estimate::class);
+    }
+
+    public function client()
+    {
+        return $this->belongsTo(Client::class);
+    }
+
+    public function articles()
+    {
+        return $this->morphMany(Article::class,'articleable');
+    }
+
+    public function bill()
+    {
+        return $this->morphMany(Bill::class,'billable')->withDefault();
+    }
 }
