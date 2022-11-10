@@ -31,8 +31,7 @@ return new class extends Migration
             $table->string('company',100)->nullable();
             $table->string('rc',10)->nullable();
             $table->string('ice',20)->unique();
-            
-            $table->timestamps();
+        
             $table->timestamp('added_at')->useCurrent();
         
             $table->boolean('active')->default(true);
