@@ -1,6 +1,6 @@
 <?php
 
-namespace App\View\Components\Facturis\Logo;
+namespace App\View\Components\facturis\logo;
 
 use Illuminate\View\Component;
 
