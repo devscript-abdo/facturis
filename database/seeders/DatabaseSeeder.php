@@ -25,6 +25,6 @@ class DatabaseSeeder extends Seeder
         $this->call(UserSeeder::class);
         $this->call(CategorySeeder::class);
 
-        \App\Models\Facturis\Finance\Estimate::factory(5)->create();
+        //\App\Models\Facturis\Finance\Estimate::factory(5)->create();
     }
 }
