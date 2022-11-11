@@ -12,11 +12,10 @@ use Illuminate\Database\Eloquent\Model;
 class Estimate extends Model
 {
     use HasFactory;
-    //use GetModelByUuid;
-    //use UuidGenerator;
-    //use PriceFormatter;
-    //use Nl2br;
-
+    use GetModelByUuid;
+    use UuidGenerator;
+    use PriceFormatter;
+    use Nl2br;
 
     protected $fillable = [
         'client_id',

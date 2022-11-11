@@ -83,9 +83,9 @@
                                 </form>
 
                                 <p class="text-center mt-2">
-                                    <span>New on our platform?</span>
+                                    <span>Vous n’avez pas encore de compte ?</span>
                                     <a href="{{route('register')}}">
-                                        <span>Create an account</span>
+                                        <span>S’inscrire</span>
                                     </a>
                                 </p>
 
