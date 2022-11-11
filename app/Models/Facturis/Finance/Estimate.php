@@ -73,7 +73,9 @@ class Estimate extends Model
             $number = getDocument()->estimate_start;
 
           }else{
+
             $number = ($model->max('code') + 1);
+            
           }
           
           $code = str_pad($number,5,0,STR_PAD_LEFT);
