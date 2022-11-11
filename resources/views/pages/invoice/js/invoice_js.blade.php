@@ -1,3 +1,4 @@
+<script>
 /*=========================================================================================
     File Name: app-invoice-list.js
     Description: app-invoice-list Javascripts
@@ -12,9 +13,11 @@ $(function () {
   'use strict';
 
   var dtInvoiceTable = $('.invoice-list-table'),
-    assetPath = '../../../app-assets/',
+
+    assetPath = '{{asset('app-assets')}}/',
+
     invoicePreview = 'app-invoice-preview.html',
-    invoiceAdd = 'app-invoice-add.html',
+    invoiceAdd = '{{route('facturis:invoices.create')}}',
     invoiceEdit = 'app-invoice-edit.html';
 
   if ($('body').attr('data-framework') === 'laravel') {
@@ -320,3 +323,4 @@ $(function () {
     });
   }
 });
+</script>
