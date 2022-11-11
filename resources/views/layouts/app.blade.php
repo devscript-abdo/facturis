@@ -40,13 +40,13 @@
 
     <!-- BEGIN: Custom CSS-->
     
+    @yield('styles')
     <!-- END: Custom CSS-->
     @livewireStyles
 
 </head>
 
-<body class="vertical-layout vertical-menu-modern content-left-sidebar navbar-floating footer-static  " data-open="click" data-menu="vertical-menu-modern" data-col="content-left-sidebar">
-
+<body class="vertical-layout vertical-menu-modern  navbar-floating footer-static  " data-open="click" data-menu="vertical-menu-modern" data-col="">
 
     @include('layouts._parts.header')
 
@@ -73,7 +73,7 @@
 
     @include('layouts._parts.scripts')
     
-    @stack('scripts')
+    @stack('page_script')
 
 </body>
 

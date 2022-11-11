@@ -2,7 +2,7 @@
     <div class="main-menu menu-fixed menu-light menu-accordion menu-shadow" data-scroll-to-active="true">
         <div class="navbar-header">
             <ul class="nav navbar-nav flex-row">
-                <li class="nav-item me-auto"><a class="navbar-brand" href="../../../html/ltr/vertical-menu-template-bordered/index.html">
+                <li class="nav-item me-auto"><a class="navbar-brand" href="{{route('facturis:home')}}">
                         <span class="brand-logo">
                             <x-facturis.logo.logo />
                         </span>
@@ -14,17 +14,17 @@
         <div class="shadow-bottom"></div>
         <div class="main-menu-content">
             <ul class="navigation navigation-main" id="main-menu-navigation" data-menu="menu-navigation">
-                <li class=" nav-item"><a class="d-flex align-items-center" href="index.html"><i data-feather="home"></i><span class="menu-title text-truncate" data-i18n="Dashboards">Dashboards</span><span class="badge badge-light-warning rounded-pill ms-auto me-1">2</span></a>
-                    <ul class="menu-content">
-                        <li><a class="d-flex align-items-center" href="dashboard-analytics.html"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="Analytics">Analytics</span></a>
-                        </li>
-                        <li><a class="d-flex align-items-center" href="dashboard-ecommerce.html"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="eCommerce">eCommerce</span></a>
-                        </li>
-                    </ul>
+                <li class="{{request()->routeIs('facturis:home') ? 'active':''}} nav-item">
+                    <a class="d-flex align-items-center" href="{{route('facturis:home')}}">
+                        <i data-feather="home"></i>
+                        <span class="menu-title text-truncate" data-i18n="Dashboard">Dashboard</span>
+                        <span class="badge badge-light-warning rounded-pill ms-auto me-1">2</span>
+                    </a>
                 </li>
-                <li class=" navigation-header"><span data-i18n="Apps &amp; Pages">Apps &amp; Pages</span><i data-feather="more-horizontal"></i>
+                <li class=" navigation-header"><span data-i18n="GESTION COMMERCIAL">
+                    GESTION COMMERCIAL</span><i data-feather="more-horizontal"></i>
                 </li>
-                <li class="active nav-item"><a class="d-flex align-items-center" href="app-email.html"><i data-feather="mail"></i><span class="menu-title text-truncate" data-i18n="Email">Email</span></a>
+                <li class=" nav-item"><a class="d-flex align-items-center" href="app-email.html"><i data-feather="mail"></i><span class="menu-title text-truncate" data-i18n="Email">Email</span></a>
                 </li>
                 <li class=" nav-item"><a class="d-flex align-items-center" href="app-chat.html"><i data-feather="message-square"></i><span class="menu-title text-truncate" data-i18n="Chat">Chat</span></a>
                 </li>
@@ -34,9 +34,9 @@
                 </li>
                 <li class=" nav-item"><a class="d-flex align-items-center" href="app-kanban.html"><i data-feather="grid"></i><span class="menu-title text-truncate" data-i18n="Kanban">Kanban</span></a>
                 </li>
-                <li class=" nav-item"><a class="d-flex align-items-center" href="#"><i data-feather="file-text"></i><span class="menu-title text-truncate" data-i18n="Invoice">Invoice</span></a>
+                <li class="{{request()->routeIs('facturis:invoices') ? 'active':''}} nav-item"><a class="d-flex align-items-center" href="#"><i data-feather="file-text"></i><span class="menu-title text-truncate" data-i18n="Invoice">Invoice</span></a>
                     <ul class="menu-content">
-                        <li><a class="d-flex align-items-center" href="app-invoice-list.html"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="List">List</span></a>
+                        <li><a class="d-flex align-items-center" href="{{route('facturis:invoices')}}"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="List">List</span></a>
                         </li>
                         <li><a class="d-flex align-items-center" href="app-invoice-preview.html"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="Preview">Preview</span></a>
                         </li>
