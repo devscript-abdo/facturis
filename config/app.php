@@ -196,6 +196,9 @@ return [
         App\Providers\RouteServiceProvider::class,
         //App\Providers\TenancyServiceProvider::class,
 
+        HTMLMin\HTMLMin\HTMLMinServiceProvider::class
+        
+
     ],
 
     /*

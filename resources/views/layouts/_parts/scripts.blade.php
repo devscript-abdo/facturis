@@ -1,3 +1,5 @@
+    <!-- skip.minification -->
+    
     <!-- BEGIN: Vendor JS-->
     <script src="{{asset('app-assets/vendors/js/vendors.min.js')}}"></script>
     <!-- BEGIN Vendor JS-->
