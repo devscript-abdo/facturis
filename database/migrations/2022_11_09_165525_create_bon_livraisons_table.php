@@ -14,7 +14,6 @@ return new class extends Migration
     public function up()
     {
         Schema::create('bon_livraisons', function (Blueprint $table) {
-
             $table->id();
             $table->uuid();
             $table->string('code')->unique();
@@ -36,7 +35,6 @@ return new class extends Migration
 
             $table->timestamps();
             $table->softDeletes();
-            
         });
     }
 

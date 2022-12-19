@@ -31,13 +31,13 @@ class Invoice extends Model
         'admin_notes',
         'client_notes',
         'condition',
-        'active'
+        'active',
     ];
 
     protected $casts = [
-        'due_date'=>'date:Y-m-d',
-        'invoice_date'=>'date:Y-m-d',
-        'active'=>'boolean'
+        'due_date' => 'date:Y-m-d',
+        'invoice_date' => 'date:Y-m-d',
+        'active' => 'boolean',
     ];
 
     public function estimate()
@@ -52,31 +52,26 @@ class Invoice extends Model
 
     public function articles()
     {
-        return $this->morphMany(Article::class,'articleable');
+        return $this->morphMany(Article::class, 'articleable');
     }
 
     public function bill()
     {
-        return $this->morphMany(Bill::class,'billable')->withDefault();
+        return $this->morphMany(Bill::class, 'billable')->withDefault();
     }
 
     public static function boot()
     {
+        static::creating(function ($model) {
+            if (self::count() <= 0) {
+                $number = getDocument()->invoice_start;
+            } else {
+                $number = ($model->max('code') + 1);
+            }
 
-        static::creating(function($model){
-
-          if(self::count()<= 0)
-          {
-            $number = getDocument()->invoice_start;
-
-          }else{
-            $number = ($model->max('code') + 1);
-          }
-
-          $code = str_pad($number,5,0,STR_PAD_LEFT);
-          $model->code = $code;
-          $model->full_number = getDocument()->invoice_prefix . $code;
-
+            $code = str_pad($number, 5, 0, STR_PAD_LEFT);
+            $model->code = $code;
+            $model->full_number = getDocument()->invoice_prefix.$code;
         });
     }
 }

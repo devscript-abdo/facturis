@@ -4,10 +4,8 @@ use Spatie\LaravelSettings\Migrations\SettingsMigration;
 
 class CreateCompanySettings extends SettingsMigration
 {
-
     public function up(): void
     {
-
         $this->migrator->add('company.name', 'WEDO APP');
         $this->migrator->add('company.website', 'https://wedoapp.ma');
         $this->migrator->add('company.logo', 'logo.png');

@@ -30,11 +30,10 @@ class Client extends Model
         'rc',
         'ice',
         'added_at',
-        'active'
+        'active',
     ];
 
     protected $casts = [
-
 
     ];
 
@@ -57,17 +56,17 @@ class Client extends Model
 
     public function bills()
     {
-        return $this->hasManyThrough(Bill::class,Invoice::class,'client_id','billable_id');
+        return $this->hasManyThrough(Bill::class, Invoice::class, 'client_id', 'billable_id');
     }
 
     public function telephones()
     {
-        return $this->morphMany(Telephone::class,'telephoneable');
+        return $this->morphMany(Telephone::class, 'telephoneable');
     }
 
     public function emails()
     {
-        return $this->morphMany(Email::class,'emailable');
+        return $this->morphMany(Email::class, 'emailable');
     }
 
     public function category()

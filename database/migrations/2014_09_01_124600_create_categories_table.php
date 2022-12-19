@@ -16,9 +16,9 @@ return new class extends Migration
         Schema::create('categories', function (Blueprint $table) {
             $table->id();
             $table->uuid();
-            $table->string('name',50)->unique();
-            $table->string('slug',100)->unique();
-            $table->string('code',50)->nullable();
+            $table->string('name', 50)->unique();
+            $table->string('slug', 100)->unique();
+            $table->string('code', 50)->nullable();
             $table->boolean('active')->default(true);
             $table->softDeletes();
             $table->timestamp('added_at')->useCurrent();

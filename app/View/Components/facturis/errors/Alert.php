@@ -12,14 +12,14 @@ class Alert extends Component
      * @var string
      */
     public $type;
- 
+
     /**
      * The alert message.
      *
      * @var string
      */
     public $message;
- 
+
     /**
      * Create the component instance.
      *

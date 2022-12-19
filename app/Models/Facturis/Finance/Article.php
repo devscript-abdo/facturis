@@ -28,14 +28,12 @@ class Article extends Model
         'tax_price',
         'remise_fix',
         'remise',
-        'taux_remise'
+        'taux_remise',
     ];
-    /**
-     * 
-     */
-    protected  $casts = [
+
+    protected $casts = [
         'quantity' => 'integer',
-        'remise_fix'=>'boolean',
+        'remise_fix' => 'boolean',
     ];
 
     public function articleable()

@@ -1,10 +1,8 @@
 <?php
 
-
-if(!function_exists('getDocument'))
-{
+if (! function_exists('getDocument')) {
     function getDocument()
     {
-       return app(App\Settings\DocumentSettings::class);
+        return app(App\Settings\DocumentSettings::class);
     }
 }

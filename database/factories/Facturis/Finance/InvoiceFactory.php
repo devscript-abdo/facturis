@@ -9,8 +9,6 @@ use Illuminate\Database\Eloquent\Factories\Factory;
  */
 class InvoiceFactory extends Factory
 {
-
-   
     /**
      * Define the model's default state.
      *
@@ -21,16 +19,16 @@ class InvoiceFactory extends Factory
         return [
             //'code' => $code = fake()->regexify('[0-9]{9}'),
             //'full_number'=>'FACT-'.$code,
-            
+
             'ht_price' => fake()->randomFloat(2),
             'tax_price' => fake()->randomFloat(2),
             'total_price' => fake()->randomFloat(2),
             'invoice_date' => now(),
-            'due_date'=>now()->addDays(10),
-            'payment_date'=>now()->addDays(15),
-            'admin_notes'=>fake()->paragraphs(5),
-            'client_notes'=>fake()->paragraphs(5),
-            'condition'=>fake()->paragraphs(9),
+            'due_date' => now()->addDays(10),
+            'payment_date' => now()->addDays(15),
+            'admin_notes' => fake()->paragraphs(5),
+            'client_notes' => fake()->paragraphs(5),
+            'condition' => fake()->paragraphs(9),
 
         ];
     }

@@ -55,13 +55,12 @@ class FortifyServiceProvider extends ServiceProvider
         });
 
         Fortify::registerView(function () {
-            
             return view('auth.register.index');
         });
 
         Fortify::authenticateUsing(function (Request $request) {
             $user = User::where('email', $request->email)->first();
-     
+
             if ($user &&
                 Hash::check($request->password, $user->password)) {
                 return $user;

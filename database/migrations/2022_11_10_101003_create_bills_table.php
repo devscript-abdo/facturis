@@ -19,7 +19,7 @@ return new class extends Migration
             $table->string('code')->unique();
             $table->string('full_number')->unique();
 
-            $table->string('reference',200)->nullable();
+            $table->string('reference', 200)->nullable();
 
             $table->float('ht_price', 8, 2)->default(0);
             $table->float('total_price', 8, 2)->default(0);

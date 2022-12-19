@@ -14,8 +14,7 @@ return new class extends Migration
     public function up()
     {
         Schema::table('bon_commands', function (Blueprint $table) {
-            
-            $table->after('uuid',function($table){
+            $table->after('uuid', function ($table) {
                 $table->foreignId('provider_id')->constrained()
                     ->onUpdate('cascade')
                     ->onDelete('cascade');
@@ -32,7 +31,7 @@ return new class extends Migration
     public function down()
     {
         Schema::table('bon_commands', function (Blueprint $table) {
-            $table->dropColumn(['provider_id','provider_uuid']);
+            $table->dropColumn(['provider_id', 'provider_uuid']);
         });
     }
 };

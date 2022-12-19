@@ -14,7 +14,6 @@ return new class extends Migration
     public function up()
     {
         Schema::create('estimates', function (Blueprint $table) {
-
             $table->id();
             $table->uuid();
 
@@ -25,7 +24,7 @@ return new class extends Migration
 
             $table->foreignId('invoice_id')->constrained()
                 ->onUpdate('cascade')
-                ->onDelete('cascade');             
+                ->onDelete('cascade');
             $table->uuid('invoice_uuid')->nullable();
 
             $table->string('code')->nullable();
@@ -34,7 +33,7 @@ return new class extends Migration
             //$table->string('bc_code')->nullable();
 
             $table->integer('status')->default(0);
-            
+
             $table->float('ht_price', 8, 2)->default(0);
             $table->float('total_price', 8, 2)->default(0);
             $table->float('tax_price', 8, 2)->default(0);

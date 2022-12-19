@@ -2,9 +2,8 @@
 
 namespace App\Traits;
 
-
-trait GetModelByUuid {
-
+trait GetModelByUuid
+{
     public function getRouteKeyName()
     {
         return 'uuid';

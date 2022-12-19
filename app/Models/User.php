@@ -14,6 +14,7 @@ class User extends Authenticatable
 {
     use HasApiTokens, HasFactory, Notifiable;
     use UuidGenerator;
+
     /**
      * The attributes that are mass assignable.
      *
@@ -33,7 +34,7 @@ class User extends Authenticatable
         'changed_password_at',
         'active',
         'city_id',
-        'category_id'
+        'category_id',
     ];
 
     /**

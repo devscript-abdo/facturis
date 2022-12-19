@@ -11,6 +11,5 @@ class CreateGeneralSettings extends SettingsMigration
 
         $this->migrator->add('general.app_devlopper', 'WEDO APP');
         $this->migrator->add('general.app_version', '1.0.0');
- 
     }
 }

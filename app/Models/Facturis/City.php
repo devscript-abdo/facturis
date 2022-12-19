@@ -11,7 +11,7 @@ class City extends Model
     use HasFactory;
     use UuidGenerator;
 
-        /**
+    /**
      * The attributes that are mass assignable.
      *
      * @var array<int, string>
@@ -21,7 +21,7 @@ class City extends Model
         'code',
         'slug',
         'active',
-        'added_at'
+        'added_at',
     ];
 
     /**
@@ -31,7 +31,7 @@ class City extends Model
      */
     protected $casts = [
 
-        'added_at'=>'datetime',
-        'active' => 'boolean'
+        'added_at' => 'datetime',
+        'active' => 'boolean',
     ];
 }

@@ -16,11 +16,11 @@ return new class extends Migration
         Schema::create('telephones', function (Blueprint $table) {
             $table->id();
             $table->uuid();
-            
+
             $table->unsignedBigInteger('telephoneable_id');
             $table->string('telephoneable_type');
 
-            $table->string('telephone',40)->unique();
+            $table->string('telephone', 40)->unique();
             $table->integer('type')->default(1);
 
             $table->boolean('is_primary')->default(false);

@@ -185,7 +185,7 @@ return [
         /*
          * Package Service Providers...
          */
-        App\Providers\FortifyServiceProvider::class, 
+        App\Providers\FortifyServiceProvider::class,
         /*
          * Application Service Providers...
          */
@@ -196,8 +196,7 @@ return [
         App\Providers\RouteServiceProvider::class,
         //App\Providers\TenancyServiceProvider::class,
 
-        HTMLMin\HTMLMin\HTMLMinServiceProvider::class
-        
+        HTMLMin\HTMLMin\HTMLMinServiceProvider::class,
 
     ],
 

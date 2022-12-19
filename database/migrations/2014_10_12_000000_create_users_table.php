@@ -16,11 +16,11 @@ return new class extends Migration
         Schema::create('users', function (Blueprint $table) {
             $table->id();
             $table->uuid();
-            $table->string('nom',30)->nullable();
-            $table->string('prenom',30)->nullable();
-            $table->string('age',10)->nullable();
+            $table->string('nom', 30)->nullable();
+            $table->string('prenom', 30)->nullable();
+            $table->string('age', 10)->nullable();
             $table->longText('address')->nullable();
-            $table->string('telephone',20)->unique()->nullable();
+            $table->string('telephone', 20)->unique()->nullable();
             $table->string('avatar')->nullable();
 
             $table->string('username')->unique()->nullable();
@@ -31,7 +31,7 @@ return new class extends Migration
 
             $table->foreignId('city_id')->nullable();
             $table->foreignId('category_id')->nullable();
-            
+
             $table->timestamps();
             $table->timestamp('added_at')->useCurrent();
             $table->timestamp('changed_password_at')->nullable();

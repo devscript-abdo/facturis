@@ -14,21 +14,20 @@ return new class extends Migration
     public function up()
     {
         Schema::create('invoices', function (Blueprint $table) {
-
             $table->id();
             $table->uuid();
 
             $table->foreignId('client_id')->constrained()
                 ->onUpdate('cascade')
                 ->onDelete('cascade');
-                
+
             $table->uuid('client_uuid')->nullable();
 
             $table->string('code')->nullable();
             $table->string('full_number')->unique();
             $table->string('bl_code')->nullable();
             $table->string('bc_code')->nullable();
-            
+
             $table->float('ht_price', 8, 2)->default(0);
             $table->float('total_price', 8, 2)->default(0);
             $table->float('tax_price', 8, 2)->default(0);

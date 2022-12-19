@@ -14,7 +14,6 @@ return new class extends Migration
     public function up()
     {
         Schema::create('invoice_avoirs', function (Blueprint $table) {
-
             $table->id();
             $table->uuid();
 
@@ -30,7 +29,7 @@ return new class extends Migration
             $table->string('full_number')->unique();
             $table->string('bl_code')->nullable();
             $table->string('bc_code')->nullable();
-            
+
             $table->float('ht_price', 8, 2)->default(0);
             $table->float('total_price', 8, 2)->default(0);
             $table->float('tax_price', 8, 2)->default(0);

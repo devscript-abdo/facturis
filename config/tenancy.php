@@ -9,7 +9,7 @@ use Stancl\Tenancy\Database\Models\Tenant;
 return [
 
     'tenant_model' => FacturisTenant::class,
-    
+
     'id_generator' => Stancl\Tenancy\UUIDGenerator::class,
 
     'domain_model' => Domain::class,

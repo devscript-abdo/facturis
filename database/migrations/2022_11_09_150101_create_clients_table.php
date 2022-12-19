@@ -17,23 +17,23 @@ return new class extends Migration
             $table->id();
             $table->uuid();
 
-            $table->string('nom',30)->nullable();
-            $table->string('prenom',30)->nullable();
+            $table->string('nom', 30)->nullable();
+            $table->string('prenom', 30)->nullable();
 
             $table->longText('address')->nullable();
-            $table->string('telephone',20)->unique()->nullable();
+            $table->string('telephone', 20)->unique()->nullable();
             $table->string('avatar')->nullable();
             $table->string('email')->unique();
 
             $table->foreignId('city_id')->nullable();
             $table->foreignId('category_id')->nullable();
 
-            $table->string('company',100)->nullable();
-            $table->string('rc',10)->nullable();
-            $table->string('ice',20)->unique();
-        
+            $table->string('company', 100)->nullable();
+            $table->string('rc', 10)->nullable();
+            $table->string('ice', 20)->unique();
+
             $table->timestamp('added_at')->useCurrent();
-        
+
             $table->boolean('active')->default(true);
             $table->softDeletes();
 

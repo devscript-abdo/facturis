@@ -14,7 +14,6 @@ return new class extends Migration
     public function up()
     {
         Schema::create('emails', function (Blueprint $table) {
-
             $table->id();
             $table->uuid();
 
@@ -26,7 +25,7 @@ return new class extends Migration
 
             $table->boolean('is_primary')->default(false);
             $table->boolean('active')->default(true);
-            
+
             $table->softDeletes();
             $table->timestamps();
         });

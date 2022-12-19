@@ -15,12 +15,11 @@ class Email extends Model
 
         'email',
         'is_primary',
-        'active'
+        'active',
     ];
 
     public function emailable()
     {
         return $this->morphTo();
     }
-
 }

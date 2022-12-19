@@ -28,12 +28,12 @@ class Bill extends Model
         'recu',
         'billable_id',
         'billable_type',
-        'active'
+        'active',
     ];
 
     protected $casts = [
-        'bill_date'=>'date:Y-m-d',
-        'active'=>'boolean'
+        'bill_date' => 'date:Y-m-d',
+        'active' => 'boolean',
     ];
 
     public function billable()
@@ -43,27 +43,21 @@ class Bill extends Model
 
     public function invoice()
     {
-        return $this->belongsTo(Invoice::class,'billable_id');
+        return $this->belongsTo(Invoice::class, 'billable_id');
     }
 
- 
     public static function boot()
     {
+        static::creating(function ($model) {
+            if (self::count() <= 0) {
+                $number = getDocument()->bill_start;
+            } else {
+                $number = ($model->max('code') + 1);
+            }
 
-        static::creating(function($model){
-
-          if(self::count()<= 0)
-          {
-            $number = getDocument()->bill_start;
-
-          }else{
-            $number = ($model->max('code') + 1);
-          }
-          
-          $code = str_pad($number,5,0,STR_PAD_LEFT);
-          $model->code = $code;
-          $model->full_number = getDocument()->bill_prefix . $code;
-
+            $code = str_pad($number, 5, 0, STR_PAD_LEFT);
+            $model->code = $code;
+            $model->full_number = getDocument()->bill_prefix.$code;
         });
     }
 }

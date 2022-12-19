@@ -22,11 +22,11 @@ class Provider extends Model
 
     public function telephones()
     {
-        return $this->morphMany(Telephone::class,'telephoneable');
+        return $this->morphMany(Telephone::class, 'telephoneable');
     }
 
     public function emails()
     {
-        return $this->morphMany(Email::class,'emailable');
+        return $this->morphMany(Email::class, 'emailable');
     }
 }

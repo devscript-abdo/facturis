@@ -3,10 +3,8 @@
 namespace Database\Seeders;
 
 use App\Models\Facturis\City;
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
-use Illuminate\Support\Str;
-use Illuminate\Support\Facades\Hash;
+
 class CitySeeder extends Seeder
 {
     /**
@@ -18,33 +16,32 @@ class CitySeeder extends Seeder
     {
         $cities = [
             [
-                'name'=>'Casablanca',
-                'slug'=>'casablanca',
-                'code'=>1,
-                'added_at'=>now(),
+                'name' => 'Casablanca',
+                'slug' => 'casablanca',
+                'code' => 1,
+                'added_at' => now(),
             ],
             [
-                'name'=>'Rabat',
-                'slug'=>'rabat',
-                'code'=>2,
-                'added_at'=>now(),
+                'name' => 'Rabat',
+                'slug' => 'rabat',
+                'code' => 2,
+                'added_at' => now(),
             ],
             [
-                'name'=>'Marrakech',
-                'slug'=>'marrakech',
-                'code'=>3,
-                'added_at'=>now(),
+                'name' => 'Marrakech',
+                'slug' => 'marrakech',
+                'code' => 3,
+                'added_at' => now(),
             ],
             [
-                'name'=>'Tanger',
-                'slug'=>'tanger',
-                'code'=>4,
-                'added_at'=>now(),
+                'name' => 'Tanger',
+                'slug' => 'tanger',
+                'code' => 4,
+                'added_at' => now(),
             ],
         ];
 
-        foreach($cities as $city)
-        {
+        foreach ($cities as $city) {
             City::create($city);
         }
     }

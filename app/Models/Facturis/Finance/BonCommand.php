@@ -11,13 +11,13 @@ use Illuminate\Database\Eloquent\Model;
 
 class BonCommand extends Model
 {
-      use HasFactory;
-      use GetModelByUuid;
-      use UuidGenerator;
-      use PriceFormatter;
-      use Nl2br;
+    use HasFactory;
+    use GetModelByUuid;
+    use UuidGenerator;
+    use PriceFormatter;
+    use Nl2br;
 
-      protected $fillable = [
+    protected $fillable = [
         'provider_id',
         'provider_uuid',
         'code',
@@ -37,35 +37,30 @@ class BonCommand extends Model
     ];
 
     protected $casts = [
-        'due_date'=>'date:Y-m-d',
-        'bon_date'=>'date:Y-m-d',
-        'sent_at'=>'datetime',
-        'active'=>'boolean',
-        'sent_at'=>'boolean'
+        'due_date' => 'date:Y-m-d',
+        'bon_date' => 'date:Y-m-d',
+        'sent_at' => 'datetime',
+        'active' => 'boolean',
+        'sent_at' => 'boolean',
     ];
 
     public function articles()
     {
-        return $this->morphMany(Article::class,'articleable');
+        return $this->morphMany(Article::class, 'articleable');
     }
 
     public static function boot()
     {
+        static::creating(function ($model) {
+            if (self::count() <= 0) {
+                $number = getDocument()->bc_start;
+            } else {
+                $number = ($model->max('code') + 1);
+            }
 
-        static::creating(function($model){
-
-          if(self::count()<= 0)
-          {
-            $number = getDocument()->bc_start;
-
-          }else{
-            $number = ($model->max('code') + 1);
-          }
-          
-          $code = str_pad($number,5,0,STR_PAD_LEFT);
-          $model->code = $code;
-          $model->full_number = getDocument()->bc_prefix . $code;
-
+            $code = str_pad($number, 5, 0, STR_PAD_LEFT);
+            $model->code = $code;
+            $model->full_number = getDocument()->bc_prefix.$code;
         });
     }
 }

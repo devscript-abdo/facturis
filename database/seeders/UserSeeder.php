@@ -3,10 +3,10 @@
 namespace Database\Seeders;
 
 use App\Models\User;
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Str;
+
 class UserSeeder extends Seeder
 {
     /**
@@ -18,37 +18,36 @@ class UserSeeder extends Seeder
     {
         $users = [
             [
-                'nom'=>'Elmarzougui',
-                'prenom'=>'Abdelghafour',
-                'age'=>29,
-                'email'=>'abdelgha4or@gmail.com',
-                'email_verified_at'=>now(),
-                'address'=>'casablanca ain chok',
-                'telephone'=>'0677512753',
-                'username'=>'devscript',
-                
-                'password'=>Hash::make('123456789@'),
-                'remember_token'=>Str::random(10),
-                'city_id' => 1
+                'nom' => 'Elmarzougui',
+                'prenom' => 'Abdelghafour',
+                'age' => 29,
+                'email' => 'abdelgha4or@gmail.com',
+                'email_verified_at' => now(),
+                'address' => 'casablanca ain chok',
+                'telephone' => '0677512753',
+                'username' => 'devscript',
+
+                'password' => Hash::make('123456789@'),
+                'remember_token' => Str::random(10),
+                'city_id' => 1,
             ],
             [
-                'nom'=>'Yassine',
-                'prenom'=>'HARIT',
-                'age'=>24,
-                'email'=>'yassine@haymacproduction.ma',
-                'email_verified_at'=>now(),
-                'address'=>'casablanca ain chok',
-                'telephone'=>'0660408888',
-                'username'=>'harit',
-                
-                'password'=>Hash::make('123456789@'),
-                'remember_token'=>Str::random(10),
-                'city_id'=>1
-            ]
+                'nom' => 'Yassine',
+                'prenom' => 'HARIT',
+                'age' => 24,
+                'email' => 'yassine@haymacproduction.ma',
+                'email_verified_at' => now(),
+                'address' => 'casablanca ain chok',
+                'telephone' => '0660408888',
+                'username' => 'harit',
+
+                'password' => Hash::make('123456789@'),
+                'remember_token' => Str::random(10),
+                'city_id' => 1,
+            ],
         ];
 
-        foreach($users as $user)
-        {
+        foreach ($users as $user) {
             User::create($user);
         }
     }

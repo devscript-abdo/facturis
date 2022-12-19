@@ -15,7 +15,7 @@ class Telephone extends Model
 
         'telephone',
         'is_primary',
-        'active'
+        'active',
     ];
 
     public function telephoneable()

@@ -17,8 +17,8 @@ class ProviderFactory extends Factory
     public function definition()
     {
         return [
-            'ice'=>rand(1000,855145),
-            'rc'=>rand(1000,855145)
+            'ice' => rand(1000, 855145),
+            'rc' => rand(1000, 855145),
         ];
     }
 }

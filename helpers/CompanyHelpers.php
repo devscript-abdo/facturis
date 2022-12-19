@@ -1,10 +1,8 @@
 <?php
 
-
-if(!function_exists('getCompany'))
-{
+if (! function_exists('getCompany')) {
     function getCompany()
     {
-       return app(App\Settings\CompanySettings::class);
+        return app(App\Settings\CompanySettings::class);
     }
 }

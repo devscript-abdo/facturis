@@ -21,7 +21,7 @@ class Category extends Model
         'code',
         'slug',
         'active',
-        'added_at'
+        'added_at',
     ];
 
     /**
@@ -31,7 +31,7 @@ class Category extends Model
      */
     protected $casts = [
 
-        'added_at'=>'datetime',
-        'active' => 'boolean'
+        'added_at' => 'datetime',
+        'active' => 'boolean',
     ];
 }
