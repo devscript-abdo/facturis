@@ -14,6 +14,8 @@ class UserTest extends TestCase
     {
         $user = User::factory(2)->create();
 
+        
+
         $this->assertDatabaseCount('users', 2);
     }
 
