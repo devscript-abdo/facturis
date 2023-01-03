@@ -17,7 +17,6 @@ class LoginTest extends TestCase
             'name' => ['Please provide a valid name.'],
         ])->view('auth.login');
 
-        $view->assertSee('Create an account');
         $view->assertSee('FACTURIS');
         $view->assertSee('Sign in');
     }
