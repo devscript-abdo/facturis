@@ -17,7 +17,14 @@ class EstimateFactory extends Factory
     public function definition()
     {
         return [
-            //
+            'ht_price' => fake()->randomFloat(2),
+            'tax_price' => fake()->randomFloat(2),
+            'total_price' => fake()->randomFloat(2),
+            'estimate_date' => now(),
+            'due_date' => now()->addDays(10),
+            'admin_notes' => fake()->paragraphs(5, true),
+            'client_notes' => fake()->paragraphs(5, true),
+            'condition' => fake()->paragraphs(9, true),
         ];
     }
 }

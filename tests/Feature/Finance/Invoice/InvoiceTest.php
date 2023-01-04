@@ -28,6 +28,10 @@ class InvoiceTest extends TestCase
         $this->assertModelExists($invoice);
     }
 
+    public function test_can_edit_invoice()
+    {
+    }
+
     public function test_delete_invoice_done()
     {
         $invoice = Invoice::factory()->create();
@@ -35,5 +39,6 @@ class InvoiceTest extends TestCase
         $invoice->delete();
 
         $this->assertModelMissing($invoice);
+       // $this->assertDatabaseMissing('invoices', $invoice);
     }
 }

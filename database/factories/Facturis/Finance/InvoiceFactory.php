@@ -26,9 +26,9 @@ class InvoiceFactory extends Factory
             'invoice_date' => now(),
             'due_date' => now()->addDays(10),
             'payment_date' => now()->addDays(15),
-            'admin_notes' => fake()->paragraphs(5),
-            'client_notes' => fake()->paragraphs(5),
-            'condition' => fake()->paragraphs(9),
+            'admin_notes' => fake()->paragraphs(5, true),
+            'client_notes' => fake()->paragraphs(5, true),
+            'condition' => fake()->paragraphs(9, true),
 
         ];
     }
