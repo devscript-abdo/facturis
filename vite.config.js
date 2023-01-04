@@ -1,6 +1,5 @@
 import { defineConfig } from 'vite';
 import laravel from 'laravel-vite-plugin';
-//import inject from '@rollup/plugin-inject';
 export default defineConfig({
     plugins: [
         laravel({
@@ -8,9 +7,6 @@ export default defineConfig({
             refresh: true,
             //valetTls: 'facturis.test', // [!tl add]
         })
-        /*inject({
-            $: 'jquery',
-        }),*/
     ],
 
 });
