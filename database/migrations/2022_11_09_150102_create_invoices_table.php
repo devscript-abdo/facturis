@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\Facturis\Finance\Client;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
@@ -17,14 +18,15 @@ return new class extends Migration
             $table->id();
             $table->uuid();
 
-            $table->foreignId('client_id')->constrained()
-                ->onUpdate('cascade')
-                ->onDelete('cascade');
-
-            $table->uuid('client_uuid')->nullable();
+            $table->foreignIdFor(Client::class)
+                ->index()
+                ->nullable()
+                ->constrained()
+                ->nullOnDelete();
 
             $table->string('code')->nullable();
             $table->string('full_number')->unique();
+
             $table->string('bl_code')->nullable();
             $table->string('bc_code')->nullable();
 
@@ -40,7 +42,7 @@ return new class extends Migration
             $table->mediumText('client_notes')->nullable();
             $table->mediumText('condition')->nullable();
 
-            $table->boolean('active')->default(true);
+            $table->boolean('is_active')->default(true);
 
             $table->timestamps();
             $table->softDeletes();

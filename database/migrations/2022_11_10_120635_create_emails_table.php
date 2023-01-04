@@ -17,14 +17,13 @@ return new class extends Migration
             $table->id();
             $table->uuid();
 
-            $table->unsignedBigInteger('emailable_id');
-            $table->string('emailable_type');
-
+            $table->morphs('emailable');
+            
             $table->string('email')->unique();
             $table->integer('type')->default(1);
 
             $table->boolean('is_primary')->default(false);
-            $table->boolean('active')->default(true);
+            $table->boolean('is_active')->default(true);
 
             $table->softDeletes();
             $table->timestamps();

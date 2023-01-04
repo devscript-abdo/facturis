@@ -10,13 +10,17 @@ class DocumentSettings extends Settings
 
     public int $invoice_start;
 
+    public string $invoiceavoir_prefix;
+
+    public int $invoiceavoir_start;
+
     public string $estimate_prefix;
 
     public int $estimate_start;
 
-    public string $bc_prefix;
+    public string $boncommand_prefix;
 
-    public int $bc_start;
+    public int $boncommand_start;
 
     public string $bl_prefix;
 

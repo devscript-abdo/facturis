@@ -28,7 +28,7 @@ return new class extends Migration
             $table->string('ice', 20)->unique();
             $table->string('logo')->default('provider.png');
 
-            $table->boolean('active')->default(false);
+            $table->boolean('is_active')->default(false);
             $table->timestamp('added_at')->useCurrent();
 
             $table->timestamps();

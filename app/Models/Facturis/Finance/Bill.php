@@ -3,6 +3,7 @@
 namespace App\Models\Facturis\Finance;
 
 use App\Traits\GetModelByUuid;
+use App\Traits\NumerotationGenerator;
 use App\Traits\PriceFormatter;
 use App\Traits\UuidGenerator;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
@@ -14,6 +15,7 @@ class Bill extends Model
     use GetModelByUuid;
     use UuidGenerator;
     use PriceFormatter;
+    use NumerotationGenerator;
 
     protected $fillable = [
         'code',
@@ -44,20 +46,5 @@ class Bill extends Model
     public function invoice()
     {
         return $this->belongsTo(Invoice::class, 'billable_id');
-    }
-
-    public static function boot()
-    {
-        static::creating(function ($model) {
-            if (self::count() <= 0) {
-                $number = getDocument()->bill_start;
-            } else {
-                $number = ($model->max('code') + 1);
-            }
-
-            $code = str_pad($number, 5, 0, STR_PAD_LEFT);
-            $model->code = $code;
-            $model->full_number = getDocument()->bill_prefix.$code;
-        });
     }
 }

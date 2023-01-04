@@ -16,6 +16,9 @@ return new class extends Migration
         Schema::create('bills', function (Blueprint $table) {
             $table->id();
             $table->uuid();
+
+            $table->morphs('billable');
+
             $table->string('code')->unique();
             $table->string('full_number')->unique();
 
@@ -30,10 +33,7 @@ return new class extends Migration
             $table->mediumText('notes')->nullable();
             $table->string('recu')->nullable();
 
-            $table->unsignedBigInteger('billable_id');
-            $table->string('billable_type');
-
-            $table->boolean('active')->default(true);
+            $table->boolean('is_active')->default(true);
 
             $table->timestamps();
             $table->softDeletes();

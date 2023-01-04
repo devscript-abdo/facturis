@@ -1,5 +1,7 @@
 <?php
 
+use App\Models\Facturis\Finance\Client;
+use App\Models\Facturis\Finance\Invoice;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
@@ -17,11 +19,16 @@ return new class extends Migration
             $table->id();
             $table->uuid();
 
-            $table->foreignId('invoice_id')->nullable();
-            $table->uuid('invoice_uuid')->nullable();
-
-            $table->foreignId('client_id')->nullable();
-            $table->uuid('client_uuid')->nullable();
+            $table->foreignIdFor(Invoice::class)
+                ->index()
+                ->nullable()
+                ->constrained()
+                ->nullOnDelete();
+            $table->foreignIdFor(Client::class)
+                ->index()
+                ->nullable()
+                ->constrained()
+                ->nullOnDelete();
 
             $table->string('invoice_number'); // normal Invoice
 
@@ -42,7 +49,7 @@ return new class extends Migration
             $table->mediumText('client_notes')->nullable();
             $table->mediumText('condition')->nullable();
 
-            $table->boolean('active')->default(true);
+            $table->boolean('is_active')->default(true);
 
             $table->timestamps();
             $table->softDeletes();

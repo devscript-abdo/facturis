@@ -19,7 +19,7 @@ return new class extends Migration
             $table->string('name', 50)->unique();
             $table->string('slug', 100)->unique();
             $table->string('code', 50)->nullable();
-            $table->boolean('active')->default(true);
+            $table->boolean('is_active')->default(true);
             $table->softDeletes();
             $table->timestamp('added_at')->useCurrent();
             $table->timestamps();

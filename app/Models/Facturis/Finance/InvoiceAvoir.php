@@ -4,6 +4,7 @@ namespace App\Models\Facturis\Finance;
 
 use App\Traits\GetModelByUuid;
 use App\Traits\Nl2br;
+use App\Traits\NumerotationGenerator;
 use App\Traits\PriceFormatter;
 use App\Traits\UuidGenerator;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
@@ -16,6 +17,7 @@ class InvoiceAvoir extends Model
     use UuidGenerator;
     use Nl2br;
     use PriceFormatter;
+    use NumerotationGenerator;
 
     protected $fillable = [
         'client_id',
@@ -63,20 +65,5 @@ class InvoiceAvoir extends Model
     public function bill()
     {
         return $this->morphOne(Bill::class, 'billable')->withDefault();
-    }
-
-    public static function boot()
-    {
-        static::creating(function ($model) {
-            if (self::count() <= 0) {
-                $number = getDocument()->invoice_avoir_start;
-            } else {
-                $number = ($model->max('code') + 1);
-            }
-
-            $code = str_pad($number, 5, 0, STR_PAD_LEFT);
-            $model->code = $code;
-            $model->full_number = getDocument()->invoice_avoir_prefix.$code;
-        });
     }
 }
