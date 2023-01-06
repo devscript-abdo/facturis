@@ -55,15 +55,15 @@ class RouteServiceProvider extends ServiceProvider
     private function appRoutes()
     {
         Route::middleware(['web'])
-        ->prefix('app')
-        ->name('facturis:auth:')
-        ->namespace($this->namespace)
-        ->group(base_path('routes/app_auth.php'));
+            ->prefix('app/auth')
+            ->name('facturis:auth:')
+            ->namespace($this->namespace)
+            ->group(base_path('routes/app_auth.php'));
 
         Route::middleware(['web'])
-        ->prefix('app')
-        ->name('facturis:')
-        ->namespace($this->namespace)
-        ->group(base_path('routes/app_routes.php'));
+            ->prefix('app/console')
+            ->name('facturis:')
+            ->namespace($this->namespace)
+            ->group(base_path('routes/app_routes.php'));
     }
 }
