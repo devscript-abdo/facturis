@@ -20,9 +20,13 @@
     @livewireStyles
 </head>
 
-<body data-sidebar="dark" data-sidebar-size="small-">
-    
+<body data-topbar="dark" data-sidebar-size="small-" >
+
     <div id="layout-wrapper">
+
+        @include('layouts.parts.sections.header')
+        
+        @include('layouts.parts.sidebar.light')
 
         <div class="main-content">
 
@@ -39,6 +43,7 @@
 
     </div>
 
+    @livewireScripts
 </body>
 
 </html>

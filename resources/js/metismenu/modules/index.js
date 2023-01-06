@@ -5,7 +5,6 @@
 * @author Osman Nuri Okumus <onokumus@gmail.com> (https://github.com/onokumus)
 * @license: MIT 
 */
-import $ from 'jquery';
 
 function _extends() {
   _extends = Object.assign || function (target) {

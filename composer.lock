@@ -2434,16 +2434,16 @@
         },
         {
             "name": "laravel/scout",
-            "version": "v9.7.0",
+            "version": "v9.7.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/scout.git",
-                "reference": "c3bdedbcf99ea44779140c07d6f49616843fe42f"
+                "reference": "7aaffde3fff649002562db5baffafe76659c54e1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/scout/zipball/c3bdedbcf99ea44779140c07d6f49616843fe42f",
-                "reference": "c3bdedbcf99ea44779140c07d6f49616843fe42f",
+                "url": "https://api.github.com/repos/laravel/scout/zipball/7aaffde3fff649002562db5baffafe76659c54e1",
+                "reference": "7aaffde3fff649002562db5baffafe76659c54e1",
                 "shasum": ""
             },
             "require": {
@@ -2502,7 +2502,7 @@
                 "issues": "https://github.com/laravel/scout/issues",
                 "source": "https://github.com/laravel/scout"
             },
-            "time": "2023-01-03T17:31:01+00:00"
+            "time": "2023-01-06T08:01:32+00:00"
         },
         {
             "name": "laravel/serializable-closure",
@@ -6217,16 +6217,16 @@
         },
         {
             "name": "spatie/laravel-medialibrary",
-            "version": "10.7.5",
+            "version": "10.7.8",
             "source": {
                 "type": "git",
                 "url": "https://github.com/spatie/laravel-medialibrary.git",
-                "reference": "e2f1f7689e01318386ff76b278957eabc95a037c"
+                "reference": "aae852a989cd40a3bacc4f9822a16b4f6a93ecef"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/spatie/laravel-medialibrary/zipball/e2f1f7689e01318386ff76b278957eabc95a037c",
-                "reference": "e2f1f7689e01318386ff76b278957eabc95a037c",
+                "url": "https://api.github.com/repos/spatie/laravel-medialibrary/zipball/aae852a989cd40a3bacc4f9822a16b4f6a93ecef",
+                "reference": "aae852a989cd40a3bacc4f9822a16b4f6a93ecef",
                 "shasum": ""
             },
             "require": {
@@ -6309,7 +6309,7 @@
             ],
             "support": {
                 "issues": "https://github.com/spatie/laravel-medialibrary/issues",
-                "source": "https://github.com/spatie/laravel-medialibrary/tree/10.7.5"
+                "source": "https://github.com/spatie/laravel-medialibrary/tree/10.7.8"
             },
             "funding": [
                 {
@@ -6321,7 +6321,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2022-12-30T16:24:01+00:00"
+            "time": "2023-01-05T11:07:58+00:00"
         },
         {
             "name": "spatie/laravel-package-tools",
@@ -6539,16 +6539,16 @@
         },
         {
             "name": "spatie/laravel-settings",
-            "version": "2.6.0",
+            "version": "2.6.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/spatie/laravel-settings.git",
-                "reference": "62009ff9a1b562f07f065e7cae9cf2a7899f9686"
+                "reference": "4f11111eb5a26fd052ef987277fbd9bc79b7c6ef"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/spatie/laravel-settings/zipball/62009ff9a1b562f07f065e7cae9cf2a7899f9686",
-                "reference": "62009ff9a1b562f07f065e7cae9cf2a7899f9686",
+                "url": "https://api.github.com/repos/spatie/laravel-settings/zipball/4f11111eb5a26fd052ef987277fbd9bc79b7c6ef",
+                "reference": "4f11111eb5a26fd052ef987277fbd9bc79b7c6ef",
                 "shasum": ""
             },
             "require": {
@@ -6611,7 +6611,7 @@
             ],
             "support": {
                 "issues": "https://github.com/spatie/laravel-settings/issues",
-                "source": "https://github.com/spatie/laravel-settings/tree/2.6.0"
+                "source": "https://github.com/spatie/laravel-settings/tree/2.6.1"
             },
             "funding": [
                 {
@@ -6623,7 +6623,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2022-11-24T10:24:29+00:00"
+            "time": "2023-01-06T08:39:21+00:00"
         },
         {
             "name": "spatie/laravel-signal-aware-command",
@@ -10504,16 +10504,16 @@
         },
         {
             "name": "phpstan/phpstan",
-            "version": "1.9.6",
+            "version": "1.9.7",
             "source": {
                 "type": "git",
                 "url": "https://github.com/phpstan/phpstan.git",
-                "reference": "ef38a25950e5d0e6c95eedf49d8a784272f8dc5e"
+                "reference": "0501435cd342eac7664bd62155b1ef907fc60b6f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/phpstan/phpstan/zipball/ef38a25950e5d0e6c95eedf49d8a784272f8dc5e",
-                "reference": "ef38a25950e5d0e6c95eedf49d8a784272f8dc5e",
+                "url": "https://api.github.com/repos/phpstan/phpstan/zipball/0501435cd342eac7664bd62155b1ef907fc60b6f",
+                "reference": "0501435cd342eac7664bd62155b1ef907fc60b6f",
                 "shasum": ""
             },
             "require": {
@@ -10543,7 +10543,7 @@
             ],
             "support": {
                 "issues": "https://github.com/phpstan/phpstan/issues",
-                "source": "https://github.com/phpstan/phpstan/tree/1.9.6"
+                "source": "https://github.com/phpstan/phpstan/tree/1.9.7"
             },
             "funding": [
                 {
@@ -10559,7 +10559,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2023-01-03T13:40:32+00:00"
+            "time": "2023-01-04T21:59:57+00:00"
         },
         {
             "name": "phpunit/php-code-coverage",
