@@ -19,7 +19,6 @@
     RewriteCond %{REQUEST_FILENAME} !-f
     RewriteRule ^ index.php [L]
 </IfModule>
-header("X-Robots-Tag: noindex, nofollow", true);
 
 # Allow access from all domains for webfonts.
 # Alternatively you could only whitelist your
@@ -101,23 +100,10 @@ SetOutputFilter DEFLATE
   ExpiresByType image/vnd.microsoft.icon "access plus 1 year"
 </IfModule>
 
-# added by abdelghafour 26-10-2022
+
+# added by abdelghafour 06-01-2023
 
 Header add Devlopped-BY "Elmarzougui Abdelghafour"
-
-# Security Headers
-<IfModule mod_headers.c>
-	Header set X-XSS-Protection "1; mode=block"
-	Header set X-Frame-Options "SAMEORIGIN"
-	Header set X-Content-Type-Options "nosniff"
-	Header always set Strict-Transport-Security "max-age=63072000; includeSubDomains"
-	# Header set Content-Security-Policy ...
-	Header set Referrer-Policy "same-origin"
-	Header set Feature-Policy "geolocation 'self'; vibrate 'none'"
-
-  #Header add Content-Security-Policy "default-src 'self';"
-  Header set Permissions-Policy "geolocation=self"
-</IfModule>
 
 <IfModule mod_headers.c>
   Header unset X-Powered-By
