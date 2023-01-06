@@ -6,7 +6,6 @@ namespace Tests\Feature\Finance\Invoice;
 
 use App\Models\Facturis\Finance\Invoice;
 use Illuminate\Foundation\Testing\RefreshDatabase;
-use Illuminate\Foundation\Testing\WithFaker;
 use Tests\TestCase;
 
 class InvoiceTest extends TestCase
@@ -19,7 +18,6 @@ class InvoiceTest extends TestCase
 
         $this->assertDatabaseCount('invoices', 2);
     }
-
 
     public function test_invoice_exists()
     {
@@ -39,6 +37,6 @@ class InvoiceTest extends TestCase
         $invoice->delete();
 
         $this->assertModelMissing($invoice);
-       // $this->assertDatabaseMissing('invoices', $invoice);
+        // $this->assertDatabaseMissing('invoices', $invoice);
     }
 }

@@ -28,12 +28,11 @@ class AppServiceProvider extends ServiceProvider
 
     private function loadMigrationsFromFolders()
     {
-
         $migrationsPath = database_path('migrations');
 
-        $directories    = glob($migrationsPath . '/*', GLOB_ONLYDIR);
+        $directories = glob($migrationsPath.'/*', GLOB_ONLYDIR);
 
-        $paths          = array_merge([$migrationsPath], $directories);
+        $paths = array_merge([$migrationsPath], $directories);
 
         $this->loadMigrationsFrom($paths);
     }

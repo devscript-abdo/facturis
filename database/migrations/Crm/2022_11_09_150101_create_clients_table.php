@@ -24,7 +24,7 @@ return new class extends Migration
                 ->nullable()
                 ->constrained()
                 ->nullOnDelete();
-                
+
             $table->foreignIdFor(Category::class)
                 ->index()
                 ->nullable()

@@ -6,7 +6,6 @@ namespace Tests\Feature\Finance\Estimate;
 
 use App\Models\Facturis\Finance\Estimate;
 use Illuminate\Foundation\Testing\RefreshDatabase;
-use Illuminate\Foundation\Testing\WithFaker;
 use Tests\TestCase;
 
 class EstimateTest extends TestCase
@@ -19,7 +18,6 @@ class EstimateTest extends TestCase
 
         $this->assertDatabaseCount('estimates', 2);
     }
- 
 
     public function test_estimate_exists()
     {

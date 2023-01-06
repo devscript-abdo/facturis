@@ -2,7 +2,6 @@
 
 namespace App\Traits;
 
-use App\Settings\DocumentSettings;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\Schema;
 
@@ -11,16 +10,13 @@ trait NumerotationGenerator
     public static function bootNumerotationGenerator(): void
     {
         static::creating(function (Model $model) {
-
             if (Schema::hasColumn($model->getTable(), 'code')) {
-
-                $startColumn = strtolower(class_basename($model)) . '_start';
-                $prefixColumn = strtolower(class_basename($model)) . '_prefix';
+                $startColumn = strtolower(class_basename($model)).'_start';
+                $prefixColumn = strtolower(class_basename($model)).'_prefix';
 
                 //  dd($startColumn, $prefixColumn, $nameClass, $prefix, $start);
 
                 if (self::count() <= 0) {
-
                     $number = getDocument()->{$startColumn};
                 } else {
                     $number = ($model->max('code') + 1);
@@ -28,7 +24,7 @@ trait NumerotationGenerator
 
                 $code = str_pad($number, 5, 0, STR_PAD_LEFT);
                 $model->code = $code;
-                $model->full_number = getDocument()->{$prefixColumn} . $code;
+                $model->full_number = getDocument()->{$prefixColumn}.$code;
             }
         });
     }

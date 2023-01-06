@@ -18,7 +18,7 @@ return new class extends Migration
             $table->uuid();
 
             $table->morphs('emailable');
-            
+
             $table->string('email')->unique();
             $table->integer('type')->default(1);
 
