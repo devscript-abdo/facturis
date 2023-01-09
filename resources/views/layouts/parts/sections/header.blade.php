@@ -22,8 +22,8 @@
         <!--facturisEnd::sidebar mobile toggle-->
         <!--facturisStart::Mobile logo-->
         <div class="d-flex align-items-center flex-grow-1 flex-lg-grow-0">
-            <a href="../../demo1/dist/index.html" class="d-lg-none">
-                <img alt="Logo" src="{{asset('assets/media/logos/default-small.svg')}}" class="h-30px" />
+            <a href="{{route('facturis:home')}}" class="d-lg-none">
+                <img alt="Logo" src="{{ asset('assets/media/logo-app.png') }}" class="h-30px" />
             </a>
         </div>
         <!--facturisEnd::Mobile logo-->
@@ -828,7 +828,7 @@
                                             <!--end:Col-->
                                             <!--begin:Col-->
                                             <div class="col-lg-4">
-                                                <img src="{{asset('assets/media/stock/600x600/img-82.jpg')}}"
+                                                <img src="{{ asset('assets/media/stock/600x600/img-82.jpg') }}"
                                                     class="rounded mw-100" alt="" />
                                             </div>
                                             <!--end:Col-->
@@ -948,8 +948,8 @@
                                             <!--end:Col-->
                                             <!--begin:Col-->
                                             <div class="col-lg-7">
-                                                <img src="{{asset('assets/media/stock/900x600/46.jpg')}}" class="rounded mw-100"
-                                                    alt="" />
+                                                <img src="{{ asset('assets/media/stock/900x600/46.jpg') }}"
+                                                    class="rounded mw-100" alt="" />
                                             </div>
                                             <!--end:Col-->
                                         </div>
@@ -1739,7 +1739,7 @@
                                             <!--end:Col-->
                                             <!--begin:Col-->
                                             <div class="col-lg-5 pe-lg-5">
-                                                <img src="{{asset('assets/media/stock/600x600/img-84.jpg')}}"
+                                                <img src="{{ asset('assets/media/stock/600x600/img-84.jpg') }}"
                                                     class="rounded mw-100" alt="" />
                                             </div>
                                             <!--end:Col-->
@@ -1812,8 +1812,8 @@
                                             <!--end:Col-->
                                             <!--begin:Col-->
                                             <div class="col-lg-8">
-                                                <img src="{{asset('assets/media/stock/900x600/44.jpg')}}" class="rounded mw-100"
-                                                    alt="" />
+                                                <img src="{{ asset('assets/media/stock/900x600/44.jpg') }}"
+                                                    class="rounded mw-100" alt="" />
                                             </div>
                                             <!--end:Col-->
                                         </div>
@@ -3388,8 +3388,8 @@
                                     <!--end:Col-->
                                     <!--begin:Col-->
                                     <div class="col-lg-6 mb-3 py-lg-3 pe-lg-8 d-flex align-items-center">
-                                        <img src="{{asset('assets/media/stock/900x600/45.jpg')}}" class="rounded mw-100"
-                                            alt="" />
+                                        <img src="{{ asset('assets/media/stock/900x600/45.jpg') }}"
+                                            class="rounded mw-100" alt="" />
                                     </div>
                                     <!--end:Col-->
                                 </div>
@@ -3646,7 +3646,8 @@
                                             class="d-flex text-dark text-hover-primary align-items-center mb-5">
                                             <!--facturisStart::Symbol-->
                                             <div class="symbol symbol-40px me-4">
-                                                <img src="{{asset('assets/media/avatars/300-6.jpg')}}" alt="" />
+                                                <img src="{{ asset('assets/media/avatars/300-6.jpg') }}"
+                                                    alt="" />
                                             </div>
                                             <!--facturisEnd::Symbol-->
                                             <!--facturisStart::Title-->
@@ -3662,7 +3663,8 @@
                                             class="d-flex text-dark text-hover-primary align-items-center mb-5">
                                             <!--facturisStart::Symbol-->
                                             <div class="symbol symbol-40px me-4">
-                                                <img src="{{asset('assets/media/avatars/300-2.jpg')}}" alt="" />
+                                                <img src="{{ asset('assets/media/avatars/300-2.jpg') }}"
+                                                    alt="" />
                                             </div>
                                             <!--facturisEnd::Symbol-->
                                             <!--facturisStart::Title-->
@@ -3678,7 +3680,8 @@
                                             class="d-flex text-dark text-hover-primary align-items-center mb-5">
                                             <!--facturisStart::Symbol-->
                                             <div class="symbol symbol-40px me-4">
-                                                <img src="{{asset('assets/media/avatars/300-9.jpg')}}" alt="" />
+                                                <img src="{{ asset('assets/media/avatars/300-9.jpg') }}"
+                                                    alt="" />
                                             </div>
                                             <!--facturisEnd::Symbol-->
                                             <!--facturisStart::Title-->
@@ -3694,7 +3697,8 @@
                                             class="d-flex text-dark text-hover-primary align-items-center mb-5">
                                             <!--facturisStart::Symbol-->
                                             <div class="symbol symbol-40px me-4">
-                                                <img src="{{asset('assets/media/avatars/300-14.jpg')}}" alt="" />
+                                                <img src="{{ asset('assets/media/avatars/300-14.jpg') }}"
+                                                    alt="" />
                                             </div>
                                             <!--facturisEnd::Symbol-->
                                             <!--facturisStart::Title-->
@@ -3710,7 +3714,8 @@
                                             class="d-flex text-dark text-hover-primary align-items-center mb-5">
                                             <!--facturisStart::Symbol-->
                                             <div class="symbol symbol-40px me-4">
-                                                <img src="{{asset('assets/media/avatars/300-11.jpg')}}" alt="" />
+                                                <img src="{{ asset('assets/media/avatars/300-11.jpg') }}"
+                                                    alt="" />
                                             </div>
                                             <!--facturisEnd::Symbol-->
                                             <!--facturisStart::Title-->
@@ -3732,7 +3737,7 @@
                                             <div class="symbol symbol-40px me-4">
                                                 <span class="symbol-label bg-light">
                                                     <img class="w-20px h-20px"
-                                                        src="{{asset('assets/media/svg/brand-logos/volicity-9.svg')}}"
+                                                        src="{{ asset('assets/media/svg/brand-logos/volicity-9.svg') }}"
                                                         alt="" />
                                                 </span>
                                             </div>
@@ -3752,7 +3757,7 @@
                                             <div class="symbol symbol-40px me-4">
                                                 <span class="symbol-label bg-light">
                                                     <img class="w-20px h-20px"
-                                                        src="{{asset('assets/media/svg/brand-logos/tvit.svg')}}"
+                                                        src="{{ asset('assets/media/svg/brand-logos/tvit.svg') }}"
                                                         alt="" />
                                                 </span>
                                             </div>
@@ -3772,7 +3777,8 @@
                                             <div class="symbol symbol-40px me-4">
                                                 <span class="symbol-label bg-light">
                                                     <img class="w-20px h-20px"
-                                                        src="{{asset('assets/media/svg/misc/infography.svg')}}" alt="" />
+                                                        src="{{ asset('assets/media/svg/misc/infography.svg') }}"
+                                                        alt="" />
                                                 </span>
                                             </div>
                                             <!--facturisEnd::Symbol-->
@@ -3791,7 +3797,7 @@
                                             <div class="symbol symbol-40px me-4">
                                                 <span class="symbol-label bg-light">
                                                     <img class="w-20px h-20px"
-                                                        src="{{asset('assets/media/svg/brand-logos/leaf.svg')}}"
+                                                        src="{{ asset('assets/media/svg/brand-logos/leaf.svg') }}"
                                                         alt="" />
                                                 </span>
                                             </div>
@@ -3811,7 +3817,7 @@
                                             <div class="symbol symbol-40px me-4">
                                                 <span class="symbol-label bg-light">
                                                     <img class="w-20px h-20px"
-                                                        src="{{asset('assets/media/svg/brand-logos/tower.svg')}}"
+                                                        src="{{ asset('assets/media/svg/brand-logos/tower.svg') }}"
                                                         alt="" />
                                                 </span>
                                             </div>
@@ -4506,7 +4512,7 @@
                         data-facturis-menu="true">
                         <!--facturisStart::Heading-->
                         <div class="d-flex flex-column bgi-no-repeat rounded-top"
-                            style="background-image:url('{{asset('assets/media/misc/menu-header-bg.jpg')}}')">
+                            style="background-image:url('{{ asset('assets/media/misc/menu-header-bg.jpg') }}')">
                             <!--facturisStart::Title-->
                             <h3 class="text-white fw-semibold px-9 mt-10 mb-6">Notifications
                                 <span class="fs-8 opacity-75 ps-3">24 reports</span>
@@ -4861,7 +4867,7 @@
                                     <!--facturisStart::Illustration-->
                                     <div class="text-center px-4">
                                         <img class="mw-100 mh-200px" alt="image"
-                                            src="{{asset('assets/media/illustrations/sketchy-1/1.png')}}" />
+                                            src="{{ asset('assets/media/illustrations/sketchy-1/1.png') }}" />
                                     </div>
                                     <!--facturisEnd::Illustration-->
                                 </div>
@@ -5303,7 +5309,7 @@
                                         <div class="col-4">
                                             <a href="#"
                                                 class="d-flex flex-column flex-center text-center text-gray-800 text-hover-primary bg-hover-light rounded py-4 px-3 mb-3">
-                                                <img src="{{asset('assets/media/svg/brand-logos/amazon.svg')}}"
+                                                <img src="{{ asset('assets/media/svg/brand-logos/amazon.svg') }}"
                                                     class="w-25px h-25px mb-2" alt="" />
                                                 <span class="fw-semibold">AWS</span>
                                             </a>
@@ -5313,7 +5319,7 @@
                                         <div class="col-4">
                                             <a href="#"
                                                 class="d-flex flex-column flex-center text-center text-gray-800 text-hover-primary bg-hover-light rounded py-4 px-3 mb-3">
-                                                <img src="{{asset('assets/media/svg/brand-logos/angular-icon-1.svg')}}"
+                                                <img src="{{ asset('assets/media/svg/brand-logos/angular-icon-1.svg') }}"
                                                     class="w-25px h-25px mb-2" alt="" />
                                                 <span class="fw-semibold">AngularJS</span>
                                             </a>
@@ -5323,7 +5329,7 @@
                                         <div class="col-4">
                                             <a href="#"
                                                 class="d-flex flex-column flex-center text-center text-gray-800 text-hover-primary bg-hover-light rounded py-4 px-3 mb-3">
-                                                <img src="{{asset('assets/media/svg/brand-logos/atica.svg')}}"
+                                                <img src="{{ asset('assets/media/svg/brand-logos/atica.svg') }}"
                                                     class="w-25px h-25px mb-2" alt="" />
                                                 <span class="fw-semibold">Atica</span>
                                             </a>
@@ -5333,7 +5339,7 @@
                                         <div class="col-4">
                                             <a href="#"
                                                 class="d-flex flex-column flex-center text-center text-gray-800 text-hover-primary bg-hover-light rounded py-4 px-3 mb-3">
-                                                <img src="{{asset('assets/media/svg/brand-logos/beats-electronics.svg')}}"
+                                                <img src="{{ asset('assets/media/svg/brand-logos/beats-electronics.svg') }}"
                                                     class="w-25px h-25px mb-2" alt="" />
                                                 <span class="fw-semibold">Music</span>
                                             </a>
@@ -5343,7 +5349,7 @@
                                         <div class="col-4">
                                             <a href="#"
                                                 class="d-flex flex-column flex-center text-center text-gray-800 text-hover-primary bg-hover-light rounded py-4 px-3 mb-3">
-                                                <img src="{{asset('assets/media/svg/brand-logos/codeigniter.svg')}}"
+                                                <img src="{{ asset('assets/media/svg/brand-logos/codeigniter.svg') }}"
                                                     class="w-25px h-25px mb-2" alt="" />
                                                 <span class="fw-semibold">Codeigniter</span>
                                             </a>
@@ -5353,7 +5359,7 @@
                                         <div class="col-4">
                                             <a href="#"
                                                 class="d-flex flex-column flex-center text-center text-gray-800 text-hover-primary bg-hover-light rounded py-4 px-3 mb-3">
-                                                <img src="{{asset('assets/media/svg/brand-logos/bootstrap-4.svg')}}"
+                                                <img src="{{ asset('assets/media/svg/brand-logos/bootstrap-4.svg') }}"
                                                     class="w-25px h-25px mb-2" alt="" />
                                                 <span class="fw-semibold">Bootstrap</span>
                                             </a>
@@ -5363,7 +5369,7 @@
                                         <div class="col-4">
                                             <a href="#"
                                                 class="d-flex flex-column flex-center text-center text-gray-800 text-hover-primary bg-hover-light rounded py-4 px-3 mb-3">
-                                                <img src="{{asset('assets/media/svg/brand-logos/google-tag-manager.svg')}}"
+                                                <img src="{{ asset('assets/media/svg/brand-logos/google-tag-manager.svg') }}"
                                                     class="w-25px h-25px mb-2" alt="" />
                                                 <span class="fw-semibold">GTM</span>
                                             </a>
@@ -5373,7 +5379,7 @@
                                         <div class="col-4">
                                             <a href="#"
                                                 class="d-flex flex-column flex-center text-center text-gray-800 text-hover-primary bg-hover-light rounded py-4 px-3 mb-3">
-                                                <img src="{{asset('assets/media/svg/brand-logos/disqus.svg')}}"
+                                                <img src="{{ asset('assets/media/svg/brand-logos/disqus.svg') }}"
                                                     class="w-25px h-25px mb-2" alt="" />
                                                 <span class="fw-semibold">Disqus</span>
                                             </a>
@@ -5383,7 +5389,7 @@
                                         <div class="col-4">
                                             <a href="#"
                                                 class="d-flex flex-column flex-center text-center text-gray-800 text-hover-primary bg-hover-light rounded py-4 px-3 mb-3">
-                                                <img src="{{asset('assets/media/svg/brand-logos/dribbble-icon-1.svg')}}"
+                                                <img src="{{ asset('assets/media/svg/brand-logos/dribbble-icon-1.svg') }}"
                                                     class="w-25px h-25px mb-2" alt="" />
                                                 <span class="fw-semibold">Dribble</span>
                                             </a>
@@ -5393,7 +5399,7 @@
                                         <div class="col-4">
                                             <a href="#"
                                                 class="d-flex flex-column flex-center text-center text-gray-800 text-hover-primary bg-hover-light rounded py-4 px-3 mb-3">
-                                                <img src="{{asset('assets/media/svg/brand-logos/google-play-store.svg')}}"
+                                                <img src="{{ asset('assets/media/svg/brand-logos/google-play-store.svg') }}"
                                                     class="w-25px h-25px mb-2" alt="" />
                                                 <span class="fw-semibold">Play Store</span>
                                             </a>
@@ -5403,7 +5409,7 @@
                                         <div class="col-4">
                                             <a href="#"
                                                 class="d-flex flex-column flex-center text-center text-gray-800 text-hover-primary bg-hover-light rounded py-4 px-3 mb-3">
-                                                <img src="{{asset('assets/media/svg/brand-logos/google-podcasts.svg')}}"
+                                                <img src="{{ asset('assets/media/svg/brand-logos/google-podcasts.svg') }}"
                                                     class="w-25px h-25px mb-2" alt="" />
                                                 <span class="fw-semibold">Podcasts</span>
                                             </a>
@@ -5413,7 +5419,7 @@
                                         <div class="col-4">
                                             <a href="#"
                                                 class="d-flex flex-column flex-center text-center text-gray-800 text-hover-primary bg-hover-light rounded py-4 px-3 mb-3">
-                                                <img src="{{asset('assets/media/svg/brand-logos/figma-1.svg')}}"
+                                                <img src="{{ asset('assets/media/svg/brand-logos/figma-1.svg') }}"
                                                     class="w-25px h-25px mb-2" alt="" />
                                                 <span class="fw-semibold">Figma</span>
                                             </a>
@@ -5423,7 +5429,7 @@
                                         <div class="col-4">
                                             <a href="#"
                                                 class="d-flex flex-column flex-center text-center text-gray-800 text-hover-primary bg-hover-light rounded py-4 px-3 mb-3">
-                                                <img src="{{asset('assets/media/svg/brand-logos/github.svg')}}"
+                                                <img src="{{ asset('assets/media/svg/brand-logos/github.svg') }}"
                                                     class="w-25px h-25px mb-2" alt="" />
                                                 <span class="fw-semibold">Github</span>
                                             </a>
@@ -5433,7 +5439,7 @@
                                         <div class="col-4">
                                             <a href="#"
                                                 class="d-flex flex-column flex-center text-center text-gray-800 text-hover-primary bg-hover-light rounded py-4 px-3 mb-3">
-                                                <img src="{{asset('assets/media/svg/brand-logos/gitlab.svg')}}"
+                                                <img src="{{ asset('assets/media/svg/brand-logos/gitlab.svg') }}"
                                                     class="w-25px h-25px mb-2" alt="" />
                                                 <span class="fw-semibold">Gitlab</span>
                                             </a>
@@ -5443,7 +5449,7 @@
                                         <div class="col-4">
                                             <a href="#"
                                                 class="d-flex flex-column flex-center text-center text-gray-800 text-hover-primary bg-hover-light rounded py-4 px-3 mb-3">
-                                                <img src="{{asset('assets/media/svg/brand-logos/instagram-2-1.svg')}}"
+                                                <img src="{{ asset('assets/media/svg/brand-logos/instagram-2-1.svg') }}"
                                                     class="w-25px h-25px mb-2" alt="" />
                                                 <span class="fw-semibold">Instagram</span>
                                             </a>
@@ -5453,7 +5459,7 @@
                                         <div class="col-4">
                                             <a href="#"
                                                 class="d-flex flex-column flex-center text-center text-gray-800 text-hover-primary bg-hover-light rounded py-4 px-3 mb-3">
-                                                <img src="{{asset('assets/media/svg/brand-logos/pinterest-p.svg')}}"
+                                                <img src="{{ asset('assets/media/svg/brand-logos/pinterest-p.svg') }}"
                                                     class="w-25px h-25px mb-2" alt="" />
                                                 <span class="fw-semibold">Pinterest</span>
                                             </a>
@@ -5640,7 +5646,7 @@
                     <div class="cursor-pointer symbol symbol-35px symbol-md-40px"
                         data-facturis-menu-trigger="{default: 'click', lg: 'hover'}"
                         data-facturis-menu-attach="parent" data-facturis-menu-placement="bottom-end">
-                        <img src="{{asset('assets/media/avatars/300-1.jpg')}}" alt="user" />
+                        <img src="{{ asset('assets/media/avatars/300-1.jpg') }}" alt="user" />
                     </div>
                     <!--facturisStart::User account menu-->
                     <div class="menu menu-sub menu-sub-dropdown menu-column menu-rounded menu-gray-800 menu-state-bg menu-state-color fw-semibold py-4 fs-6 w-275px"
@@ -5650,7 +5656,7 @@
                             <div class="menu-content d-flex align-items-center px-3">
                                 <!--facturisStart::Avatar-->
                                 <div class="symbol symbol-50px me-5">
-                                    <img alt="Logo" src="{{asset('assets/media/avatars/300-1.jpg')}}" />
+                                    <img alt="Logo" src="{{ asset('assets/media/avatars/300-1.jpg') }}" />
                                 </div>
                                 <!--facturisEnd::Avatar-->
                                 <!--facturisStart::Username-->
@@ -5753,7 +5759,7 @@
                                     <span
                                         class="fs-8 rounded bg-light px-3 py-2 position-absolute translate-middle-y top-50 end-0">English
                                         <img class="w-15px h-15px rounded-1 ms-2"
-                                            src="{{asset('assets/media/flags/united-states.svg')}}"
+                                            src="{{ asset('assets/media/flags/united-states.svg') }}"
                                             alt="" /></span></span>
                             </a>
                             <!--facturisStart::Menu sub-->
@@ -5763,7 +5769,8 @@
                                     <a href="../../demo1/dist/account/settings.html"
                                         class="menu-link d-flex px-5 active">
                                         <span class="symbol symbol-20px me-4">
-                                            <img class="rounded-1" src="{{asset('assets/media/flags/united-states.svg')}}"
+                                            <img class="rounded-1"
+                                                src="{{ asset('assets/media/flags/united-states.svg') }}"
                                                 alt="" />
                                         </span>English</a>
                                 </div>
@@ -5772,8 +5779,8 @@
                                 <div class="menu-item px-3">
                                     <a href="../../demo1/dist/account/settings.html" class="menu-link d-flex px-5">
                                         <span class="symbol symbol-20px me-4">
-                                            <img class="rounded-1" src="{{asset('assets/media/flags/spain.svg')}}"
-                                                alt="" />
+                                            <img class="rounded-1"
+                                                src="{{ asset('assets/media/flags/spain.svg') }}" alt="" />
                                         </span>Spanish</a>
                                 </div>
                                 <!--facturisEnd::Menu item-->
@@ -5781,7 +5788,8 @@
                                 <div class="menu-item px-3">
                                     <a href="../../demo1/dist/account/settings.html" class="menu-link d-flex px-5">
                                         <span class="symbol symbol-20px me-4">
-                                            <img class="rounded-1" src="{{asset('assets/media/flags/germany.svg')}}"
+                                            <img class="rounded-1"
+                                                src="{{ asset('assets/media/flags/germany.svg') }}"
                                                 alt="" />
                                         </span>German</a>
                                 </div>
@@ -5790,8 +5798,8 @@
                                 <div class="menu-item px-3">
                                     <a href="../../demo1/dist/account/settings.html" class="menu-link d-flex px-5">
                                         <span class="symbol symbol-20px me-4">
-                                            <img class="rounded-1" src="{{asset('assets/media/flags/japan.svg')}}"
-                                                alt="" />
+                                            <img class="rounded-1"
+                                                src="{{ asset('assets/media/flags/japan.svg') }}" alt="" />
                                         </span>Japanese</a>
                                 </div>
                                 <!--facturisEnd::Menu item-->
@@ -5799,7 +5807,8 @@
                                 <div class="menu-item px-3">
                                     <a href="../../demo1/dist/account/settings.html" class="menu-link d-flex px-5">
                                         <span class="symbol symbol-20px me-4">
-                                            <img class="rounded-1" src="{{asset('assets/media/flags/france.svg')}}"
+                                            <img class="rounded-1"
+                                                src="{{ asset('assets/media/flags/france.svg') }}"
                                                 alt="" />
                                         </span>French</a>
                                 </div>
@@ -5816,9 +5825,13 @@
                         <!--facturisEnd::Menu item-->
                         <!--facturisStart::Menu item-->
                         <div class="menu-item px-5">
-                            <a href="../../demo1/dist/authentication/layouts/corporate/sign-in.html"
+                            <a href="#" onclick="document.getElementById('logoutForm').submit();"
                                 class="menu-link px-5">Sign Out</a>
                         </div>
+                        <form id="logoutForm" method="post" action="{{ route('facturis:auth:logout') }}">
+                            @csrf
+
+                        </form>
                         <!--facturisEnd::Menu item-->
                     </div>
                     <!--facturisEnd::User account menu-->

@@ -2,10 +2,12 @@
     data-facturis-drawer-name="app-sidebar" data-facturis-drawer-activate="{default: true, lg: false}"
     data-facturis-drawer-overlay="true" data-facturis-drawer-width="225px" data-facturis-drawer-direction="start"
     data-facturis-drawer-toggle="#facturis_app_sidebar_mobile_toggle">
-    <div class="app-sidebar-logo px-6" id="facturis_app_sidebar_logo">
-        <a href="../../demo1/dist/index.html">
-            <img alt="FACTURIS" src="{{asset('assets/media/logos/default-dark.svg')}}" class="h-25px app-sidebar-logo-default" />
-            <img alt="FACTURIS" src="{{asset('assets/media/logos/default-small.svg')}}" class="h-20px app-sidebar-logo-minimize" />
+    <div class="app-sidebar-logo px-6 " id="facturis_app_sidebar_logo">
+        <a href="{{ route('facturis:home') }}">
+            <img alt="FACTURIS" src="{{ asset('assets/media/logo-white.png') }}"
+                class="h-50px app-sidebar-logo-default" />
+            <img alt="FACTURIS" src="{{ asset('assets/media/logo-white.png') }}"
+                class="h-30px app-sidebar-logo-minimize " />
         </a>
         <div id="facturis_app_sidebar_toggle"
             class="app-sidebar-toggle btn btn-icon btn-shadow btn-sm btn-color-muted btn-active-color-primary body-bg h-30px w-30px position-absolute top-50 start-100 translate-middle rotate"
@@ -55,227 +57,25 @@
 
                     <div class="menu-sub menu-sub-accordion">
                         <div class="menu-item">
-                            <a class="menu-link" href="{{route('facturis:home')}}">
+                            <a class="menu-link" href="{{ route('facturis:home') }}">
                                 <span class="menu-bullet">
                                     <span class="bullet bullet-dot"></span>
                                 </span>
                                 <span class="menu-title">Default</span>
                             </a>
                         </div>
-                        <div class="menu-item">
-                            <a class="menu-link" href="../../demo1/dist/dashboards/ecommerce.html">
-                                <span class="menu-bullet">
-                                    <span class="bullet bullet-dot"></span>
-                                </span>
-                                <span class="menu-title">eCommerce</span>
-                            </a>
-                        </div>
-                        <div class="menu-item">
-                            <a class="menu-link" href="../../demo1/dist/dashboards/projects.html">
-                                <span class="menu-bullet">
-                                    <span class="bullet bullet-dot"></span>
-                                </span>
-                                <span class="menu-title">Projects</span>
-                            </a>
-                        </div>
-                        <div class="menu-item">
-                            <a class="menu-link" href="../../demo1/dist/dashboards/online-courses.html">
-                                <span class="menu-bullet">
-                                    <span class="bullet bullet-dot"></span>
-                                </span>
-                                <span class="menu-title">Online Courses</span>
-                            </a>
-                        </div>
-
-                        <div class="menu-item">
-                            <a class="menu-link" href="../../demo1/dist/dashboards/marketing.html">
-                                <span class="menu-bullet">
-                                    <span class="bullet bullet-dot"></span>
-                                </span>
-                                <span class="menu-title">Marketing</span>
-                            </a>
-                        </div>
-                        <div class="menu-inner flex-column collapse show"
-                            id="facturis_app_sidebar_menu_dashboards_collapse">
-                            <div class="menu-item">
-                                <a class="menu-link" href="../../demo1/dist/dashboards/bidding.html">
-                                    <span class="menu-bullet">
-                                        <span class="bullet bullet-dot"></span>
-                                    </span>
-                                    <span class="menu-title">Bidding</span>
-                                </a>
-                            </div>
-                            <div class="menu-item">
-                                <a class="menu-link" href="../../demo1/dist/dashboards/pos.html">
-                                    <span class="menu-bullet">
-                                        <span class="bullet bullet-dot"></span>
-                                    </span>
-                                    <span class="menu-title">POS System</span>
-                                </a>
-                            </div>
-                            <div class="menu-item">
-                                <a class="menu-link" href="../../demo1/dist/dashboards/call-center.html">
-                                    <span class="menu-bullet">
-                                        <span class="bullet bullet-dot"></span>
-                                    </span>
-                                    <span class="menu-title">Call Center</span>
-                                </a>
-                            </div>
-                            <div class="menu-item">
-                                <a class="menu-link" href="../../demo1/dist/dashboards/logistics.html">
-                                    <span class="menu-bullet">
-                                        <span class="bullet bullet-dot"></span>
-                                    </span>
-                                    <span class="menu-title">Logistics</span>
-                                </a>
-                            </div>
-                            <div class="menu-item">
-                                <a class="menu-link" href="../../demo1/dist/dashboards/website-analytics.html">
-                                    <span class="menu-bullet">
-                                        <span class="bullet bullet-dot"></span>
-                                    </span>
-                                    <span class="menu-title">Website Analytics</span>
-                                </a>
-                            </div>
-                            <div class="menu-item">
-                                <a class="menu-link active"
-                                    href="../../demo1/dist/dashboards/finance-performance.html">
-                                    <span class="menu-bullet">
-                                        <span class="bullet bullet-dot"></span>
-                                    </span>
-                                    <span class="menu-title">Finance Performance</span>
-                                </a>
-                            </div>
-                            <div class="menu-item">
-                                <a class="menu-link" href="../../demo1/dist/dashboards/store-analytics.html">
-                                    <span class="menu-bullet">
-                                        <span class="bullet bullet-dot"></span>
-                                    </span>
-                                    <span class="menu-title">Store Analytics</span>
-                                </a>
-                            </div>
-                            <!--end:Menu item-->
-                            <!--begin:Menu item-->
-                            <div class="menu-item">
-                                <!--begin:Menu link-->
-                                <a class="menu-link" href="../../demo1/dist/dashboards/social.html">
-                                    <span class="menu-bullet">
-                                        <span class="bullet bullet-dot"></span>
-                                    </span>
-                                    <span class="menu-title">Social</span>
-                                </a>
-                                <!--end:Menu link-->
-                            </div>
-                            <!--end:Menu item-->
-                            <!--begin:Menu item-->
-                            <div class="menu-item">
-                                <!--begin:Menu link-->
-                                <a class="menu-link" href="../../demo1/dist/dashboards/delivery.html">
-                                    <span class="menu-bullet">
-                                        <span class="bullet bullet-dot"></span>
-                                    </span>
-                                    <span class="menu-title">Delivery</span>
-                                </a>
-                                <!--end:Menu link-->
-                            </div>
-                            <!--end:Menu item-->
-                            <!--begin:Menu item-->
-                            <div class="menu-item">
-                                <!--begin:Menu link-->
-                                <a class="menu-link" href="../../demo1/dist/dashboards/crypto.html">
-                                    <span class="menu-bullet">
-                                        <span class="bullet bullet-dot"></span>
-                                    </span>
-                                    <span class="menu-title">Crypto</span>
-                                </a>
-                                <!--end:Menu link-->
-                            </div>
-                            <!--end:Menu item-->
-                            <!--begin:Menu item-->
-                            <div class="menu-item">
-                                <!--begin:Menu link-->
-                                <a class="menu-link" href="../../demo1/dist/dashboards/school.html">
-                                    <span class="menu-bullet">
-                                        <span class="bullet bullet-dot"></span>
-                                    </span>
-                                    <span class="menu-title">School</span>
-                                </a>
-                                <!--end:Menu link-->
-                            </div>
-                            <!--end:Menu item-->
-                            <!--begin:Menu item-->
-                            <div class="menu-item">
-                                <!--begin:Menu link-->
-                                <a class="menu-link" href="../../demo1/dist/dashboards/podcast.html">
-                                    <span class="menu-bullet">
-                                        <span class="bullet bullet-dot"></span>
-                                    </span>
-                                    <span class="menu-title">Podcast</span>
-                                </a>
-                                <!--end:Menu link-->
-                            </div>
-                            <!--end:Menu item-->
-                            <!--begin:Menu item-->
-                            <div class="menu-item">
-                                <!--begin:Menu link-->
-                                <a class="menu-link" href="../../demo1/dist/landing.html">
-                                    <span class="menu-bullet">
-                                        <span class="bullet bullet-dot"></span>
-                                    </span>
-                                    <span class="menu-title">Landing</span>
-                                </a>
-                                <!--end:Menu link-->
-                            </div>
-                            <!--end:Menu item-->
-                        </div>
-                        <div class="menu-item">
-                            <div class="menu-content">
-                                <a class="btn btn-flex btn-color-primary d-flex flex-stack fs-base p-0 ms-2 mb-2 toggle collapsible active"
-                                    data-bs-toggle="collapse" href="#facturis_app_sidebar_menu_dashboards_collapse"
-                                    data-facturis-toggle-text="Show 12 More">
-                                    <span data-facturis-toggle-text-target="true">Show Less</span>
-                                    <!--facturisStart::Svg Icon | path: icons/duotune/general/gen036.svg-->
-                                    <span class="svg-icon toggle-on svg-icon-2 me-0">
-                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
-                                            xmlns="http://www.w3.org/2000/svg">
-                                            <rect opacity="0.3" x="2" y="2" width="20"
-                                                height="20" rx="5" fill="currentColor" />
-                                            <rect x="6.0104" y="10.9247" width="12" height="2"
-                                                rx="1" fill="currentColor" />
-                                        </svg>
-                                    </span>
-                                    <!--facturisEnd::Svg Icon-->
-                                    <!--facturisStart::Svg Icon | path: icons/duotune/general/gen035.svg-->
-                                    <span class="svg-icon toggle-off svg-icon-2 me-0">
-                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
-                                            xmlns="http://www.w3.org/2000/svg">
-                                            <rect opacity="0.3" x="2" y="2" width="20"
-                                                height="20" rx="5" fill="currentColor" />
-                                            <rect x="10.8891" y="17.8033" width="12" height="2"
-                                                rx="1" transform="rotate(-90 10.8891 17.8033)"
-                                                fill="currentColor" />
-                                            <rect x="6.01041" y="10.9247" width="12" height="2"
-                                                rx="1" fill="currentColor" />
-                                        </svg>
-                                    </span>
-                                    <!--facturisEnd::Svg Icon-->
-                                </a>
-                            </div>
-                        </div>
                     </div>
-                    <!--end:Menu sub-->
+
                 </div>
-                <!--end:Menu item-->
-                <!--begin:Menu item-->
+
                 <div class="menu-item pt-5">
                     <!--begin:Menu content-->
                     <div class="menu-content">
                         <span class="menu-heading fw-bold text-uppercase fs-7">Pages</span>
                     </div>
-                    <!--end:Menu content-->
+
                 </div>
-                <!--end:Menu item-->
-                <!--begin:Menu item-->
+
                 <div data-facturis-menu-trigger="click" class="menu-item menu-accordion">
                     <!--begin:Menu link-->
                     <span class="menu-link">
@@ -2010,8 +1810,7 @@
                                 <!--begin:Menu item-->
                                 <div class="menu-item">
                                     <!--begin:Menu link-->
-                                    <a class="menu-link"
-                                        href="../../demo1/dist/utilities/wizards/offer-a-deal.html">
+                                    <a class="menu-link" href="../../demo1/dist/utilities/wizards/offer-a-deal.html">
                                         <span class="menu-bullet">
                                             <span class="bullet bullet-dot"></span>
                                         </span>
