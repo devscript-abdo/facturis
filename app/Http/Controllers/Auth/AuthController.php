@@ -21,7 +21,7 @@ class AuthController extends Controller
 
     public function loginForm()
     {
-        return view('theme.Authentification.Login.index');
+        return view('auth.login.index');
     }
 
     /**
@@ -33,7 +33,7 @@ class AuthController extends Controller
      */
     protected function authenticated(Request $request, $user)
     {
-        if (! Auth::user()->active) {
+        if (!Auth::user()->active) {
             Auth::logout();
 
             return redirect(route('admin:auth:login'))->withErrors(['Votre compte est désactivé']);

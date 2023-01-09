@@ -4,7 +4,9 @@
 
 <head>
     <meta charset="utf-8" />
+    
     <title> {{ getCompany()->name ?? 'FACTURIS' }}</title>
+
     <meta name="robots" content="noindex, nofollow" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta content="app_creator" name="Elmarzougui Abdelghafour" />
@@ -13,35 +15,17 @@
 
     <!-- App favicon -->
     <link rel="shortcut icon" href="{{ asset('images/logo.png') }}">
+
     @yield('css')
 
-    @vite(['resources/css/app.css', 'resources/js/app.js'])
+    {{--@vite(['resources/css/app.css', 'resources/js/app.js'])--}}
 
     @livewireStyles
 </head>
 
-<body data-topbar="dark" data-sidebar-size="small-" >
-
-    <div id="layout-wrapper">
-
-        @include('layouts.parts.sections.header')
-        
-        @include('layouts.parts.sidebar.light')
-
-        <div class="main-content">
-
-            <div class="page-content">
-
-                <div id="overlayy"></div>
-
-                @yield('content')
-
-            </div>
-
-        </div>
+<body>
 
 
-    </div>
 
     @livewireScripts
 </body>
