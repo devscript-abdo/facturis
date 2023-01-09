@@ -58,8 +58,8 @@
 
                         <div class="fv-row mb-8">
 
-                            <input type="text" placeholder="Email" value="abdelgha4or@gmail.com" name="email" autocomplete="off"
-                                value="{{ old('email') }}"
+                            <input type="text" placeholder="Email" value="abdelgha4or@gmail.com" name="email"
+                                autocomplete="off" value="{{ old('email') }}"
                                 class="form-control bg-transparent @error('email') is-invalid @enderror" />
                             @error('email')
                                 <span class="invalid-feedback" role="alert">

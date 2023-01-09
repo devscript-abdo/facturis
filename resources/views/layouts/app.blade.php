@@ -14,7 +14,7 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
 
-    <link rel="shortcut icon" href="{{ asset('assets/images/logo.png') }}">
+    <link rel="shortcut icon" href="{{ asset('assets/media/logo-app.png') }}">
 
     <!--facturisStart::Fonts(mandatory for all pages)-->
 
