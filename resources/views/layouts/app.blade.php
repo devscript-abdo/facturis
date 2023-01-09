@@ -56,8 +56,11 @@
                         @include('layouts.parts.sections.toolbar')
 
                         @yield('content')
+
                     </div>
+
                     @include('layouts.parts.footer.footer')
+
                 </div>
             </div>
 

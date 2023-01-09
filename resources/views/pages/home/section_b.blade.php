@@ -46,7 +46,7 @@
                                 <!--facturisStart::Section-->
                                 <div class="d-flex align-items-center me-5">
                                     <!--facturisStart::Flag-->
-                                    <img src="assets/media/svg/brand-logos/atica.svg" class="me-4 w-30px"
+                                    <img src="{{asset('assets/media/svg/brand-logos/atica.svg')}}" class="me-4 w-30px"
                                         style="border-radius: 4px" alt="" />
                                     <!--facturisEnd::Flag-->
                                     <!--facturisStart::Content-->
@@ -101,7 +101,7 @@
                                 <!--facturisStart::Section-->
                                 <div class="d-flex align-items-center me-5">
                                     <!--facturisStart::Flag-->
-                                    <img src="assets/media/svg/brand-logos/telegram-2.svg" class="me-4 w-30px"
+                                    <img src="{{asset('assets/media/svg/brand-logos/telegram-2.svg')}}" class="me-4 w-30px"
                                         style="border-radius: 4px" alt="" />
                                     <!--facturisEnd::Flag-->
                                     <!--facturisStart::Content-->
@@ -156,7 +156,7 @@
                                 <!--facturisStart::Section-->
                                 <div class="d-flex align-items-center me-5">
                                     <!--facturisStart::Flag-->
-                                    <img src="assets/media/svg/brand-logos/balloon.svg" class="me-4 w-30px"
+                                    <img src="{{asset('assets/media/svg/brand-logos/balloon.svg')}}" class="me-4 w-30px"
                                         style="border-radius: 4px" alt="" />
                                     <!--facturisEnd::Flag-->
                                     <!--facturisStart::Content-->
@@ -211,7 +211,7 @@
                                 <!--facturisStart::Section-->
                                 <div class="d-flex align-items-center me-5">
                                     <!--facturisStart::Flag-->
-                                    <img src="assets/media/svg/brand-logos/kickstarter.svg" class="me-4 w-30px"
+                                    <img src="{{asset('assets/media/svg/brand-logos/kickstarter.svg')}}" class="me-4 w-30px"
                                         style="border-radius: 4px" alt="" />
                                     <!--facturisEnd::Flag-->
                                     <!--facturisStart::Content-->
@@ -266,7 +266,7 @@
                                 <!--facturisStart::Section-->
                                 <div class="d-flex align-items-center me-5">
                                     <!--facturisStart::Flag-->
-                                    <img src="assets/media/svg/brand-logos/vimeo.svg" class="me-4 w-30px"
+                                    <img src="{{asset('assets/media/svg/brand-logos/vimeo.svg')}}" class="me-4 w-30px"
                                         style="border-radius: 4px" alt="" />
                                     <!--facturisEnd::Flag-->
                                     <!--facturisStart::Content-->
@@ -321,7 +321,7 @@
                                 <!--facturisStart::Section-->
                                 <div class="d-flex align-items-center me-5">
                                     <!--facturisStart::Flag-->
-                                    <img src="assets/media/svg/brand-logos/plurk.svg" class="me-4 w-30px"
+                                    <img src="{{asset('assets/media/svg/brand-logos/plurk.svg')}}" class="me-4 w-30px"
                                         style="border-radius: 4px" alt="" />
                                     <!--facturisEnd::Flag-->
                                     <!--facturisStart::Content-->
@@ -384,7 +384,7 @@
                                 <!--facturisStart::Section-->
                                 <div class="d-flex align-items-center me-5">
                                     <!--facturisStart::Flag-->
-                                    <img src="assets/media/svg/brand-logos/atica.svg" class="me-4 w-30px"
+                                    <img src="{{asset('assets/media/svg/brand-logos/atica.svg')}}" class="me-4 w-30px"
                                         style="border-radius: 4px" alt="" />
                                     <!--facturisEnd::Flag-->
                                     <!--facturisStart::Content-->
@@ -439,7 +439,7 @@
                                 <!--facturisStart::Section-->
                                 <div class="d-flex align-items-center me-5">
                                     <!--facturisStart::Flag-->
-                                    <img src="assets/media/svg/brand-logos/telegram-2.svg" class="me-4 w-30px"
+                                    <img src="{{asset('assets/media/svg/brand-logos/telegram-2.svg')}}" class="me-4 w-30px"
                                         style="border-radius: 4px" alt="" />
                                     <!--facturisEnd::Flag-->
                                     <!--facturisStart::Content-->
@@ -494,7 +494,7 @@
                                 <!--facturisStart::Section-->
                                 <div class="d-flex align-items-center me-5">
                                     <!--facturisStart::Flag-->
-                                    <img src="assets/media/svg/brand-logos/balloon.svg" class="me-4 w-30px"
+                                    <img src="{{asset('assets/media/svg/brand-logos/balloon.svg')}}" class="me-4 w-30px"
                                         style="border-radius: 4px" alt="" />
                                     <!--facturisEnd::Flag-->
                                     <!--facturisStart::Content-->
@@ -549,7 +549,7 @@
                                 <!--facturisStart::Section-->
                                 <div class="d-flex align-items-center me-5">
                                     <!--facturisStart::Flag-->
-                                    <img src="assets/media/svg/brand-logos/kickstarter.svg" class="me-4 w-30px"
+                                    <img src="{{asset('assets/media/svg/brand-logos/kickstarter.svg')}}" class="me-4 w-30px"
                                         style="border-radius: 4px" alt="" />
                                     <!--facturisEnd::Flag-->
                                     <!--facturisStart::Content-->
@@ -604,7 +604,7 @@
                                 <!--facturisStart::Section-->
                                 <div class="d-flex align-items-center me-5">
                                     <!--facturisStart::Flag-->
-                                    <img src="assets/media/svg/brand-logos/vimeo.svg" class="me-4 w-30px"
+                                    <img src="{{asset('assets/media/svg/brand-logos/vimeo.svg')}}" class="me-4 w-30px"
                                         style="border-radius: 4px" alt="" />
                                     <!--facturisEnd::Flag-->
                                     <!--facturisStart::Content-->
@@ -659,7 +659,7 @@
                                 <!--facturisStart::Section-->
                                 <div class="d-flex align-items-center me-5">
                                     <!--facturisStart::Flag-->
-                                    <img src="assets/media/svg/brand-logos/plurk.svg" class="me-4 w-30px"
+                                    <img src="{{asset('assets/media/svg/brand-logos/plurk.svg')}}" class="me-4 w-30px"
                                         style="border-radius: 4px" alt="" />
                                     <!--facturisEnd::Flag-->
                                     <!--facturisStart::Content-->
