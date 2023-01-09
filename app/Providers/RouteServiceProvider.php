@@ -17,7 +17,7 @@ class RouteServiceProvider extends ServiceProvider
      *
      * @var string
      */
-    public const HOME = '/app/console';
+    public const HOME = '/app/console/home';
 
     /**
      * Define your route model bindings, pattern filters, and other route configuration.
@@ -50,6 +50,10 @@ class RouteServiceProvider extends ServiceProvider
         RateLimiter::for('api', function (Request $request) {
             return Limit::perMinute(60)->by($request->user()?->id ?: $request->ip());
         });
+
+        RateLimiter::for('login', function (Request $request) {
+            return Limit::perMinute(4)->by(optional($request->user())->id ?: $request->ip());
+        });
     }
 
     private function appRoutes()
@@ -60,7 +64,7 @@ class RouteServiceProvider extends ServiceProvider
             ->namespace($this->namespace)
             ->group(base_path('routes/app_auth.php'));
 
-        Route::middleware(['web'])
+        Route::middleware(['web', 'auth'])
             ->prefix('app/console')
             ->name('facturis:')
             ->namespace($this->namespace)
