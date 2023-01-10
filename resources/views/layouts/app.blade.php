@@ -44,6 +44,7 @@
     <div class="d-flex flex-column flex-root app-root" id="facturis_app_root">
 
         <div class="app-page flex-column flex-column-fluid" id="facturis_app_page">
+            
             @include('layouts.parts.sections.header')
 
             <div class="app-wrapper flex-column flex-row-fluid" id="facturis_app_wrapper">

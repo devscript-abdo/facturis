@@ -49,8 +49,7 @@
 
         },
         "files" : [
-            "helpers/CompanyHelpers.php",
-            "helpers/DocumentHelpers.php"
+            "helpers/helpers.php"
         ]
     },
     "autoload-dev": {
