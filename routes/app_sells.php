@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Finance\Client\ClientController;
 use App\Http\Controllers\Finance\Sell\Bl\BlController;
 use App\Http\Controllers\Finance\Sell\Estimate\EstimateController;
 use App\Http\Controllers\Finance\Sell\Invoice\InvoiceController;
@@ -23,5 +24,11 @@ Route::group(['prefix' => 'sells'], function () {
         Route::get('/', [BlController::class, 'index'])->name('bl');
         Route::get('/create', [BlController::class, 'create'])->name('bl.create');
         Route::post('/create', [BlController::class, 'store'])->name('bl.store');
+    });
+
+    Route::group(['prefix' => 'clients'], function () {
+        Route::get('/', [ClientController::class, 'index'])->name('clients');
+        Route::get('/create', [ClientController::class, 'create'])->name('clients.create');
+        Route::post('/create', [ClientController::class, 'store'])->name('clients.store');
     });
 });

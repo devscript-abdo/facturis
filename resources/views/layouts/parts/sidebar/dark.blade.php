@@ -64,8 +64,7 @@
                 </div>
                 <div class="menu-item">
                     <!--begin:Menu link-->
-                    <a class="menu-link" href="https://preview.keenthemes.com/html/Facturis/docs/base/utilities"
-                        target="blank">
+                    <a class="menu-link" href="{{ route('finance:sells:clients') }}">
                         <span class="menu-icon">
                             <!--facturisStart::Svg Icon | path: icons/duotune/general/gen002.svg-->
                             <span class="svg-icon svg-icon-2">
