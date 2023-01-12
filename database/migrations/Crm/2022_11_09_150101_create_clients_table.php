@@ -31,8 +31,8 @@ return new class extends Migration
                 ->constrained()
                 ->nullOnDelete();
 
-            $table->string('nom', 30)->nullable();
-            $table->string('prenom', 30)->nullable();
+            $table->string('code')->nullable();
+            $table->string('full_name', 60)->nullable();
 
             $table->longText('address')->nullable();
             $table->string('telephone', 20)->unique()->nullable();
@@ -45,6 +45,7 @@ return new class extends Migration
 
             $table->timestamp('added_at')->useCurrent();
 
+            $table->boolean('is_pro')->default(true);
             $table->boolean('is_active')->default(true);
             $table->softDeletes();
 
