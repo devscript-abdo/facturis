@@ -54,8 +54,6 @@
                 <div class="app-main flex-column flex-row-fluid" id="facturis_app_main">
                     <div class="d-flex flex-column flex-column-fluid">
 
-                        @include('layouts.parts.sections.toolbar')
-
                         @yield('content')
 
                     </div>
