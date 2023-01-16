@@ -30,11 +30,14 @@ class Client extends Model
         'rc',
         'ice',
         'added_at',
+        'is_pro',
         'active',
     ];
 
     protected $casts = [
 
+        'is_pro' => 'boolean',
+        'active' => 'boolean',
     ];
 
     /***** Relations *****/
