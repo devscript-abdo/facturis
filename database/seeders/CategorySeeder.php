@@ -2,35 +2,30 @@
 
 namespace Database\Seeders;
 
-use App\Models\Facturis\Category;
+use App\Models\Catalog\Category;
 use Illuminate\Database\Seeder;
 
 class CategorySeeder extends Seeder
 {
-    /**
-     * Run the database seeds.
-     *
-     * @return void
-     */
+    public $cates = [
+        [
+            'name' => 'category 1',
+            'active' => true,
+
+        ],
+        [
+            'name' => 'category 2',
+            'active' => false,
+
+        ],
+    ];
+
     public function run()
     {
-        $categories = [
-            [
-                'name' => 'PME',
-                'slug' => 'pme',
-                'code' => 1,
-                'added_at' => now(),
-            ],
-            [
-                'name' => 'SA',
-                'slug' => 'sa',
-                'code' => 2,
-                'added_at' => now(),
-            ],
-        ];
-
-        foreach ($categories as $category) {
-            Category::create($category);
+        if (Category::count() <= 0) {
+            foreach ($this->cates as $category) {
+                Category::create($category);
+            }
         }
     }
 }

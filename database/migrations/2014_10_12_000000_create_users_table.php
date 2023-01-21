@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-return new class extends Migration
+class CreateUsersTable extends Migration
 {
     /**
      * Run the migrations.
@@ -15,27 +15,22 @@ return new class extends Migration
     {
         Schema::create('users', function (Blueprint $table) {
             $table->id();
-            $table->uuid();
-            $table->string('nom', 30)->nullable();
-            $table->string('prenom', 30)->nullable();
-            $table->string('age', 10)->nullable();
-            $table->longText('address')->nullable();
-            $table->string('telephone', 20)->unique()->nullable();
-            $table->string('avatar')->nullable();
+            $table->uuid()->unique()->nullable();
+            $table->string('code')->unique()->nullable();
 
-            $table->string('username')->unique()->nullable();
+            $table->string('nom', 50);
+            $table->string('prenom', 50);
             $table->string('email')->unique();
+            $table->string('telephone')->nullable()->unique();
+
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
-            $table->rememberToken();
 
-            $table->foreignId('city_id')->nullable();
-            $table->foreignId('category_id')->nullable();
+            $table->rememberToken();
+            $table->boolean('active')->default(true);
+            $table->boolean('super_admin')->default(false);
 
             $table->timestamps();
-            $table->timestamp('added_at')->useCurrent();
-            $table->timestamp('changed_password_at')->nullable();
-            $table->boolean('active')->default(true);
             $table->softDeletes();
         });
     }
@@ -49,4 +44,4 @@ return new class extends Migration
     {
         Schema::dropIfExists('users');
     }
-};
+}
