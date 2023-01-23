@@ -17,7 +17,7 @@ class CreateClientsTable extends Migration
     {
         Schema::create('clients', function (Blueprint $table) {
             $table->id();
-            $table->uuid('uuid')->unique()->nullable();
+            $table->uuid()->unique()->nullable();
             $table->foreignIdFor(Category::class)->index()->nullable()->constrained()->nullOnDelete();
             $table->string('code')->unique()->nullable();
 

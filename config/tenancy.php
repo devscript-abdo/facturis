@@ -2,13 +2,12 @@
 
 declare(strict_types=1);
 
-use App\Models\Facturis\FacturisTenant;
+use App\Models\Facturis\Tenant;
 use Stancl\Tenancy\Database\Models\Domain;
-use Stancl\Tenancy\Database\Models\Tenant;
 
 return [
 
-    'tenant_model' => FacturisTenant::class,
+    'tenant_model' => Tenant::class,
 
     'id_generator' => Stancl\Tenancy\UUIDGenerator::class,
 
@@ -55,7 +54,7 @@ return [
          * prefix + tenant_id + suffix.
          */
         'prefix' => 'facturis_',
-        'suffix' => 'db',
+        'suffix' => '_db',
 
         /**
          * TenantDatabaseManagers are classes that handle the creation & deletion of tenant databases.

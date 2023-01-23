@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\TestController;
 use Illuminate\Support\Facades\Route;
 /*
 |--------------------------------------------------------------------------
@@ -13,3 +14,5 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::redirect('/', '/app/auth/login')->name('home');
+
+Route::get('/create-tenant', [TestController::class, 'createTenant']);
