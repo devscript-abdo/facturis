@@ -15,6 +15,7 @@ class TaxSeeder extends Seeder
     public function run(): void
     {
         $taxes = [
+            ['name' => 'TVA', 'taux_percent' => '0%'],
             ['name' => 'TVA', 'taux_percent' => '20%'],
             ['name' => 'TVA', 'taux_percent' => '14%'],
             ['name' => 'TVA', 'taux_percent' => '10%'],

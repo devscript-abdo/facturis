@@ -61,13 +61,13 @@ class RouteServiceProvider extends ServiceProvider
     {
         Route::middleware(['web'])
             ->prefix('app/auth')
-            ->name('facturis:auth:')
+            ->name('admin:auth:')
             ->namespace($this->namespace)
             ->group(base_path('routes/app_auth.php'));
 
         Route::middleware(['web', 'auth'])
             ->prefix('app/console')
-            ->name('facturis:')
+            ->name('admin:')
             ->namespace($this->namespace)
             ->group(base_path('routes/app_routes.php'));
     }

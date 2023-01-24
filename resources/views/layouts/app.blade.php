@@ -3,80 +3,84 @@
 <html lang="en">
 
 <head>
+
     <meta charset="utf-8" />
-
-    <title> {{ getCompany()->name ?? 'FACTURIS' }} Application</title>
-
+    <title> {{ getCompany()->name ?? 'Facturis' }}</title>
     <meta name="robots" content="noindex, nofollow" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta content="app_creator" name="Elmarzougui Abdelghafour" />
     <meta content="app_version" name="v 1.1" />
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-
-    <link rel="shortcut icon" href="{{ asset('assets/media/logo-app.png') }}">
-
-    <!--facturisStart::Fonts(mandatory for all pages)-->
-
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter:300,400,500,600,700&display=swap" />
-
-    <!--facturisEnd::Fonts-->
-
-    <!--begin::Global Stylesheets Bundle(all pages)-->
-
-    <link href="{{ asset('assets/plugins/global/plugins.bundle.css') }}" rel="stylesheet" type="text/css" />
-    <link href="{{ asset('assets/css/style.bundle.css') }}" rel="stylesheet" type="text/css" />
-
-    <!--end::Global Stylesheets Bundle-->
+    <link rel="shortcut icon" href="{{ asset('images/logo-app.png') }}">
+    <link href="{{ asset('assets/libs/magnific-popup/magnific-popup.css') }}" rel="stylesheet" type="text/css" />
     @yield('css')
 
-    {{-- @vite(['resources/css/app.css', 'resources/js/app.js']) --}}
+    <link href="{{ asset('css/app.css') }}?ver={{ rand(2, 250) }}" rel="stylesheet" type="text/css" />
 
-    {{-- @livewireStyles --}}
+    @livewireStyles
+
 </head>
 
-<body id="facturis_app_body" data-facturis-app-layout="dark-sidebar" data-facturis-app-header-fixed="true"
-    data-facturis-app-sidebar-enabled="true" data-facturis-app-sidebar-fixed="true"
-    data-facturis-app-sidebar-hoverable="true" data-facturis-app-sidebar-push-header="true"
-    data-facturis-app-sidebar-push-toolbar="true" data-facturis-app-sidebar-push-footer="true"
-    data-facturis-app-toolbar-enabled="true" class="app-default">
+<body data-sidebar="dark"   data-sidebar-size="small">
 
-    <div class="d-flex flex-column flex-root app-root" id="facturis_app_root">
+    <div id="preloader">
+        <div id="status">
+            <div class="spinner-chase">
+                <div class="chase-dot"></div>
+                <div class="chase-dot"></div>
+                <div class="chase-dot"></div>
+                <div class="chase-dot"></div>
+                <div class="chase-dot"></div>
+                <div class="chase-dot"></div>
+            </div>
+        </div>
+    </div>
+    <!-- <body data-layout="horizontal" data-topbar="dark"> -->
 
-        <div class="app-page flex-column flex-column-fluid" id="facturis_app_page">
-            
-            @include('layouts.parts.sections.header')
+    <div id="layout-wrapper">
 
-            <div class="app-wrapper flex-column flex-row-fluid" id="facturis_app_wrapper">
+        @include('layouts._parts.__header')
 
-                @include('layouts.parts.sidebar.dark')
+        @include('layouts.sidebar.__compact')
 
-                <div class="app-main flex-column flex-row-fluid" id="facturis_app_main">
-                    <div class="d-flex flex-column flex-column-fluid">
+        <div class="main-content">
 
-                        @yield('content')
+            <div class="page-content">
 
-                    </div>
+                <div id="overlayy"></div>
 
-                    @include('layouts.parts.footer.footer')
+                @yield('content')
 
-                </div>
             </div>
 
+            {{-- @include('layouts._parts._subscribe') --}}
+
+
+            @include('layouts._parts._footer')
+
         </div>
+
 
     </div>
 
 
-    {{-- @livewireScripts --}}
+    {{-- @include('layouts._parts._rightSidebar') --}}
 
 
-    @include('layouts.parts.js.custom_js')
+    @include('layouts._parts._overly')
 
-    @include('layouts.parts.js.normal_js')
+    @livewireScripts
 
-    @stack('customjs')
+    <script src="{{ asset('js/app.js') }}"></script>
 
+    @stack('scripts')
+
+    @stack('reloadModal')
+
+    <script src="{{ asset('assets/libs/magnific-popup/jquery.magnific-popup.min.js') }}"></script>
+
+    <script src="{{ asset('js/pages/lightbox.init.js') }}"></script>
 </body>
 
 </html>

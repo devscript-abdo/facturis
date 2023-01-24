@@ -5,7 +5,7 @@
             <div class="navbar-brand-box">
                 <a href="{{ route('admin:home') }}" class="logo logo-dark">
                     <span class="logo-sm">
-                        <img src="{{ appLogo() }}" alt="" height="22">
+                        <img src="{{ appLogo() }}" alt="" height="40">
                     </span>
                     <span class="logo-lg">
                         <img src="{{ appLogo() }}" alt="" height="50">
@@ -14,10 +14,10 @@
 
                 <a href="{{ route('admin:home') }}" class="logo logo-light">
                     <span class="logo-sm">
-                        <img src="{{ appLogo() }}" alt="" height="22">
+                        <img src="{{ appLogo() }}" alt="" height="40">
                     </span>
                     <span class="logo-lg">
-                        <img src="{{ appLogo() }}" alt="" height="19">
+                        <img src="{{ appLogo() }}" alt="" height="50">
                     </span>
                 </a>
             </div>
@@ -207,7 +207,7 @@
                     <a class="dropdown-item" href="#{{-- route('admin:profile.index') --}}"><i
                             class="bx bx-user font-size-16 align-middle me-1"></i> <span
                             key="t-profile">Profile</span></a>
-                    <a class="dropdown-item d-block" href="{{ route('admin:profile.settings') }}">
+                    <a class="dropdown-item d-block" href="{{-- route('admin:profile.settings') --}}">
 
                         <i class="bx bx-wrench font-size-16 align-middle me-1"></i>
                         <span key="t-settings">Settings</span>

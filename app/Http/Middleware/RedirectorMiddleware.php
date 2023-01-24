@@ -18,11 +18,11 @@ class RedirectorMiddleware
     public function handle(Request $request, Closure $next)
     {
         if ($request->is('app', 'app/')) {
-            return redirect()->route('facturis:home');
+            return redirect()->route('admin:home');
         }
 
         if ($request->is('/', '/home')) {
-            return redirect()->route('facturis:home');
+            return redirect()->route('admin:home');
         }
 
         return $next($request);

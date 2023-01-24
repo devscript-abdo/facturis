@@ -36,7 +36,7 @@ class AuthController extends Controller
         if (!Auth::user()->active) {
             Auth::logout();
 
-            return redirect(route('facturis:auth:login'))->withErrors(['Votre compte est désactivé']);
+            return redirect(route('admin:auth:login'))->withErrors(['Votre compte est désactivé']);
         }
     }
 
@@ -54,7 +54,7 @@ class AuthController extends Controller
 
         return $request->wantsJson()
             ? new Response('', 204)
-            : redirect(route('facturis:auth:login'));
+            : redirect(route('admin:auth:login'));
     }
 
     /**
@@ -62,6 +62,6 @@ class AuthController extends Controller
      */
     private function redirectTo()
     {
-        return route('facturis:home');
+        return route('admin:home');
     }
 }
