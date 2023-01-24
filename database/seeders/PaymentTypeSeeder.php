@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace Database\Seeders;
 
-use App\Models\Utilities\PaymentType;
+use App\Models\Utilities\PaymentMethod;
 use Illuminate\Database\Seeder;
 
 class PaymentTypeSeeder extends Seeder
@@ -28,7 +28,7 @@ class PaymentTypeSeeder extends Seeder
         ];
 
         foreach ($types as $type) {
-            PaymentType::create($type);
+            PaymentMethod::create($type);
         }
     }
 }

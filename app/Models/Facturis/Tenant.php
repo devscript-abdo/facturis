@@ -2,7 +2,6 @@
 
 namespace App\Models\Facturis;
 
-use App\Models\Events\SetModelUuid;
 use App\Traits\GetModelByUuid;
 use App\Traits\ULidGenerator;
 use App\Traits\UuidGenerator;
