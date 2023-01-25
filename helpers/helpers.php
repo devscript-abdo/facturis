@@ -16,13 +16,20 @@ if (!function_exists('getDocument')) {
     }
 }
 
-if (! function_exists('appLogo')) {
+if (!function_exists('appLogo')) {
     function appLogo()
     {
         if (Str::contains(getCompany()->logo, ['https://', 'http://'])) {
             return getCompany()->logo;
         }
 
-        return asset('storage/'.getCompany()->logo);
+        return asset('storage/' . getCompany()->logo);
+    }
+}
+
+if (!function_exists('isAdmin')) {
+    function isAdmin()
+    {
+        return auth()->check() && auth()->user()->hasRole('SuperAdmin') ? true : false;
     }
 }

@@ -15,7 +15,7 @@
                 </li>
                 <li class="menu-title" key="t-menu">VENTES</li>
                 <li>
-                    <a href="calendar.html" class="waves-effect">
+                    <a href="{{route('finance:sells:clients')}}" class="waves-effect">
                         <i class="bx bx-user"></i>
                         <span key="t-clients">Clients</span>
                     </a>

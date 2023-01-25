@@ -26,6 +26,7 @@ class Client extends Model implements HasMedia
     use ClientFilters;
 
     protected $fillable = [
+        'uuid',
         'entreprise',
         'contact',
         'telephone',
@@ -82,7 +83,7 @@ class Client extends Model implements HasMedia
     {
         $date = Carbon::createFromFormat('Y-m-d H:i:s', $this->created_at);
 
-        return $date->translatedFormat('d').' '.$date->translatedFormat('F').' '.$date->translatedFormat('Y');
+        return $date->translatedFormat('d') . ' ' . $date->translatedFormat('F') . ' ' . $date->translatedFormat('Y');
     }
 
     public function registerMediaConversions(Media $media = null): void
@@ -104,7 +105,7 @@ class Client extends Model implements HasMedia
         static::creating(function ($model) use ($prefixer) {
             $number = (self::max('id') + 1);
 
-            $model->code = $prefixer.str_pad($number, 5, 0, STR_PAD_LEFT);
+            $model->code = $prefixer . str_pad($number, 5, 0, STR_PAD_LEFT);
         });
     }
 }

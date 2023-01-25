@@ -27,8 +27,15 @@ Route::group(['prefix' => 'sells'], function () {
     });
 
     Route::group(['prefix' => 'clients'], function () {
+
         Route::get('/', [ClientController::class, 'index'])->name('clients');
         Route::get('/create', [ClientController::class, 'create'])->name('clients.create');
         Route::post('/create', [ClientController::class, 'store'])->name('clients.store');
+
+        Route::group(['prefix' => 'client'], function () {
+            Route::get('/{client}', [ClientController::class, 'edit'])->name('clients.edit');
+            Route::post('/{client}', [ClientController::class, 'update'])->name('clients.update');
+            Route::delete('/{client}', [ClientController::class, 'update'])->name('clients.delete');
+        });
     });
 });
