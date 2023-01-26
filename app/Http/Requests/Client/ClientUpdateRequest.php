@@ -34,7 +34,7 @@ class ClientUpdateRequest extends FormRequest
             'email' => ['required', 'email', Rule::unique('clients')->ignore($this->route('client'), 'uuid')],
             'addresse' => 'required|string',
             'rc' => ['nullable', 'numeric', Rule::unique('clients')->ignore($this->route('client'), 'uuid')],
-            'ice' => ['required', 'numeric', 'digits_between:15,16', Rule::unique('clients')->ignore($this->route('client'), 'uuid')],
+            'ice' => ['required', 'numeric', 'digits_between:14,16', Rule::unique('clients')->ignore($this->route('client'), 'uuid')],
             'description' => 'nullable|string',
         ];
     }

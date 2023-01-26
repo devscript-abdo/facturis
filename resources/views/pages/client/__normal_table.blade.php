@@ -9,6 +9,7 @@
                         <i class="bx bxs-add-to-queue label-icon"></i>
                         Nouveau client
                     </a>
+                    
                 </div>
             </div>
         </div>
@@ -72,7 +73,7 @@
                                         <div class="button-items">
 
                                             <a href="{{ route('finance:sells:clients.edit', $client->uuid) }}"
-                                                class="btn btn-primary btn-sm waves-effect waves-light btn-label">
+                                                class="btn btn-primary btn-sm waves-light btn-label">
                                                 <i class="bx bx-edit-alt label-icon"></i>
                                                 Edit
                                             </a>
@@ -83,8 +84,13 @@
 
                         </tbody>
                     </table>
+                    
                 </div>
+                {{ $clients->links() }}
             </div>
+            
         </div>
+       
     </div>
+   
 </div>

@@ -36,7 +36,7 @@ class DatabaseSeeder extends Seeder
         $this->call(WarehouseSeeder::class);
 
         \App\Models\Finance\Provider::factory(5)->create();
-        \App\Models\Client::factory(5)->create();
+        \App\Models\Client::factory(30)->create();
     }
 
     private function clearAll()
