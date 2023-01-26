@@ -21,7 +21,7 @@
                     </a>
                 </li>
                 <li>
-                    <a href="calendar.html" class="waves-effect">
+                    <a href="{{route('finance:sells:estimates')}}" class="waves-effect">
                         <i class="bx bx-file-blank"></i>
                         <span key="t-estimates">Devis</span>
                     </a>

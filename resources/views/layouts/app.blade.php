@@ -22,10 +22,10 @@
 
 </head>
 
-<body data-sidebar="dark"   data-sidebar-size="small">
+<body data-sidebar="dark" data-sidebar-size="small">
 
 
-    {{--@include('layouts._parts.__loader')--}}
+    {{-- @include('layouts._parts.__loader') --}}
 
     <!-- <body data-layout="horizontal" data-topbar="dark"> -->
 

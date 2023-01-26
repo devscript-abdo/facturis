@@ -33,7 +33,7 @@ class Estimate extends Model
         'price_tva',
         'ht_price_remise',
         'status',
-        'estimate_date',
+        'document_date',
         'due_date',
         'invoice_id',
         'client_id',
@@ -49,8 +49,8 @@ class Estimate extends Model
 
     protected $casts = [
         'is_send' => 'boolean',
-        'due_date' => 'date:Y-m-d',
-        'estimate_date' => 'date:Y-m-d',
+        'due_date' => 'date',
+        'document_date' => 'date',
         'has_header' => 'boolean',
     ];
 

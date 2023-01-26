@@ -19,6 +19,12 @@ Route::group(['prefix' => 'sells'], function () {
         Route::get('/', [EstimateController::class, 'index'])->name('estimates');
         Route::get('/create', [EstimateController::class, 'create'])->name('estimates.create');
         Route::post('/create', [EstimateController::class, 'store'])->name('estimates.store');
+
+        Route::group(['prefix' => 'estimate'], function () {
+            Route::get('/{estimate}', [EstimateController::class, 'edit'])->name('estimates.edit');
+            Route::post('/{estimate}', [EstimateController::class, 'update'])->name('estimates.update');
+            Route::delete('/{estimate}', [EstimateController::class, 'delete'])->name('estimates.delete');
+        });
     });
 
     Route::group(['prefix' => 'bons-de-livraison'], function () {
@@ -43,7 +49,7 @@ Route::group(['prefix' => 'sells'], function () {
 
 Route::group(['prefix' => 'buys'], function () {
 
-    Route::group(['prefix' => 'providers'], function () {
+    Route::group(['prefix' => 'suppliers'], function () {
 
         Route::get('/', [ProviderController::class, 'index'])->name('providers');
         Route::get('/create', [ProviderController::class, 'create'])->name('providers.create');
