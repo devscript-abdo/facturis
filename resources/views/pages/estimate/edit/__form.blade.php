@@ -5,7 +5,7 @@
                 <div class="card-body">
                     <div class="row mb-10">
                         <div class="col-lg-6">
-                            <h5 class="card-title">DEVIS Numero : {{$estimate->full_number}}</h5>
+                            <h5 class="card-title">DEVIS Numero : {{ $estimate->full_number }}</h5>
                             <p class="card-title-desc"></p>
                         </div>
                         <div class="col-lg-6">
@@ -159,6 +159,12 @@
                     </div>
                     <div class="row">
                         <div class="col-lg-12 mb-4">
+
+                            @if ($estimate->articles->count() > 0)
+                                @include('pages.document.edit_articles', ['document' => $estimate])
+                            @endif
+                            <hr>
+                            <p class="card-title-desc">Ajouter des nouveaux articles</p>
                             @include('pages.document.add_articles')
                         </div>
                         <div class="col-lg-6">

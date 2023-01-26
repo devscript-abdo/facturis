@@ -57,8 +57,13 @@ class EstimateController extends Controller
     public function update(ArticleStoreRequest $request, Estimate $estimate)
     {
         if (!empty($this->hasItems($request))) {
+
             $estimate->articles()->createMany($this->hasItems($request));
+
+            return redirect(route('finance:sells:estimates.edit', $estimate->uuid))->with('success', "Le devis a éte modifier avec success");
         }
+
+        return redirect()->back()->with('error', 'Problem ... !!');
     }
 
     private function hasItems(Request $request)
