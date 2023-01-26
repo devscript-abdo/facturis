@@ -5,14 +5,21 @@ declare(strict_types=1);
 namespace App\Http\Controllers\Finance\Sell\Estimate;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\Document\ArticleStoreRequest;
+use App\Http\Requests\Document\EstimateDeleteRequest;
 use App\Http\Requests\Document\EstimateStoreRequest;
 use App\Models\Client;
 use App\Models\Finance\Estimate;
+use App\Models\Utilities\PaymentMethod;
+use App\Models\Utilities\Tax;
 use Illuminate\Http\Request;
+use App\Services\Commercial\Remise\RemiseCalculator;
+use App\Services\Commercial\Taxes\TVACalulator;
 
 class EstimateController extends Controller
 {
-
+    use TVACalulator;
+    use RemiseCalculator;
 
     public function index()
     {
@@ -38,5 +45,91 @@ class EstimateController extends Controller
     public function edit(Estimate $estimate)
     {
 
+        $payments = PaymentMethod::select(['id', 'name'])->get();
+
+        $taxes = Tax::select(['id', 'taux_percent'])->get();
+
+        $estimate->load('articles');
+
+        return view('pages.estimate.edit.index', compact('estimate', 'payments', 'taxes'));
+    }
+
+    public function update(ArticleStoreRequest $request, Estimate $estimate)
+    {
+        if (!empty($this->hasItems($request))) {
+            $estimate->articles()->createMany($this->hasItems($request));
+        }
+    }
+
+    private function hasItems(Request $request)
+    {
+
+        $articles = $request->articles;
+
+        $totalPrice = collect($articles)->map(function ($item) {
+
+            if ($item['remise'] && $item['remise'] > 0 && $item['remise'] !== 0) {
+                $itemPrice = $item['prix_unitaire'] * $item['quantity'];
+                $finalePrice = $this->caluculateRemise($itemPrice, $item['remise']);
+                $totalPrice = $this->caluculateTotalWithTax($finalePrice, $item['price_tax']);
+
+                $taxePrice = $this->calculateOnlyTax($totalPrice, $item['price_tax']);
+                return $totalPrice;
+            }
+
+            return $item['prix_unitaire'] * $item['quantity'];
+        })->sum();
+
+        $articlesData = collect($articles)->map(function ($item) {
+
+            if ($item['remise'] && $item['remise'] > 0 && $item['remise'] !== 0) {
+
+                $itemPrice = $item['prix_unitaire'] * $item['quantity'];
+                $finalePrice = $this->caluculateRemise($itemPrice, $item['remise']);
+                $tauxRemise = $this->calculateOnlyRemise($itemPrice, $item['remise']);
+
+                $totalPrice = $this->caluculateTotalWithTax($finalePrice, $item['taux_tax']);
+                $taxePrice = $this->calculateOnlyTax($finalePrice, $item['taux_tax']);
+
+                $prices = [
+                    'price_total' => $totalPrice,
+                    'montant_ht' => $finalePrice,
+                    'price_tax' => $taxePrice,
+                    'taux_remise' => $tauxRemise
+                ];
+
+                return collect($item)->merge($prices);
+            }
+            $prices = [
+                'price_total' => $this->caluculateTotalWithTax($item['prix_unitaire'] * $item['quantity'], $item['taux_tax']),
+                'montant_ht' => ($item['prix_unitaire'] * $item['quantity']),
+                'price_tax' => $this->calculateOnlyTax(($item['prix_unitaire'] * $item['quantity']), $item['taux_tax']),
+                'remise' => '0'
+            ];
+
+            return collect($item)->merge($prices);
+        })->toArray();
+
+        $articles = array_filter(array_map('array_filter', $articlesData));
+
+        dd($articles,'###YES');
+        return $articles;
+    }
+
+    public function delete(EstimateDeleteRequest $request)
+    {
+
+        $estimate = Estimate::whereUuid($request->estimateId)->first();
+
+        //$this->authorize('delete', $estimate);
+
+        if ($estimate) {
+
+            $estimate->delete();
+
+            return redirect(route('finance:sells:estimates'))->with('success', 'Le DEVIS a été supprimer avec success');
+        }
+
+        return redirect()->back()->with('success', 'Problem ... !!');
     }
 }

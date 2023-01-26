@@ -20,6 +20,12 @@
 
     @livewireStyles
 
+    <style>
+        .zIndexer {
+            z-index: 7;
+        }
+    </style>
+
 </head>
 
 <body data-sidebar="dark" data-sidebar-size="small">
