@@ -21,8 +21,10 @@ class Article extends Model
         'designation',
         'description',
         'quantity',
-        'prix_unitaire',
-        'montant_ht',
+        'price_uni',
+        'price_ht',
+        'price_total',
+        'price_tax',
         'remise_fix',
         'remise',
         'taux_remise',
@@ -32,7 +34,7 @@ class Article extends Model
     protected $casts = [
         'quantity' => 'integer',
         'remise_fix' => 'boolean',
-        //'montant_ht' => 'integer',
+        //'price_ht' => 'integer',
         //'prix_unitaire' => 'integer'
     ];
 

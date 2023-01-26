@@ -30,8 +30,8 @@ class ArticleStoreRequest extends FormRequest
             'articles.*.designation' => ['required', 'string'],
             'articles.*.description' => ['nullable', 'string'],
             'articles.*.quantity' => ['required', 'integer'],
-            'articles.*.prix_unitaire' => ['required', 'numeric', 'digits_between:1,20'],
-            //'articles.*.montant_ht' => ['nullable', 'numeric'],
+            'articles.*.price_uni' => ['required', 'numeric', 'digits_between:1,20'],
+            //'articles.*.price_ht' => ['nullable', 'numeric'],
             'articles.*.remise' => ['nullable', 'numeric', 'digits_between:1,20'],
             'articles.*.taux_tax' => ['required', 'string', 'exists:taxes,taux_percent'],
         ];

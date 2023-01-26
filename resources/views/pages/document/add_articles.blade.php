@@ -14,11 +14,11 @@
             @enderror
         </div>
         <div class="mb-3 col-lg-1">
-            <label for="prix_unitaire">{{ __('P.U HT') }} *</label>
-            <input type="text" name="prix_unitaire" id="prix_unitaire"
-                class="form-control @error('articles.*.prix_unitaire') is-invalid @enderror" required />
+            <label for="price_uni">{{ __('P.U HT') }} *</label>
+            <input type="text" name="price_uni" id="price_uni"
+                class="form-control @error('articles.*.price_uni') is-invalid @enderror" required />
 
-            @error('prix_unitaire')
+            @error('price_uni')
                 <span class="invalid-feedback" role="alert">
                     <strong>{{ $message }}</strong>
                 </span>
@@ -62,10 +62,10 @@
         </div>
 
         <div class="mb-3 col-lg-2">
-            <label for="montant_ht">{{ __('TOTAL HT') }}</label>
-            <input type="text" name="montant_ht" id="montant_ht"
-                class="form-control @error('articles.*.montant_ht') is-invalid @enderror" readonly />
-            @error('montant_ht')
+            <label for="price_ht">{{ __('TOTAL HT') }}</label>
+            <input type="text" name="price_ht" id="price_ht"
+                class="form-control @error('articles.*.price_ht') is-invalid @enderror" readonly />
+            @error('price_ht')
                 <span class="invalid-feedback" role="alert">
                     <strong>{{ $message }}</strong>
                 </span>

@@ -64,27 +64,11 @@ class EstimateController extends Controller
     private function hasItems(Request $request)
     {
 
-        $articles = $request->articles;
-
-        $totalPrice = collect($articles)->map(function ($item) {
-
-            if ($item['remise'] && $item['remise'] > 0 && $item['remise'] !== 0) {
-                $itemPrice = $item['prix_unitaire'] * $item['quantity'];
-                $finalePrice = $this->caluculateRemise($itemPrice, $item['remise']);
-                $totalPrice = $this->caluculateTotalWithTax($finalePrice, $item['price_tax']);
-
-                $taxePrice = $this->calculateOnlyTax($totalPrice, $item['price_tax']);
-                return $totalPrice;
-            }
-
-            return $item['prix_unitaire'] * $item['quantity'];
-        })->sum();
-
-        $articlesData = collect($articles)->map(function ($item) {
+        $articlesData = collect($request->articles)->map(function ($item) {
 
             if ($item['remise'] && $item['remise'] > 0 && $item['remise'] !== 0) {
 
-                $itemPrice = $item['prix_unitaire'] * $item['quantity'];
+                $itemPrice = $item['price_uni'] * $item['quantity'];
                 $finalePrice = $this->caluculateRemise($itemPrice, $item['remise']);
                 $tauxRemise = $this->calculateOnlyRemise($itemPrice, $item['remise']);
 
@@ -93,7 +77,7 @@ class EstimateController extends Controller
 
                 $prices = [
                     'price_total' => $totalPrice,
-                    'montant_ht' => $finalePrice,
+                    'price_ht' => $finalePrice,
                     'price_tax' => $taxePrice,
                     'taux_remise' => $tauxRemise
                 ];
@@ -101,9 +85,9 @@ class EstimateController extends Controller
                 return collect($item)->merge($prices);
             }
             $prices = [
-                'price_total' => $this->caluculateTotalWithTax($item['prix_unitaire'] * $item['quantity'], $item['taux_tax']),
-                'montant_ht' => ($item['prix_unitaire'] * $item['quantity']),
-                'price_tax' => $this->calculateOnlyTax(($item['prix_unitaire'] * $item['quantity']), $item['taux_tax']),
+                'price_total' => $this->caluculateTotalWithTax($item['price_uni'] * $item['quantity'], $item['taux_tax']),
+                'price_ht' => ($item['price_uni'] * $item['quantity']),
+                'price_tax' => $this->calculateOnlyTax(($item['price_uni'] * $item['quantity']), $item['taux_tax']),
                 'remise' => '0'
             ];
 
@@ -112,7 +96,6 @@ class EstimateController extends Controller
 
         $articles = array_filter(array_map('array_filter', $articlesData));
 
-        dd($articles,'###YES');
         return $articles;
     }
 
