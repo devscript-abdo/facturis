@@ -2233,7 +2233,7 @@ textarea.form-control-lg {
     padding: 1rem 0.75rem;
 }
 .form-floating > label {
-    border: 1px solid transparent;
+    border: 2px solid transparent;
     height: 100%;
     left: 0;
     padding: 1rem 0.75rem;
@@ -2242,6 +2242,9 @@ textarea.form-control-lg {
     top: 0;
     transform-origin: 0 0;
     transition: opacity 0.1s ease-in-out, transform 0.1s ease-in-out;
+    font-size: 15px;
+    font-weight: 600;
+    color: #000;
 }
 @media (prefers-reduced-motion: reduce) {
     .form-floating > label {

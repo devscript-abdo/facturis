@@ -25,21 +25,18 @@
                     <table class="table table-bordered border-danger table-hover align-middle table-nowrap table-check">
                         <thead class="table-light">
                             <tr>
-                                @if (auth()->user()->hasAnyRole('Admin', 'SuperAdmin'))
-                                    <th style="width: 20px;" class="align-middle">
-                                        <div class="form-check font-size-16">
-                                            <input class="form-check-input" type="checkbox" id="checkAll">
-                                            <label class="form-check-label" for="checkAll"></label>
-                                        </div>
-                                    </th>
-                                @endif
-                                <th class="align-middle">Logo</th>
-                                <th class="align-middle">Nom complet</th>
-                                <th class="align-middle">E-mail</th>
-                                <th class="align-middle">Tél</th>
-                                <th class="align-middle">Type</th>
-                                <th class="align-middle">Etat</th>
-                                <th class="align-middle">Action</th>
+                                <th style="width: 20px;" class="align-middle">
+                                    <div class="form-check font-size-16">
+                                        <input class="form-check-input" type="checkbox" id="checkAllCTLS">
+                                        <label class="form-check-label" for="checkAllCTLS"></label>
+                                    </div>
+                                </th>
+                                <th class="align-middle">Référence</th>
+                                <th class="align-middle">Raison Sociale</th>
+                                <th class="align-middle">Nom du contact</th>
+                                <th class="align-middle">Téléphone du contact</th>
+                                <th class="align-middle">Créé le</th>
+                                <th class="align-middle">Actions</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -53,47 +50,31 @@
                                         </div>
                                     </td>
                                     <td>
-                                        @if (!is_null($client->logo))
-                                            <div>
-                                                <img class="img-fluid rounded" alt=""
-                                                    src="{{ asset('storage/' . $client->logo) }}" width="50">
-                                            </div>
-                                        @endif
-                                    </td>
-                                    <td>
                                         <a href="{{-- $client->url --}}" class="text-body fw-bold">
-                                            {{ $client->full_name }}
+                                            {{ $client->code }}
                                         </a>
-                                        @if ($client->type === 'particulier')
-                                            <br>
-                                            {{ $client->cnie }}
-                                        @endif
                                     </td>
                                     <td>
-                                        {{ $client->email }}
+                                        {{ $client->entreprise }}
+                                    </td>
+                                    <td>
+                                        {{ $client->contact }}
                                     </td>
                                     <td>
                                         {{ $client->telephone }}
                                     </td>
                                     <td>
-                                        {{ $client->type }}
-                                        <p class="text-muted mb-0"></p>
-                                    </td>
-                                    <td>
-
-                                        <div class="form-check form-switch form-switch-lg mb-3" dir="ltr">
-                                            <input data-client="{{ $client->uuid }}" class="form-check-input activeUser"
-                                                type="checkbox" id="SwitchCheckSizelg"
-                                                {{ $client->active == true ? 'checked' : '' }}>
-
-                                        </div>
+                                        {{ $client->created_at->format('d-m-Y') }}
                                     </td>
 
                                     <td>
-                                        <div class="d-flex gap-3">
+
+                                        <div class="button-items">
+
                                             <a href="{{ route('finance:sells:clients.edit', $client->uuid) }}"
-                                                class="text-success">
-                                                <i class="mdi mdi-pencil font-size-18"></i>
+                                                class="btn btn-primary btn-sm waves-effect waves-light btn-label">
+                                                <i class="bx bx-edit-alt label-icon"></i>
+                                                Edit
                                             </a>
                                         </div>
                                     </td>

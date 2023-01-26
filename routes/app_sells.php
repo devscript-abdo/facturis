@@ -35,7 +35,7 @@ Route::group(['prefix' => 'sells'], function () {
         Route::group(['prefix' => 'client'], function () {
             Route::get('/{client}', [ClientController::class, 'edit'])->name('clients.edit');
             Route::post('/{client}', [ClientController::class, 'update'])->name('clients.update');
-            Route::delete('/{client}', [ClientController::class, 'update'])->name('clients.delete');
+            Route::delete('/{client}', [ClientController::class, 'delete'])->name('clients.delete');
         });
     });
 });

@@ -24,18 +24,9 @@
 
 <body data-sidebar="dark"   data-sidebar-size="small">
 
-    <div id="preloader">
-        <div id="status">
-            <div class="spinner-chase">
-                <div class="chase-dot"></div>
-                <div class="chase-dot"></div>
-                <div class="chase-dot"></div>
-                <div class="chase-dot"></div>
-                <div class="chase-dot"></div>
-                <div class="chase-dot"></div>
-            </div>
-        </div>
-    </div>
+
+    {{--@include('layouts._parts.__loader')--}}
+
     <!-- <body data-layout="horizontal" data-topbar="dark"> -->
 
     <div id="layout-wrapper">

@@ -34,9 +34,7 @@ class Client extends Model implements HasMedia
         'addresse',
         'rc',
         'ice',
-        'category_id',
         'description',
-        'logo',
     ];
 
     public function telephones(): \Illuminate\Database\Eloquent\Relations\MorphMany
