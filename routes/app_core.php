@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Finance\Buy\Provider\ProviderController;
 use App\Http\Controllers\Finance\Client\ClientController;
 use App\Http\Controllers\Finance\Sell\Bl\BlController;
 use App\Http\Controllers\Finance\Sell\Estimate\EstimateController;
@@ -36,6 +37,22 @@ Route::group(['prefix' => 'sells'], function () {
             Route::get('/{client}', [ClientController::class, 'edit'])->name('clients.edit');
             Route::post('/{client}', [ClientController::class, 'update'])->name('clients.update');
             Route::delete('/{client}', [ClientController::class, 'delete'])->name('clients.delete');
+        });
+    });
+});
+
+Route::group(['prefix' => 'buys'], function () {
+
+    Route::group(['prefix' => 'providers'], function () {
+
+        Route::get('/', [ProviderController::class, 'index'])->name('providers');
+        Route::get('/create', [ProviderController::class, 'create'])->name('providers.create');
+        Route::post('/create', [ProviderController::class, 'store'])->name('providers.store');
+
+        Route::group(['prefix' => 'provider'], function () {
+            Route::get('/{provider}', [ProviderController::class, 'edit'])->name('providers.edit');
+            Route::post('/{provider}', [ProviderController::class, 'update'])->name('providers.update');
+            Route::delete('/{provider}', [ProviderController::class, 'delete'])->name('providers.delete');
         });
     });
 });

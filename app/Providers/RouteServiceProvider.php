@@ -37,7 +37,8 @@ class RouteServiceProvider extends ServiceProvider
                 ->group(base_path('routes/web.php'));
 
             $this->appRoutes();
-            $this->sellsRoutes();
+            
+            $this->coreRoutes();
         });
     }
 
@@ -72,12 +73,12 @@ class RouteServiceProvider extends ServiceProvider
             ->group(base_path('routes/app_routes.php'));
     }
 
-    private function sellsRoutes()
+    private function coreRoutes()
     {
         Route::middleware(['web', 'auth'])
             ->prefix('app/console/finance')
             ->name('finance:sells:')
             ->namespace($this->namespace)
-            ->group(base_path('routes/app_sells.php'));
+            ->group(base_path('routes/app_core.php'));
     }
 }

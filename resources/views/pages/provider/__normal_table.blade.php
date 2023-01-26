@@ -5,11 +5,11 @@
                 <h4 class="card-title">Actions Disponible</h4>
                 <p class="card-title-desc"></p>
                 <div class="button-items ">
-                    <a href="{{ route('finance:sells:clients.create') }}" type="button" class="btn btn-info btn-label">
+                    <a href="{{ route('finance:sells:providers.create') }}" type="button" class="btn btn-info btn-label">
                         <i class="bx bxs-add-to-queue label-icon"></i>
-                        Nouveau client
+                        Nouveau fournisseur
                     </a>
-                    
+
                 </div>
             </div>
         </div>
@@ -41,46 +41,46 @@
                             </tr>
                         </thead>
                         <tbody>
-                            @foreach ($clients as $client)
+                            @foreach ($providers as $provider)
                                 <tr>
                                     <td>
                                         <div class="form-check font-size-16">
                                             <input class="form-check-input" type="checkbox"
-                                                id="client-{{ $client->id }}">
-                                            <label class="form-check-label" for="client-{{ $client->id }}"></label>
+                                                id="provider-{{ $provider->id }}">
+                                            <label class="form-check-label" for="provider-{{ $provider->id }}"></label>
                                         </div>
                                     </td>
                                     <td>
-                                        <a href="{{-- $client->url --}}" class="text-body fw-bold">
-                                            {{ $client->code }}
+                                        <a href="{{-- $provider->url --}}" class="text-body fw-bold">
+                                            {{ $provider->code }}
                                         </a>
                                     </td>
                                     <td>
-                                        {{ $client->entreprise }}
+                                        {{ $provider->entreprise }}
                                     </td>
                                     <td>
-                                        {{ $client->contact }}
+                                        {{ $provider->contact }}
                                     </td>
                                     <td>
-                                        {{ $client->telephone }}
+                                        {{ $provider->telephone }}
                                     </td>
                                     <td>
-                                        {{ $client->created_at->format('d/m/Y') }}
+                                        {{ $provider->created_at->format('d/m/Y') }}
                                     </td>
 
                                     <td>
 
                                         <div class="button-items">
 
-                                            <a href="{{ route('finance:sells:clients.edit', $client->uuid) }}"
+                                            <a href="{{ route('finance:sells:providers.edit', $provider->uuid) }}"
                                                 class="btn btn-primary btn-sm waves-light btn-label">
                                                 <i class="bx bx-edit-alt label-icon"></i>
                                                 Edit
                                             </a>
-                                            <a href="{{ route('finance:sells:clients.edit', $client->uuid) }}"
+                                            <a href="{{ route('finance:sells:providers.edit', $provider->uuid) }}"
                                                 class="btn btn-info btn-sm waves-light btn-label">
                                                 <i class="bx bxs-show label-icon"></i>
-                                               Afficher
+                                                Afficher
                                             </a>
                                         </div>
                                     </td>
@@ -89,13 +89,13 @@
 
                         </tbody>
                     </table>
-                    
+
                 </div>
-                {{ $clients->links() }}
+                {{ $providers->links() }}
             </div>
-            
+
         </div>
-       
+
     </div>
-   
+
 </div>

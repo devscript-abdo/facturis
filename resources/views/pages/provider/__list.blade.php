@@ -1,0 +1,1 @@
+@include('pages.provider.__normal_table')

@@ -15,6 +15,18 @@ class Provider extends Model
     use UuidGenerator;
     use GetModelByUuid;
 
+    protected $fillable = [
+        'uuid',
+        'entreprise',
+        'contact',
+        'telephone',
+        'email',
+        'addresse',
+        'rc',
+        'ice',
+        'description',
+    ];
+
     public function getEditAttribute()
     {
         return route('buy:providers.edit', $this->uuid);
@@ -44,7 +56,7 @@ class Provider extends Model
         static::creating(function ($model) use ($prefixer) {
             $number = (self::max('id') + 1);
 
-            $model->code = $prefixer.str_pad($number, 5, 0, STR_PAD_LEFT);
+            $model->code = $prefixer . str_pad($number, 5, 0, STR_PAD_LEFT);
         });
     }
 }
