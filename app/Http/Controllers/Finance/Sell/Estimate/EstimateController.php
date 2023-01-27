@@ -60,6 +60,16 @@ class EstimateController extends Controller
 
             $estimate->articles()->createMany($this->hasItems($request));
 
+            $totalPrice = $estimate->articles->sum('price_total');
+
+            $totalTaxes = $estimate->articles->sum('price_tax');
+
+            $totalHT = $estimate->articles->sum('price_ht');
+
+            $data = ['price_total' => $totalPrice, 'price_tax' => $totalTaxes, 'price_ht' => $totalHT];
+
+            $estimate->update($data);
+
             return redirect(route('finance:sells:estimates.edit', $estimate->uuid))->with('success', "Le devis a éte modifier avec success");
         }
 
@@ -112,6 +122,8 @@ class EstimateController extends Controller
         //$this->authorize('delete', $estimate);
 
         if ($estimate) {
+
+            $estimate->articles()->delete();
 
             $estimate->delete();
 

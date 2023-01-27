@@ -30,7 +30,7 @@ class Estimate extends Model
         'full_number',
         'price_ht',
         'price_total',
-        'price_tva',
+        'price_tax',
         'ht_price_remise',
         'status',
         'document_date',
@@ -45,7 +45,7 @@ class Estimate extends Model
 
     protected $with = [];
 
-    //protected $dates = ['due_date', 'estimate_date'];
+    //protected $dates = ['due_date', 'document_date'];
 
     protected $casts = [
         'is_send' => 'boolean',
@@ -102,7 +102,7 @@ class Estimate extends Model
 
     public function getFormatedTotalTvaAttribute(): string
     {
-        return number_format($this->price_tva, 2);
+        return number_format($this->price_tax, 2);
     }
 
     public function getFormatedTotalRemiseAttribute(): string
