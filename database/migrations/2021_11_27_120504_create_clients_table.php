@@ -17,7 +17,8 @@ class CreateClientsTable extends Migration
     {
         Schema::create('clients', function (Blueprint $table) {
             $table->id();
-            $table->uuid()->unique()->nullable();
+            $table->uuid()->unique();
+
             $table->foreignIdFor(Category::class)->index()->nullable()->constrained()->nullOnDelete();
             $table->string('code')->unique()->nullable();
 
@@ -25,16 +26,15 @@ class CreateClientsTable extends Migration
 
             $table->string('contact', 50)->nullable();
             $table->string('telephone', 50)->unique();
+            $table->string('fax', 50)->unique()->nullable();
             $table->string('email')->unique()->nullable();
-            $table->longText('addresse');
-
+            
             $table->string('rc', 20)->unique()->nullable();
             $table->string('ice', 40)->unique()->nullable();
             $table->string('logo')->nullable();
-            $table->longText('description')->nullable();
+            $table->longText('details')->nullable();
 
             $table->boolean('is_active')->default(true);
-
 
             $table->timestamps();
 

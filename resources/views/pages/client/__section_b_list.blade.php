@@ -80,7 +80,7 @@
                         <tr>
                             <td class="text-center">
                                 <a class="fw-semibold" href="be_pages_ecom_order.html">
-                                    <strong>CLT{{$client->code}}</strong>
+                                    <strong>{{$client->code}}</strong>
                                 </a>
                             </td>
                             <td class="d-none d-sm-table-cell text-center">{{$client->entreprise}}</td>
@@ -96,6 +96,9 @@
                             <td class="text-center fs-base">
                                 <a class="btn btn-sm btn-alt-secondary" href="be_pages_ecom_order.html">
                                     <i class="fa fa-fw fa-eye"></i>
+                                </a>
+                                <a class="btn btn-sm btn-alt-secondary" href="{{route('app:clients.edit',$client->uuid)}}">
+                                    <i class="far  fa-pen-to-square"></i>
                                 </a>
                                 <a class="btn btn-sm btn-alt-secondary" href="javascript:void(0)">
                                     <i class="fa fa-fw fa-times text-danger"></i>

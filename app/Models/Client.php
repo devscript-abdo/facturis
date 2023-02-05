@@ -6,6 +6,7 @@ use App\Models\Filters\ClientFilters;
 use App\Models\Finance\Bill;
 use App\Models\Finance\Invoice;
 use App\Models\Finance\InvoiceAvoir;
+use App\Models\Utilities\Address;
 use App\Models\Utilities\Email;
 use App\Models\Utilities\Telephone;
 use App\Traits\GetModelByUuid;
@@ -30,11 +31,11 @@ class Client extends Model implements HasMedia
         'entreprise',
         'contact',
         'telephone',
+        'fax',
         'email',
-        'addresse',
         'rc',
         'ice',
-        'description',
+        'details',
     ];
 
     public function telephones(): \Illuminate\Database\Eloquent\Relations\MorphMany
@@ -61,20 +62,20 @@ class Client extends Model implements HasMedia
     {
         return $this->hasManyThrough(Bill::class, Invoice::class, 'client_id', 'billable_id');
     }
-
-    public function getEditAttribute(): string
+    
+    public function addresses()
     {
-        return route('admin:client.edit', $this->uuid);
+        return $this->hasMany(Address::class);
     }
 
-    public function getUpdateAttribute(): string
+    public function invoiceAddress()
     {
-        return route('admin:client.update', $this->uuid);
+        return $this->hasOne(Address::class)->where('type', Address::INVOICE_TYPE);
     }
 
-    public function getUrlAttribute(): string
+    public function deliveryAddress()
     {
-        return route('admin:clients.show', $this->uuid);
+        return $this->hasOne(Address::class)->where('type', Address::DELIVERY_TYPE);
     }
 
     public function getFullDateAttribute(): string
@@ -98,7 +99,7 @@ class Client extends Model implements HasMedia
     {
         parent::boot();
 
-        $prefixer = config('app-config.clients.prefix');
+        $prefixer = config('facturis.clients.prefix');
 
         static::creating(function ($model) use ($prefixer) {
             $number = (self::max('id') + 1);

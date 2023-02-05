@@ -28,13 +28,25 @@ class ClientStoreRequest extends FormRequest
         return [
 
             'entreprise' => 'required|string',
-            'contact' => 'required|string',
+            'contact' => 'nullable|string',
             'telephone' => 'required|phone:MA|unique:clients',
-            'email' => 'required|email|unique:clients',
-            'addresse' => 'required|string',
+            'fax' => 'nullable|phone:MA|unique:clients',
+            'email' => 'nullable|email|unique:clients',
+
             'rc' => 'nullable|numeric|unique:clients',
             'ice' => 'required|numeric|digits_between:15,16|unique:clients',
-            'description'=>'nullable|string',
+            'details' => 'nullable|string',
+            'devis' => ['required', 'integer', 'exists:currencies,id'],
+
+            'facturation_address' => ['nullable', 'string'],
+            'facturation_postal' => ['nullable', 'numeric'],
+            'facturation_city' => ['nullable', 'string'],
+            'facturation_country' => ['nullable', 'string'],
+
+            'livraison_address' => ['nullable', 'string'],
+            'livraison_postal' => ['nullable', 'numeric'],
+            'livraison_city' => ['nullable', 'string'],
+            'livraison_country' => ['nullable', 'string'],
         ];
     }
 }

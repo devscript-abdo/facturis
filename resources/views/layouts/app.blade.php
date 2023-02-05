@@ -24,6 +24,15 @@
     <link rel="stylesheet" id="css-main" href="{{ asset('assets/css/app.min.css') }}?ver={{ rand(2, 250) }}">
 
     @livewireStyles
+    <style>
+        div.sticky {
+            position: -webkit-sticky;
+            position: sticky;
+            top: 0;
+            z-index: 2147483638;
+            margin-top: 5px
+        }
+    </style>
 
 </head>
 
@@ -32,8 +41,8 @@
 
     <div id="page-container"
         @unless(request()->routeIs('admin:auth:login'))
-        class="sidebar-o sidebar-dark enable-page-overlay side-scroll page-header-fixed main-content-narrow"
-    @endunless>
+           class="sidebar-o sidebar-dark enable-page-overlay side-scroll page-header-fixed main-content-narrow"
+         @endunless>
 
         @unless(request()->routeIs('admin:auth:login'))
             @include('layouts.sidebar.__aside')

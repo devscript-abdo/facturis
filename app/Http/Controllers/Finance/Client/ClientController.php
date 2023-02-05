@@ -18,7 +18,7 @@ class ClientController extends Controller
 
     public function index()
     {
-        $clients = Client::simplePaginate(10);
+        $clients = Client::all();
 
         return view('pages.client.index', compact('clients'));
     }
@@ -36,16 +36,42 @@ class ClientController extends Controller
 
         $client = Client::create($data);
 
-        return redirect(route('finance:sells:clients.edit', $client->uuid))->with('success', "L'ajoute a éte effectuer avec success");
+        if ($client) {
+
+            if ($request->has('facturation_address') && $request->filled('facturation_address')) {
+                $addressData = [
+                    'address' => $request->facturation_address,
+                    'postal' => $request->facturation_postal,
+                    'city' => $request->facturation_city,
+                    'country' => $request->facturation_country,
+                    'type' => 'invoice'
+                ];
+                $client->invoiceAddress()->create($addressData);
+            }
+            if ($request->has('livraison_address') && $request->filled('livraison_address')) {
+                $addressData = [
+                    'address' => $request->livraison_address,
+                    'postal' => $request->livraison_postal,
+                    'city' => $request->livraison_city,
+                    'country' => $request->livraison_country,
+                    'type' => 'delivery'
+                ];
+                $client->deliveryAddress()->create($addressData);
+            }
+        }
+
+        return redirect(route('app:clients.edit', $client->uuid))->with('success', "L'ajoute a éte effectuer avec success");
     }
 
     public function edit(Client $client)
     {
         //$this->authorize('update', $client);
 
-        $client->load('telephones', 'emails');
+        $devis = Currency::select(['id', 'name'])->get();
 
-        return view('pages.client.edit.index', compact('client'));
+        $client->load('invoiceAddress', 'deliveryAddress');
+
+        return view('pages.client.edit.index', compact('client', 'devis'));
     }
 
     public function update(ClientUpdateRequest $request, Client $client)
@@ -54,7 +80,31 @@ class ClientController extends Controller
 
         $client->update($data);
 
-        return redirect(route('finance:sells:clients.edit', $client->uuid))->with('success', "L' Update a éte effectuer avec success");
+        if ($client) {
+
+            if ($request->has('facturation_address') && $request->filled('facturation_address')) {
+                $addressData = [
+                    'address' => $request->facturation_address,
+                    'postal' => $request->facturation_postal,
+                    'city' => $request->facturation_city,
+                    'country' => $request->facturation_country,
+                    'type' => 'invoice'
+                ];
+                $client->invoiceAddress()->updateOrCreate(['client_id' => $client->id, 'type' => 'invoice'], $addressData);
+            }
+            if ($request->has('livraison_address') && $request->filled('livraison_address')) {
+                $addressData = [
+                    'address' => $request->livraison_address,
+                    'postal' => $request->livraison_postal,
+                    'city' => $request->livraison_city,
+                    'country' => $request->livraison_country,
+                    'type' => 'delivery'
+                ];
+                $client->deliveryAddress()->updateOrCreate(['client_id' => $client->id, 'type' => 'delivery'], $addressData);
+            }
+        }
+
+        return redirect(route('app:clients.edit', $client->uuid))->with('success', "L' Update a éte effectuer avec success");
     }
 
     public function delete(ClientDeleteRequest $request)

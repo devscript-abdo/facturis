@@ -1,4 +1,4 @@
-<form action="{{ route('app:clients.store') }}" method="post">
+<form action="{{ route('app:clients.update', $client->uuid) }}" method="post">
 
     <div class="block">
         <div class="sticky block-options block-header block-header-default">
@@ -23,7 +23,7 @@
                                 <label class="form-label" for="entreprise">Raison sociale <span
                                         class="text-danger">*</span></label>
                                 <input type="text" class="form-control @error('entreprise') is-invalid @enderror"
-                                    id="entreprise" name="entreprise" value="{{old('entreprise')}}">
+                                    id="entreprise" name="entreprise" value="{{ $client->entreprise }}" required>
                                 @error('entreprise')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
@@ -33,7 +33,7 @@
                             <div class="mb-4 col-12">
                                 <label class="form-label" for="entreprise">R.C</label>
                                 <input type="text" class="form-control @error('rc') is-invalid @enderror"
-                                    id="rc" name="rc" value="{{old('rc')}}">
+                                    id="rc" name="rc" value="{{ $client->rc }}">
                                 @error('rc')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
@@ -44,7 +44,7 @@
                                 <label class="form-label" for="ice">I.C.E <span
                                         class="text-danger">*</span></label>
                                 <input type="text" class="form-control @error('ice') is-invalid @enderror"
-                                    id="ice" name="ice" value="{{old('ice')}}">
+                                    id="ice" name="ice" value="{{ $client->ice }}" required>
                                 @error('ice')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
@@ -57,7 +57,7 @@
                                 <select class="form-select @error('devis') is-invalid @enderror" id="devis"
                                     name="devis">
                                     @foreach ($devis as $item)
-                                        <option value="{{$item->id}}">{{ $item->name }}</option>
+                                        <option value="{{ $item->id }}">{{ $item->name }}</option>
                                     @endforeach
 
                                 </select>
@@ -69,7 +69,7 @@
                             </div>
                             <div class="mb-4 col-12">
                                 <label class="form-label" for="details">Remarques</label>
-                                <textarea class="form-control @error('details') is-invalid  @enderror" id="details" name="details" rows="3">{{old('details')}}</textarea>
+                                <textarea class="form-control @error('details') is-invalid  @enderror" id="details" name="details" rows="3">{{ $client->details }}</textarea>
                                 <div class="form-text">Visible on blog post list as a small description of the post.
                                 </div>
                                 @error('details')
@@ -89,7 +89,7 @@
                                         <i class="far fa-at"></i>
                                     </span>
                                     <input type="text" class="form-control @error('email') is-invalid @enderror"
-                                        id="email" name="email" value="{{old('email')}}">
+                                        id="email" name="email" value="{{ $client->email }}">
                                     @error('email')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
@@ -105,7 +105,7 @@
                                         <i class="fa fa-phone"></i>
                                     </span>
                                     <input type="text" class="form-control @error('telephone') is-invalid @enderror"
-                                        id="telephone" name="telephone" value="{{old('telephone')}}">
+                                        id="telephone" name="telephone" value="{{ $client->telephone }}" required>
                                     @error('telephone')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
@@ -120,7 +120,7 @@
                                         <i class="fa fa-fax"></i>
                                     </span>
                                     <input type="text" class="form-control @error('fax') is-invalid @enderror"
-                                        id="fax" name="fax" value="{{old('fax')}}">
+                                        id="fax" name="fax" value="{{ $client->fax }}">
                                     @error('fax')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
@@ -135,7 +135,7 @@
                                         <i class="fa fa-globe"></i>
                                     </span>
                                     <input type="text" class="form-control @error('website') is-invalid @enderror"
-                                        id="website" name="website" value="{{old('website')}}">
+                                        id="website" name="website" value="{{ $client->website }}">
                                     @error('website')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
@@ -154,7 +154,7 @@
                             <div class="mb-4 col-12">
                                 <label class="form-label" for="facturation_address">Adresse</label>
                                 <textarea class="form-control @error('facturation_address') is-invalid @enderror" id="facturation_address"
-                                    name="facturation_address" rows="2">{{old('facturation_address')}}</textarea>
+                                    name="facturation_address" rows="2">{{ $client->invoiceAddress?->address }}</textarea>
                                 @error('facturation_address')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
@@ -165,7 +165,8 @@
                                 <label class="form-label" for="facturation_postal">Code postal</label>
                                 <input type="text"
                                     class="form-control @error('facturation_postal') is-invalid @enderror"
-                                    id="facturation_postal" name="facturation_postal" value="{{old('facturation_postal')}}">
+                                    id="facturation_postal" name="facturation_postal"
+                                    value="{{ $client->invoiceAddress?->postal }}">
                                 @error('facturation_postal')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
@@ -176,7 +177,8 @@
                                 <label class="form-label" for="facturation_city">Ville</label>
                                 <input type="text"
                                     class="form-control @error('facturation_city') is-invalid @enderror"
-                                    id="facturation_city" name="facturation_city" value="{{old('facturation_city')}}">
+                                    id="facturation_city" name="facturation_city"
+                                    value="{{ $client->invoiceAddress?->city }}">
                                 @error('facturation_city')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
@@ -201,7 +203,7 @@
                             <div class="mb-4 col-12">
                                 <label class="form-label" for="livraison_address">Adresse</label>
                                 <textarea class="form-control @error('livraison_address') is-invalid @enderror" id="livraison_address"
-                                    name="livraison_address" rows="2">{{old('livraison_address')}}</textarea>
+                                    name="livraison_address" rows="2">{{ $client->deliveryAddress?->address }}</textarea>
                                 @error('livraison_address')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
@@ -211,7 +213,8 @@
                             <div class="mb-4 col-12">
                                 <label class="form-label" for="livraison_postal">Code postal</label>
                                 <input type="text" class="form-control @error('livraison_postal') @enderror"
-                                    id="livraison_postal" name="livraison_postal" value="{{old('livraison_postal')}}">
+                                    id="livraison_postal" name="livraison_postal"
+                                    value="{{ $client->deliveryAddress?->postal }}">
                                 @error('livraison_postal')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
@@ -221,7 +224,7 @@
                             <div class="mb-4 col-12">
                                 <label class="form-label" for="livraison_city">Ville</label>
                                 <input type="text" class="form-control @error('livraison_city') @enderror"
-                                    id="livraison_city" name="livraison_city" value="{{old('livraison_city')}}">
+                                    id="livraison_city" name="livraison_city" value="{{ $client->deliveryAddress?->city }}">
                                 @error('livraison_city')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>

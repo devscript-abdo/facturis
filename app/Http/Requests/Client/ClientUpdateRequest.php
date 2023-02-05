@@ -29,13 +29,25 @@ class ClientUpdateRequest extends FormRequest
         return [
 
             'entreprise' => 'required|string',
-            'contact' => 'required|string',
+
             'telephone' => ['required', 'phone:MA', Rule::unique('clients')->ignore($this->route('client'), 'uuid')],
-            'email' => ['required', 'email', Rule::unique('clients')->ignore($this->route('client'), 'uuid')],
-            'addresse' => 'required|string',
+            'fax' => ['nullable', 'phone:MA', Rule::unique('clients')->ignore($this->route('client'), 'uuid')],
+            'email' => ['nullable', 'email', Rule::unique('clients')->ignore($this->route('client'), 'uuid')],
+
             'rc' => ['nullable', 'numeric', Rule::unique('clients')->ignore($this->route('client'), 'uuid')],
             'ice' => ['required', 'numeric', 'digits_between:14,16', Rule::unique('clients')->ignore($this->route('client'), 'uuid')],
-            'description' => 'nullable|string',
+            'details' => 'nullable|string',
+            'devis' => ['required', 'integer', 'exists:currencies,id'],
+
+            'facturation_address' => ['nullable', 'string'],
+            'facturation_postal' => ['nullable', 'numeric'],
+            'facturation_city' => ['nullable', 'string'],
+            'facturation_country' => ['nullable', 'string'],
+
+            'livraison_address' => ['nullable', 'string'],
+            'livraison_postal' => ['nullable', 'numeric'],
+            'livraison_city' => ['nullable', 'string'],
+            'livraison_country' => ['nullable', 'string'],
         ];
     }
 }
