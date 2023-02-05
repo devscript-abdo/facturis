@@ -77,7 +77,7 @@
                 </thead>
                 <tbody>
                     @foreach ($clients as $client)
-                        <tr>
+                        <tr {{$client->uuid}}>
                             <td class="text-center">
                                 <a class="fw-semibold" href="be_pages_ecom_order.html">
                                     <strong>{{$client->code}}</strong>
