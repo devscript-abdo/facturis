@@ -8,7 +8,7 @@
                     F<span class="opacity-75">F</span>
                 </span>
                 <span class="smini-hidden">
-                    Facturis<span class="opacity-75">mix</span>
+                    Facturis<span class="opacity-75"> app</span>
                 </span>
             </a>
 
