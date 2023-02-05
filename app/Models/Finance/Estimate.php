@@ -73,7 +73,7 @@ class Estimate extends Model
     {
         return $this->morphMany(Article::class, 'articleable')->orderBy('created_at', 'ASC');
     }
-
+    
     public function histories(): \Illuminate\Database\Eloquent\Relations\MorphMany
     {
         return $this->morphMany(History::class, 'historyable')->orderBy('created_at', 'ASC');
@@ -117,30 +117,6 @@ class Estimate extends Model
         return number_format($this->ht_price_remise, 2);
     }
 
-    public function getUrlAttribute(): string
-    {
-        return route('commercial:estimates.single', $this->uuid);
-    }
-
-    public function getEditUrlAttribute(): string
-    {
-        return route('commercial:estimates.edit', $this->uuid);
-    }
-
-    public function getUpdateUrlAttribute(): string
-    {
-        return route('commercial:estimates.update', $this->uuid);
-    }
-
-    public function getCreateInvoiceUrlAttribute(): string
-    {
-        return route('commercial:estimates.create.invoice', $this->uuid);
-    }
-
-    public function getPdfUrlAttribute(): string
-    {
-        return route('public.show.estimate', ['estimate' => $this->uuid]);
-    }
 
     public function getIsPublishedAttribute(): bool
     {
@@ -153,4 +129,5 @@ class Estimate extends Model
 
         return $date->translatedFormat('d') . ' ' . $date->translatedFormat('F') . ' ' . $date->translatedFormat('Y');
     }
+
 }

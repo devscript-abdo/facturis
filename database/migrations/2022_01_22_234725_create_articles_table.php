@@ -16,7 +16,7 @@ class CreateArticlesTable extends Migration
         Schema::create('articles', function (Blueprint $table) {
             $table->id();
             $table->uuid()->unique();
-            
+
             $table->string('code')->nullable();
 
             $table->bigInteger('articleable_id');
@@ -30,7 +30,9 @@ class CreateArticlesTable extends Migration
             $table->unsignedBigInteger('price_ht')->default(0);
             $table->unsignedBigInteger('price_tax')->default(0);
             $table->unsignedBigInteger('price_total')->default(0);
-           
+            $table->unsignedBigInteger('taxe_id')->nullable();
+            $table->string('taux_tax', 40)->nullable();
+
             $table->timestamps();
             $table->softDeletes();
         });

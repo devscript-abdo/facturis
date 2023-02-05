@@ -5,6 +5,7 @@ use App\Http\Controllers\Finance\Client\ClientController;
 use App\Http\Controllers\Finance\Sell\Bl\BlController;
 use App\Http\Controllers\Finance\Sell\Estimate\EstimateController;
 use App\Http\Controllers\Finance\Sell\Invoice\InvoiceController;
+use App\Http\Livewire\Article\Show;
 use Illuminate\Support\Facades\Route;
 
 Route::group(['prefix' => 'sells'], function () {
@@ -62,3 +63,5 @@ Route::group(['prefix' => 'buys'], function () {
         });
     });
 });
+
+Route::get('/articles', Show::class);

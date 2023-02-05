@@ -5,79 +5,60 @@
 <head>
 
     <meta charset="utf-8" />
-    <title> {{ getCompany()->name ?? 'Facturis' }}</title>
+    <title> {{ getCompany()->name ?? 'Facturis' }} - FACTURIS</title>
     <meta name="robots" content="noindex, nofollow" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta content="app_creator" name="Elmarzougui Abdelghafour" />
-    <meta content="app_version" name="v 1.1" />
+    <meta content="app_version" name="1.1" />
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
     <link rel="shortcut icon" href="{{ asset('images/logo-app.png') }}">
-    <link href="{{ asset('assets/libs/magnific-popup/magnific-popup.css') }}" rel="stylesheet" type="text/css" />
+    <link rel="shortcut icon" href="{{ asset('assets/media/favicons/favicon.png') }}">
+    <link rel="icon" type="image/png" sizes="192x192"
+        href="{{ asset('assets/media/favicons/favicon-192x192.png') }}">
+    <link rel="apple-touch-icon" sizes="180x180"
+        href="{{ asset('assets/media/favicons/apple-touch-icon-180x180.png') }}">
+
     @yield('css')
 
-    <link href="{{ asset('css/app.css') }}?ver={{ rand(2, 250) }}" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" id="css-main" href="{{ asset('assets/css/app.min.css') }}?ver={{ rand(2, 250) }}">
 
     @livewireStyles
 
-    <style>
-        .zIndexer {
-            z-index: 7;
-        }
-    </style>
-
 </head>
 
-<body data-sidebar="dark" data-sidebar-size="small">
+<body>
 
 
-    {{-- @include('layouts._parts.__loader') --}}
+    <div id="page-container"
+        @unless(request()->routeIs('admin:auth:login'))
+        class="sidebar-o sidebar-dark enable-page-overlay side-scroll page-header-fixed main-content-narrow"
+    @endunless>
 
-    <!-- <body data-layout="horizontal" data-topbar="dark"> -->
+        @unless(request()->routeIs('admin:auth:login'))
+            @include('layouts.sidebar.__aside')
+            @include('layouts.sidebar.__sidebar')
+            @include('layouts._parts.__header')
+        @endunless
 
-    <div id="layout-wrapper">
+        <main id="main-container">
 
-        @include('layouts._parts.__header')
+            @yield('content')
 
-        @include('layouts.sidebar.__compact')
-
-        <div class="main-content">
-
-            <div class="page-content">
-
-                <div id="overlayy"></div>
-
-                @yield('content')
-
-            </div>
-
-            {{-- @include('layouts._parts._subscribe') --}}
-
-
-            @include('layouts._parts._footer')
-
-        </div>
-
+        </main>
+        @include('layouts._parts.__footer')
 
     </div>
 
-
-    {{-- @include('layouts._parts._rightSidebar') --}}
-
-
-    @include('layouts._parts._overly')
-
     @livewireScripts
 
-    <script src="{{ asset('js/app.js') }}"></script>
+    <script src="{{ asset('assets/js/lib/jquery.min.js') }}"></script>
+
+    <script src="{{ asset('assets/js/facturis.app.min.js') }}"></script>
+
 
     @stack('scripts')
 
-    @stack('reloadModal')
-
-    <script src="{{ asset('assets/libs/magnific-popup/jquery.magnific-popup.min.js') }}"></script>
-
-    <script src="{{ asset('js/pages/lightbox.init.js') }}"></script>
 </body>
 
 </html>

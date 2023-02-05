@@ -1,136 +1,89 @@
-<!doctype html>
-<html lang="en">
+@extends('layouts.app')
 
-<head>
+@section('content')
+    <div class="bg-image" style="background-image: url('{{ asset('assets/media/photos/photo22@2x.jpg') }}');">
+        <div class="row g-0 bg-primary-op">
 
-    <meta charset="utf-8" />
-    <title>Login | Facturis</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="robots" content="noindex, nofollow" />
-    <link rel="shortcut icon" href="{{ asset('images/logo.png') }}">
-    <meta content="app_creator" name="Elmarzougui Abdelghafour" />
-    <meta content="app_version" name="v 1.1" />
-    <meta name="csrf-token" content="{{ csrf_token() }}">
+            <div class="hero-static col-md-6 d-flex align-items-center bg-body-extra-light">
+                <div class="p-3 w-100">
 
-    <link href="{{ asset('css/app.css') }}" rel="stylesheet" type="text/css" />
+                    <div class="mb-3 text-center">
+                        <a class="fw-bold fs-1" href="https://facturis.ma" target="_blank">
+                            <span class="text-dark">FACTURIS</span><span class="text-primary">app</span>
+                        </a>
+                        <p class="text-uppercase fw-bold fs-sm text-muted">Se connecter</p>
+                    </div>
 
-</head>
 
-<body>
-    <div class="account-pages my-5 pt-sm-5">
-        <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-md-8 col-lg-6 col-xl-5">
-                    <div class="card overflow-hidden">
-                        <div class="bg-primary bg-soft">
-                            <div class="row">
-                                <div class="col-7">
-                                    <div class="text-primary p-4">
-                                        <h5 class="text-primary">Se connecter</h5>
-
-                                    </div>
-                                </div>
-                                <div class="col-5 align-self-end">
-                                    <img src="{{ asset('assets/images/profile-img.png') }}" alt=""
-                                        class="img-fluid">
-                                </div>
-                            </div>
-                        </div>
-                        <div class="card-body pt-0">
-                            <div class="auth-logo">
-                                <a href="{{ route('home') }}" class="auth-logo-light">
-                                    <div class="avatar-md profile-user-wid mb-4">
-                                        <span class="avatar-title rounded-circle bg-light">
-                                            <img src="{{ asset('images/logo-app.png') }}" alt=""
-                                                class="rounded-circle" height="70">
-                                        </span>
-                                    </div>
-                                </a>
-
-                                <a href="{{ route('home') }}" class="auth-logo-dark">
-                                    <div class="avatar-md profile-user-wid mb-4">
-                                        <span class="avatar-title rounded-circle bg-light">
-                                            <img src="{{ asset('images/logo-app.png') }}" alt=""
-                                                class="rounded-circle" height="70">
-                                        </span>
-                                    </div>
-                                </a>
-                            </div>
-                            <div class="p-2">
-
-                                @include('layouts._parts.__messages')
-
-                                <form class="form-horizontal" action="{{ route('facturis:auth:loginPost') }}"
-                                    method="post">
-                                    @csrf
-                                    @honeypot
-                                    <div class="mb-3">
-                                        <label for="email" class="form-label">Email</label>
-                                        <input type="email" name="email"
-                                            class="form-control  @error('email') is-invalid @enderror" id="email"
-                                            placeholder="Enter email" value="{{ old('email') }}">
-
+                    <div class="row g-0 justify-content-center">
+                        <div class="col-sm-8 col-xl-6">
+                            <form action="{{ route('admin:auth:loginPost') }}" method="post">
+                                @csrf
+                                @honeypot
+                                <div class="py-3">
+                                    <div class="mb-4">
+                                        <input type="email"
+                                            class="form-control form-control-lg form-control-alt @error('email') is-invalid @enderror"
+                                            id="email" name="email" placeholder="E-mail">
                                         @error('email')
                                             <span class="invalid-feedback" role="alert">
                                                 <strong>{{ $message }}</strong>
                                             </span>
                                         @enderror
-
                                     </div>
-                                    <div class="mb-3">
-                                        <label class="form-label">Mot de password</label>
-                                        <div class="input-group auth-pass-inputgroup">
-                                            <input type="password" name="password"
-                                                class="form-control @error('password') is-invalid @enderror"
-                                                placeholder="Enter password" value="" aria-label="Password"
-                                                aria-describedby="password-addon">
-                                            <button class="btn btn-light " type="button" id="password-addon"><i
-                                                    class="mdi mdi-eye-outline"></i></button>
-                                            @error('password')
-                                                <span class="invalid-feedback" role="alert">
-                                                    <strong>{{ $message }}</strong>
-                                                </span>
-                                            @enderror
-
-                                        </div>
+                                    <div class="mb-4">
+                                        <input type="password"
+                                            class="form-control form-control-lg form-control-alt @error('password') is-invalid @enderror"
+                                            id="password" name="password" placeholder="Mot de pass">
+                                        @error('password')
+                                            <span class="invalid-feedback" role="alert">
+                                                <strong>{{ $message }}</strong>
+                                            </span>
+                                        @enderror
                                     </div>
-
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" name="remember"
+                                    <div class="mb-4">
+                                        <input class="form-check-input form-control-alt" type="checkbox" name="remember"
                                             id="remember-check" {{ old('remember') ? 'checked' : '' }}>
                                         <label class="form-check-label" for="remember-check">
                                             Se souvenir de moi
                                         </label>
                                     </div>
-
-                                    <div class="mt-3 d-grid">
-                                        <button class="btn btn-primary waves-effect waves-light" type="submit">Se
-                                            connecter
-                                        </button>
-                                    </div>
-
-                                    @if (Route::has('forgotpassword'))
-                                        <div class="mt-4 text-center">
-                                            <a href="{{ route('forgotpassword') }}" class="text-muted">
-                                                <i class="mdi mdi-lock me-1"></i>
-                                                Mot de passe oublié ?
+                                </div>
+                                <div class="mb-4">
+                                    <button type="submit" class="btn w-100 btn-lg btn-hero btn-primary">
+                                        <i class="fa fa-fw fa-sign-in-alt opacity-50 me-1"></i> Sign In
+                                    </button>
+                                    <p class="mt-3 mb-0 d-lg-flex justify-content-lg-between">
+                                        @if (Route::has('admin:auth:forgotpassword'))
+                                            <a class="btn btn-sm btn-alt-secondary d-block d-lg-inline-block mb-1"
+                                                href="{{ route('admin:auth:forgotpassword') }}">
+                                                <i class="fa fa-exclamation-triangle opacity-50 me-1"></i> Mot de passe
+                                                oublié ?
                                             </a>
-                                        </div>
-                                    @endif
-                                </form>
-                            </div>
-
+                                        @endif
+                                        <a class="btn btn-sm btn-alt-secondary d-block d-lg-inline-block mb-1"
+                                            href="#">
+                                            <i class="fa fa-plus opacity-50 me-1"></i> New Account
+                                        </a>
+                                    </p>
+                                </div>
+                            </form>
                         </div>
                     </div>
+                </div>
+            </div>
 
-                    @include('auth.footer')
-
+            <div
+                class="hero-static col-md-6 d-none d-md-flex align-items-md-center justify-content-md-center text-md-center">
+                <div class="p-3">
+                    <p class="display-4 fw-bold text-white mb-3">
+                        Welcome to FACTURIS
+                    </p>
+                    <p class="fs-lg fw-semibold text-white-75 mb-0">
+                        Copyright &copy; <span data-toggle="year-copy"></span>
+                    </p>
                 </div>
             </div>
         </div>
     </div>
-
-    <script src="{{ asset('js/app.js') }}"></script>
-</body>
-
-</html>
+@endsection

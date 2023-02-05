@@ -21,7 +21,7 @@ class AuthController extends Controller
 
     public function loginForm()
     {
-        return view('auth.login.index2');
+        return view('auth.login.index');
     }
 
     /**

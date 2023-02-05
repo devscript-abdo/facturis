@@ -26,6 +26,8 @@ class ArticleStoreRequest extends FormRequest
     public function rules()
     {
         return [
+            'due_date' => ['required', 'date', 'date_format:Y-m-d'],
+            /*************** */
             'articles' => ['required','array'],
             'articles.*.designation' => ['required', 'string'],
             'articles.*.description' => ['nullable', 'string'],

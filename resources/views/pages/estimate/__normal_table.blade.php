@@ -73,6 +73,7 @@
                                     </td>
                                     <td>
                                         {{ $estimate->formated_price_total }} DH
+                                        
                                     </td>
                                     <td>
                                         {{ $estimate->due_date?->format('d-m-Y') }}

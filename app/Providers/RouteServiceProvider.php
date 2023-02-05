@@ -77,7 +77,7 @@ class RouteServiceProvider extends ServiceProvider
     {
         Route::middleware(['web', 'auth'])
             ->prefix('app/console/finance')
-            ->name('finance:sells:')
+            ->name('app:')
             ->namespace($this->namespace)
             ->group(base_path('routes/app_core.php'));
     }

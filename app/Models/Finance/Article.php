@@ -3,9 +3,11 @@
 namespace App\Models\Finance;
 
 use App\Models\Catalog\Product;
+use App\Models\Utilities\Tax;
 use App\Traits\UuidGenerator;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Article extends Model
@@ -28,7 +30,9 @@ class Article extends Model
         'remise_fix',
         'remise',
         'taux_remise',
+        'taux_tax',
         'product_id',
+        'taxe_id'
     ];
 
     protected $casts = [
@@ -46,6 +50,11 @@ class Article extends Model
     public function product(): \Illuminate\Database\Eloquent\Relations\BelongsTo
     {
         return $this->belongsTo(Product::class);
+    }
+
+    public function taxe(): \Illuminate\Database\Eloquent\Relations\BelongsTo
+    {
+        return $this->BelongsTo(Tax::class, 'taxe_id');
     }
 
     public function getFormatedMontantHtAttribute(): string
