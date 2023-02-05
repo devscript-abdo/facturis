@@ -37,7 +37,7 @@
         <div class="content-side">
             <ul class="nav-main">
                 <li class="nav-main-item">
-                    <a class="nav-main-link active" href="{{ route('admin:home') }}">
+                    <a class="nav-main-link {{request()->routeIs('admin:home') ?'active':''}}" href="{{ route('admin:home') }}">
                         <i class="nav-main-link-icon far fa-2x fa-square"></i>
                         <span class="nav-main-link-name">Tableau de bord</span>
                         <span class="nav-main-link-badge badge rounded-pill bg-primary">8</span>
@@ -45,7 +45,7 @@
                 </li>
                 <li class="nav-main-heading">VENTES</li>
                 <li class="nav-main-item">
-                    <a class="nav-main-link active" href="{{ route('app:clients') }}">
+                    <a class="nav-main-link {{request()->routeIs('app:clients') ?'active':''}}" href="{{ route('app:clients') }}">
                         <i class="nav-main-link-icon far fa-2x fa-address-book"></i>
                         <span class="nav-main-link-name">Clients</span>
                     </a>
