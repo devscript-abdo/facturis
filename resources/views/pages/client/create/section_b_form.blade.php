@@ -45,12 +45,6 @@
                                 <div class="form-text">Visible on blog post list as a small description of the post.
                                 </div>
                             </div>
-                            <div class="row mb-4">
-                                <div class="col-xl-12">
-                                    <label class="form-label" for="dm-post-add-image">Featured Image</label>
-                                    <input class="form-control" type="file" id="dm-post-add-image">
-                                </div>
-                            </div>
                         </div>
 
                         <div class="col-md-5">
@@ -96,10 +90,53 @@
                 </div>
                 <div class="col-md-10">
                     <div class="row justify-content-center push">
+
                         <div class="col-md-5">
+                            <h2 class="content-heading">Adresse de facturation</h2>
                             <div class="mb-4 col-12">
-                                <label class="form-label" for="entreprise">Raison sociale</label>
-                                <input type="text" class="form-control" id="entreprise" name="entreprise">
+                                <label class="form-label" for="facturation_address">Adresse</label>
+                                <textarea class="form-control" id="facturation_address" name="facturation_address" rows="2"></textarea>
+
+                            </div>
+                            <div class="mb-4 col-12">
+                                <label class="form-label" for="facturation_postal">Code postal</label>
+                                <input type="text" class="form-control" id="facturation_postal"
+                                    name="facturation_postal">
+                            </div>
+                            <div class="mb-4 col-12">
+                                <label class="form-label" for="facturation_city">Ville</label>
+                                <input type="text" class="form-control" id="facturation_city"
+                                    name="facturation_city">
+                            </div>
+                            <div class="mb-4 col-12">
+                                <label class="form-label" for="facturation_country">Pays</label>
+                                <select class="form-select" id="facturation_country" name="facturation_country">
+                                    <option value="maroc">maroc</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-md-5">
+                            <h2 class="content-heading">Adresse de livraison</h2>
+                            <div class="mb-4 col-12">
+                                <label class="form-label" for="livraison_address">Adresse</label>
+                                <textarea class="form-control" id="livraison_address" name="livraison_address" rows="2"></textarea>
+
+                            </div>
+                            <div class="mb-4 col-12">
+                                <label class="form-label" for="livraison_postal">Code postal</label>
+                                <input type="text" class="form-control" id="livraison_postal"
+                                    name="livraison_postal">
+                            </div>
+                            <div class="mb-4 col-12">
+                                <label class="form-label" for="livraison_city">Ville</label>
+                                <input type="text" class="form-control" id="livraison_city"
+                                    name="livraison_city">
+                            </div>
+                            <div class="mb-4 col-12">
+                                <label class="form-label" for="livraison_country">Pays</label>
+                                <select class="form-select" id="livraison_country" name="livraison_country">
+                                    <option value="maroc">maroc</option>
+                                </select>
                             </div>
                         </div>
                     </div>
