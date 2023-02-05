@@ -33,6 +33,7 @@ class Client extends Model implements HasMedia
         'telephone',
         'fax',
         'email',
+        'website',
         'rc',
         'ice',
         'details',

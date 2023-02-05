@@ -32,7 +32,8 @@ class ClientStoreRequest extends FormRequest
             'telephone' => 'required|phone:MA|unique:clients',
             'fax' => 'nullable|phone:MA|unique:clients',
             'email' => 'nullable|email|unique:clients',
-
+            'website' => 'nullable|email|unique:clients',
+            
             'rc' => 'nullable|numeric|unique:clients',
             'ice' => 'required|numeric|digits_between:15,16|unique:clients',
             'details' => 'nullable|string',

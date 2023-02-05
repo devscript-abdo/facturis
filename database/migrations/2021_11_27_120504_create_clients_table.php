@@ -28,7 +28,8 @@ class CreateClientsTable extends Migration
             $table->string('telephone', 50)->unique();
             $table->string('fax', 50)->unique()->nullable();
             $table->string('email')->unique()->nullable();
-            
+            $table->string('website')->unique()->nullable();
+
             $table->string('rc', 20)->unique()->nullable();
             $table->string('ice', 40)->unique()->nullable();
             $table->string('logo')->nullable();
