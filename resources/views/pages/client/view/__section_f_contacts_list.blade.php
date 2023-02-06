@@ -1,6 +1,7 @@
 @php
     $condition = $client->contacts()->exists() && $client->contacts->count() == 3;
 @endphp
+
 <div class="block block-rounded">
     <div class="block-header block-header-default">
         <h3 class="block-title">Contacts ({{ $client->contacts->count() }})</h3>

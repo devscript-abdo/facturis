@@ -8,7 +8,7 @@
                 </a>
                 <h1 class="fw-bold my-2 text-white">Edit Account</h1>
                 <h2 class="h4 fw-bold text-white-75">
-                    George Taylor
+                   {{$user->full_name}}
                 </h2>
                 <a class="btn btn-secondary" href="be_pages_generic_profile.html">
                     <i class="fa fa-fw fa-arrow-left opacity-50"></i> Back to Profile

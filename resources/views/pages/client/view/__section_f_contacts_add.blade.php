@@ -31,9 +31,9 @@
                                                         <i class="fa  fa-circle-info"></i>
                                                     </span>
                                                     <input type="text"
-                                                        class="form-control @error('nom') is-invalid @enderror"
+                                                        class="form-control @error('nom', 'contact') is-invalid @enderror"
                                                         id="nom" name="nom" value="{{ old('nom') }}">
-                                                    @error('nom')
+                                                    @error('nom', 'contact')
                                                         <span class="invalid-feedback" role="alert">
                                                             <strong>{{ $message }}</strong>
                                                         </span>
@@ -49,9 +49,9 @@
                                                         <i class="fa  fa-circle-info"></i>
                                                     </span>
                                                     <input type="text"
-                                                        class="form-control @error('prenom') is-invalid @enderror"
+                                                        class="form-control @error('prenom', 'contact') is-invalid @enderror"
                                                         id="prenom" name="prenom" value="{{ old('prenom') }}">
-                                                    @error('prenom')
+                                                    @error('prenom', 'contact')
                                                         <span class="invalid-feedback" role="alert">
                                                             <strong>{{ $message }}</strong>
                                                         </span>
@@ -66,9 +66,9 @@
                                                     <i class="far fa-at"></i>
                                                 </span>
                                                 <input type="text"
-                                                    class="form-control @error('email') is-invalid @enderror"
+                                                    class="form-control @error('email', 'contact') is-invalid @enderror"
                                                     id="email" name="email" value="{{ old('email') }}">
-                                                @error('email')
+                                                @error('email', 'contact')
                                                     <span class="invalid-feedback" role="alert">
                                                         <strong>{{ $message }}</strong>
                                                     </span>
@@ -83,10 +83,10 @@
                                                     <i class="fa fa-phone"></i>
                                                 </span>
                                                 <input type="text"
-                                                    class="form-control @error('telephone') is-invalid @enderror"
+                                                    class="form-control @error('telephone', 'contact') is-invalid @enderror"
                                                     id="telephone" name="telephone" value="{{ old('telephone') }}"
                                                     required>
-                                                @error('telephone')
+                                                @error('telephone', 'contact')
                                                     <span class="invalid-feedback" role="alert">
                                                         <strong>{{ $message }}</strong>
                                                     </span>
@@ -96,8 +96,8 @@
                                         <div class="mb-4 col-12">
 
                                             <div class="form-check form-switch form-check-inline">
-                                                <input class="form-check-input" type="checkbox"
-                                                    id="is_default" name="is_default">
+                                                <input class="form-check-input" type="checkbox" id="is_default"
+                                                    name="is_default">
                                                 <label class="form-check-label" for="is_default">CONTACT
                                                     PRINCIPAL </label>
 

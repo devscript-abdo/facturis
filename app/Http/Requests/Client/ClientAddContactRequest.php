@@ -9,6 +9,8 @@ use Illuminate\Validation\Rule;
 
 class ClientAddContactRequest extends FormRequest
 {
+
+    protected $errorBag = 'contact';
     /**
      * Determine if the user is authorized to make this request.
      *
