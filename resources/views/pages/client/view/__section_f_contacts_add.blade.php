@@ -4,15 +4,18 @@
         <div class="modal-content">
             <div class="modal-header">
                 <h5 class="modal-title">Ajouter un contact</h5>
-                <button type="submit" class="btn btn-alt-primary">
+                <button type="button" class="btn btn-alt-primary"
+                    onclick="document.getElementById('add_contact_form').submit();">
                     <i class="far fa-1x fa-floppy-disk opacity-50 me-1"></i> Enregistrer
                 </button>
             </div>
             <div class="modal-body pb-1">
-                <form action="{{ route('app:clients.update', $client->uuid) }}" method="post">
+                <form action="{{ route('app:clients.addcontact', $client->uuid) }}" method="post"
+                    id="add_contact_form">
 
                     @csrf
                     @honeypot
+                    @method('PUT')
                     <div class="block-content">
 
                         <div class="row justify-content-center push">
@@ -93,9 +96,9 @@
                                         <div class="mb-4 col-12">
 
                                             <div class="form-check form-switch form-check-inline">
-                                                <input class="form-check-input" type="checkbox" value=""
-                                                    id="example-switch-inline1" name="example-switch-inline1">
-                                                <label class="form-check-label" for="example-switch-inline1">CONTACT
+                                                <input class="form-check-input" type="checkbox"
+                                                    id="is_default" name="is_default">
+                                                <label class="form-check-label" for="is_default">CONTACT
                                                     PRINCIPAL </label>
 
                                             </div>

@@ -5,10 +5,13 @@ declare(strict_types=1);
 namespace App\Http\Controllers\Finance\Client;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\Client\ClientAddContactRequest;
+use App\Http\Requests\Client\ClientDeleteContactRequest;
 use App\Http\Requests\Client\ClientDeleteRequest;
 use App\Http\Requests\Client\ClientStoreRequest;
 use App\Http\Requests\Client\ClientUpdateRequest;
 use App\Models\Client;
+use App\Models\Contact;
 use App\Models\Utilities\Currency;
 use Illuminate\Http\Request;
 
@@ -109,11 +112,39 @@ class ClientController extends Controller
 
     public function view(Client $client)
     {
-        $client->load('invoiceAddress','deliveryAddress');
+        $client->load('invoiceAddress', 'deliveryAddress', 'contacts');
 
         return view('pages.client.view.index', compact('client'));
     }
 
+    public function addContact(ClientAddContactRequest $request, Client $client)
+    {
+        $contact = new Contact();
+        $contact->nom = $request->nom;
+        $contact->prenom = $request->prenom;
+        $contact->email = $request->email;
+        $contact->telephone = $request->telephone;
+        $contact->is_default = $request->boolean('is_default');
+        $contact->client()->associate($client);
+        $contact->save();
+
+        return redirect(route('app:clients.view', $client->uuid))->with('success', "Le contact éte ajouter avec success");
+    }
+
+    public function deleteContact(ClientDeleteContactRequest $request, Client $client)
+    {
+
+        $contact = Contact::whereUuid($request->contactId)->firstOrFail();
+
+        if ($client && $contact && $contact->client()->is($client)) {
+
+            $contact->delete();
+
+            return redirect(route('app:clients.view', $client->uuid))->with('success', "Le contact été supprimer avec success");
+        }
+        return redirect()->back()->with('error', 'Problem ... !!');
+
+    }
     public function delete(ClientDeleteRequest $request)
     {
 
@@ -123,6 +154,8 @@ class ClientController extends Controller
 
         if ($client) {
 
+            $client->contacts()->delete();
+            
             $client->delete();
 
             return redirect(route('app:clients'))->with('success', 'Le client a été supprimer avec success');

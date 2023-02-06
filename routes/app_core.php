@@ -48,6 +48,8 @@ Route::group(['prefix' => 'sells'], function () {
 
         Route::group(['prefix' => 'view'], function () {
             Route::get('/{client}', [ClientController::class, 'view'])->name('clients.view');
+            Route::put('/{client}', [ClientController::class, 'addContact'])->name('clients.addcontact');
+            Route::delete('/{client}', [ClientController::class, 'deleteContact'])->name('clients.deletecontact');
         });
     });
 });

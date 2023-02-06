@@ -13,9 +13,8 @@
         </a>
     </div>
     <div class="col-6">
-        <a class="block block-rounded block-link-shadow text-center h-100 mb-0" 
-        onclick="document.getElementById('deleteThisClent').submit();"
-        href="javascript:void(0)">
+        <a class="block block-rounded block-link-shadow text-center h-100 mb-0"
+            onclick="document.getElementById('deleteThisClent').submit();" href="javascript:void(0)">
             <div class="block-content py-5">
                 <div class="fs-3 fw-semibold text-danger mb-1">
                     <i class="fa fa-times"></i>

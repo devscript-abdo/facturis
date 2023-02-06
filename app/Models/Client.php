@@ -39,6 +39,12 @@ class Client extends Model implements HasMedia
         'details',
     ];
 
+
+    public function contacts(): \Illuminate\Database\Eloquent\Relations\HasMany
+    {
+        return $this->hasMany(Contact::class);
+    }
+    
     public function telephones(): \Illuminate\Database\Eloquent\Relations\MorphMany
     {
         return $this->morphMany(Telephone::class, 'telephoneable');

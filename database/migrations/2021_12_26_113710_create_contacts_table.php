@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\Client;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
@@ -16,16 +17,14 @@ class CreateContactsTable extends Migration
         Schema::create('contacts', function (Blueprint $table) {
             $table->id();
             $table->uuid('uuid')->unique()->nullable();
-            $table->string('code')->unique();
-
+            $table->foreignIdFor(Client::class)->constrained()->cascadeOnDelete();
             $table->string('nom', 50);
             $table->string('prenom', 50);
             $table->string('email')->unique()->nullable();
             $table->string('telephone')->unique()->nullable();
-            $table->string('city');
-            $table->longText('addresse');
-
+            
             $table->boolean('active')->default(true);
+            $table->boolean('is_default')->default(false);
 
             $table->timestamps();
             $table->softDeletes();
