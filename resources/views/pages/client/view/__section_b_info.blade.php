@@ -16,12 +16,12 @@
     <div class="block-content bg-body-light text-center">
         <div class="row items-push text-uppercase">
             <div class="col-6 col-md-3">
-                <div class="fw-semibold text-dark mb-1">Orders</div>
+                <div class="fw-semibold text-dark mb-1">Total factures</div>
                 <a class="link-fx fs-3" href="javascript:void(0)">5</a>
             </div>
             <div class="col-6 col-md-3">
-                <div class="fw-semibold text-dark mb-1">Orders Value</div>
-                <a class="link-fx fs-3" href="javascript:void(0)">$5.680,00</a>
+                <div class="fw-semibold text-dark mb-1">Chiffre d'affaire</div>
+                <a class="link-fx fs-3" href="javascript:void(0)">5.680,00 MAD</a>
             </div>
             <div class="col-6 col-md-3">
                 <div class="fw-semibold text-dark mb-1">Cart</div>

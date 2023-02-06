@@ -1,6 +1,9 @@
 <div class="block block-rounded">
     <div class="block-header block-header-default">
-        <h3 class="block-title">Referred Members (3)</h3>
+        <h3 class="block-title">Contacts (3)</h3>
+        <button type="submit" class="btn btn-alt-primary">
+            <i class="far fa-1x fa-plus opacity-50 me-1"></i> Ajouter un contact
+        </button>
     </div>
     <div class="block-content">
         <div class="row items-push">

@@ -1,6 +1,6 @@
 <div class="block block-rounded">
     <div class="block-header block-header-default">
-        <h3 class="block-title">Shopping Cart (4)</h3>
+        <h3 class="block-title">Factures récentes (4)</h3>
     </div>
     <div class="block-content">
         <div class="table-responsive">

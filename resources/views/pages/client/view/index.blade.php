@@ -11,5 +11,8 @@
         @include('pages.client.view.__section_f_contacts')
         @include('pages.client.view.__section_g_notes')
 
+
+        @include('pages.client.view.__section_f_contacts_add')
+
     </div>
 @endsection

@@ -109,7 +109,7 @@ class ClientController extends Controller
 
     public function view(Client $client)
     {
-        $client->load('addresses');
+        $client->load('invoiceAddress','deliveryAddress');
 
         return view('pages.client.view.index', compact('client'));
     }

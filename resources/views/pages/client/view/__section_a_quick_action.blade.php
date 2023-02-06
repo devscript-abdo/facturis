@@ -1,3 +1,11 @@
+<div class="sticky block-options block-header block-header-default mb-2">
+    <div class="dropdown">
+        <a class="btn btn-alt-secondary" href="{{ route('app:clients') }}">
+            <i class="fa fa-arrow-left me-1"></i> Retour
+        </a>
+
+    </div>
+</div>
 <div class="row items-push">
     <div class="col-6">
         <a class="block block-rounded block-link-shadow text-center h-100 mb-0"

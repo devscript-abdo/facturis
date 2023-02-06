@@ -1,6 +1,6 @@
 <div class="block block-rounded">
     <div class="block-header block-header-default">
-        <h3 class="block-title">Private Notes</h3>
+        <h3 class="block-title">Details</h3>
     </div>
     <div class="block-content">
         <p class="alert alert-info fs-sm">
@@ -13,7 +13,7 @@
                     placeholder="Maybe a special request?"></textarea>
             </div>
             <div class="mb-4">
-                <button type="submit" class="btn btn-alt-primary">Add Note</button>
+                <button type="submit" class="btn btn-alt-primary">Ajouter</button>
             </div>
         </form>
     </div>
