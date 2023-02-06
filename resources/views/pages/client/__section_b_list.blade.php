@@ -98,7 +98,7 @@
                                     <i class="fa fa-fw fa-eye"></i>
                                 </a>
                                 <a class="btn btn-sm btn-alt-secondary" href="{{route('app:clients.edit',$client->uuid)}}">
-                                    <i class="far  fa-pen-to-square"></i>
+                                    <i class="fa fa-fw fa-pencil-alt text-primary"></i>
                                 </a>
                                 <a class="btn btn-sm btn-alt-secondary" href="javascript:void(0)">
                                     <i class="fa fa-fw fa-times text-danger"></i>
