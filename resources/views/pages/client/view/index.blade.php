@@ -20,3 +20,13 @@
 
     </div>
 @endsection
+
+@push('scripts')
+    @if (count($errors->contact))
+        <script>
+            $(document).ready(function() {
+                $("#add_contact").modal('show');
+            });
+        </script>
+    @endif
+@endpush
