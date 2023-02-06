@@ -1,7 +1,7 @@
 <div class="block block-rounded">
     <div class="block-header block-header-default">
         <h3 class="block-title">Contacts (3)</h3>
-        <button type="submit" class="btn btn-alt-primary">
+        <button type="submit" class="btn btn-alt-primary" data-bs-toggle="modal" data-bs-target="#add_contact">
             <i class="far fa-1x fa-plus opacity-50 me-1"></i> Ajouter un contact
         </button>
     </div>
