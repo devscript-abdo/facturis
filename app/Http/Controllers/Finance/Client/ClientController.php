@@ -18,7 +18,7 @@ class ClientController extends Controller
 
     public function index()
     {
-        $clients = Client::all();
+        $clients = Client::latest()->get();
 
         return view('pages.client.index', compact('clients'));
     }
@@ -107,6 +107,13 @@ class ClientController extends Controller
         return redirect(route('app:clients.edit', $client->uuid))->with('success', "L' Update a éte effectuer avec success");
     }
 
+    public function view(Client $client)
+    {
+        $client->load('addresses');
+
+        return view('pages.client.view.index', compact('client'));
+    }
+
     public function delete(ClientDeleteRequest $request)
     {
 
@@ -118,7 +125,7 @@ class ClientController extends Controller
 
             $client->delete();
 
-            return redirect(route('finance:sells:clients'))->with('success', 'Le client a été supprimer avec success');
+            return redirect(route('app:clients'))->with('success', 'Le client a été supprimer avec success');
         }
 
         return redirect()->back()->with('success', 'Problem ... !!');

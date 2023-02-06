@@ -6,7 +6,7 @@
         </h3>
         <div class="block-options">
             <div class="dropdown">
-                <a href="{{route('app:clients.create')}}" class="btn btn-alt-primary">
+                <a href="{{ route('app:clients.create') }}" class="btn btn-alt-primary">
                     <i class="fa fa-fw fa-plus me-1"></i>
                     Nouveau client
                 </a>
@@ -77,27 +77,29 @@
                 </thead>
                 <tbody>
                     @foreach ($clients as $client)
-                        <tr {{$client->uuid}}>
+                        <tr {{ $client->uuid }}>
                             <td class="text-center">
                                 <a class="fw-semibold" href="be_pages_ecom_order.html">
-                                    <strong>{{$client->code}}</strong>
+                                    <strong>{{ $client->code }}</strong>
                                 </a>
                             </td>
-                            <td class="d-none d-sm-table-cell text-center">{{$client->entreprise}}</td>
+                            <td class="d-none d-sm-table-cell text-center">{{ $client->entreprise }}</td>
                             <td class="d-none d-sm-table-cell text-center">
-                               {{$client->contact}}
+                                {{ $client->contact }}
                             </td>
                             <td class="d-none d-xl-table-cell">
-                                <a class="fw-semibold" href="#">{{$client->telephone}}</a>
+                                <a class="fw-semibold" href="#">{{ $client->telephone }}</a>
                             </td>
                             <td class="d-none d-xl-table-cell text-center">
-                                {{$client->created_at->format('d-m-Y - H:i')}}
+                                {{ $client->created_at->format('d-m-Y - H:i') }}
                             </td>
                             <td class="text-center fs-base">
-                                <a class="btn btn-sm btn-alt-secondary" href="be_pages_ecom_order.html">
+                                <a class="btn btn-sm btn-alt-secondary"
+                                    href="{{ route('app:clients.view', $client->uuid) }}">
                                     <i class="fa fa-fw fa-eye"></i>
                                 </a>
-                                <a class="btn btn-sm btn-alt-secondary" href="{{route('app:clients.edit',$client->uuid)}}">
+                                <a class="btn btn-sm btn-alt-secondary"
+                                    href="{{ route('app:clients.edit', $client->uuid) }}">
                                     <i class="fa fa-fw fa-pencil-alt text-primary"></i>
                                 </a>
                                 <a class="btn btn-sm btn-alt-secondary" href="javascript:void(0)">
@@ -109,10 +111,9 @@
                 </tbody>
             </table>
         </div>
-        <!-- END All Orders Table -->
 
-        <!-- Pagination -->
+
         @include('pages.client.__pagination')
-        <!-- END Pagination -->
+
     </div>
 </div>
