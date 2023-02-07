@@ -3,7 +3,7 @@
     <div class="block">
         <div class="sticky block-options block-header block-header-default">
             <div class="dropdown">
-                <a class="btn btn-alt-secondary" href="{{ route('app:clients') }}">
+                <a class="btn btn-alt-secondary" href="{{ URL::previous() }}">
                     <i class="fa fa-arrow-left me-1"></i> Retour
                 </a>
                 <button type="submit" class="btn btn-alt-primary">
@@ -224,7 +224,8 @@
                             <div class="mb-4 col-12">
                                 <label class="form-label" for="livraison_city">Ville</label>
                                 <input type="text" class="form-control @error('livraison_city') @enderror"
-                                    id="livraison_city" name="livraison_city" value="{{ $client->deliveryAddress?->city }}">
+                                    id="livraison_city" name="livraison_city"
+                                    value="{{ $client->deliveryAddress?->city }}">
                                 @error('livraison_city')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
