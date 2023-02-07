@@ -30,3 +30,8 @@
         </script>
     @endif
 @endpush
+
+@include('layouts._helpers.__sweetaltert', [
+    'deleteBtn' => 'deleteClient',
+    'deleteForm' => 'deleteThisClent',
+])
