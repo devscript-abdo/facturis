@@ -1,1 +1,0 @@
-@include('pages.estimate.__normal_table')

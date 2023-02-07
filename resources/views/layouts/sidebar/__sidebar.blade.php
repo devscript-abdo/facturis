@@ -50,6 +50,12 @@
                         <span class="nav-main-link-name">Clients</span>
                     </a>
                 </li>
+                <li class="nav-main-item">
+                    <a class="nav-main-link {{request()->routeIs('app:estimates') ?'active':''}}" href="{{ route('app:estimates') }}">
+                        <i class="nav-main-link-icon far fa-2x fa-rectangle-list"></i>
+                        <span class="nav-main-link-name">Devis</span>
+                    </a>
+                </li>
 
             </ul>
         </div>
