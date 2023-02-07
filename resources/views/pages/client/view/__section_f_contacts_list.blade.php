@@ -45,10 +45,16 @@
                                 <strong>{{ $contact->created_at->format('d-m-Y -H:i') }}</strong>
                             </td>
                             <td class="text-center fs-sm">
-                                <a class="btn btn-sm btn-alt-secondary" href="#"
-                                    onclick="document.getElementById('delete_contact_{{ $contact->uuid }}').submit();">
+                                <button class="btn btn-sm btn-alt-secondary"
+                                    onclick="
+                                                var result = confirm('Are you sure you want to delete this contact ?');
+
+                                                if(result){
+                                                    event.preventDefault();
+                                                    document.getElementById('delete_contact_{{ $contact->uuid }}').submit();
+                                                }">
                                     <i class="fa fa-fw fa-times text-danger"></i>
-                                </a>
+                                </button>
                             </td>
                         </tr>
                         <form action="{{ route('app:clients.deletecontact', $client->uuid) }}" method="post"
