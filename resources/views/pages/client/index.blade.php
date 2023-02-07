@@ -3,7 +3,7 @@
 @section('content')
     <div class="content">
 
-        @include('pages.client.__section_a_status')
+        {{--@include('pages.client.__section_a_status')--}}
 
         @include('layouts._parts.__messages')
         

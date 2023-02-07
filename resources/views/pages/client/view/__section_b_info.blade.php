@@ -2,15 +2,26 @@
     <div class="block-content text-center">
         <div class="py-4">
             <div class="mb-3">
-                <img class="img-avatar img-avatar96" src="{{asset('assets/media/avatars/avatar15.jpg')}}" alt="">
+                <img class="img-avatar img-avatar96" src="{{ asset('assets/media/avatars/avatar15.jpg') }}" alt="">
             </div>
             <h1 class="fs-lg mb-0">
-                {{$client->entreprise}}
+                {{ $client->entreprise }}
             </h1>
             <p class="text-muted">
                 <i class="fa fa-award text-warning me-1"></i>
                 Premium Customer
             </p>
+        </div>
+    </div>
+    <div class="col-lg-12">
+        <div class="block  block-bordered">
+            <div class="block-header border-bottom">
+                <h3 class="block-title">Informations :</h3>
+            </div>
+            <div class="block-content text-muted font-size-sm">
+                <p>R.C : {{ $client->rc }}</p>
+                <p>I.C.E : {{ $client->ice }}</p>
+            </div>
         </div>
     </div>
     <div class="block-content bg-body-light text-center">
