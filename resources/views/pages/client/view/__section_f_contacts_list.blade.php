@@ -57,7 +57,7 @@
                             @csrf
                             @honeypot
                             @method('DELETE')
-                            <input type="hidden"  name="clientId" value="{{ $client->uuid }}">
+                            <input type="hidden" name="clientId" value="{{ $client->uuid }}">
                             <input type="hidden" name="contactId" value="{{ $contact->uuid }}">
                         </form>
                     @endforeach
