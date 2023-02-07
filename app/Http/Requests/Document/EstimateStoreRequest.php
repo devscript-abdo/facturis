@@ -28,7 +28,14 @@ class EstimateStoreRequest extends FormRequest
         return [
 
             'client' => ['required', 'integer', 'exists:clients,id'],
-            'document_date' => ['required', 'date', 'date_format:Y-m-d'],
+            'document_date' => ['required', 'date', 'date_format:d/m/Y'],
+        ];
+    }
+
+    public function attributes()
+    {
+        return [
+            'document_date' => 'date de devis',
         ];
     }
 }

@@ -19,8 +19,8 @@
     <link rel="apple-touch-icon" sizes="180x180"
         href="{{ asset('assets/media/favicons/apple-touch-icon-180x180.png') }}">
 
-    @yield('css')
 
+    @stack('css')
     <link rel="stylesheet" id="css-main" href="{{ asset('assets/css/app.min.css') }}?ver={{ rand(2, 250) }}">
 
     @livewireStyles

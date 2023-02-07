@@ -4,15 +4,17 @@
             <i class="nav-main-link-icon far fa-1x fa-rectangle-list"></i>
             Liste des devis
         </h3>
+
+        <button type="button" class="btn btn-alt-primary" data-bs-toggle="modal" data-bs-target="#add_estimate_modal">
+            <i class="far fa-1x fa-plus opacity-50 me-1"></i>Nouveau devis
+        </button>
     </div>
     <div class="block-content block-content-full">
         <!-- DataTables init on table by adding .js-dataTable-buttons class, functionality is initialized in js/pages/be_tables_datatables.min.js which was auto compiled from _js/pages/be_tables_datatables.js -->
         <table class="table table-bordered table-striped table-vcenter js-dataTable-buttons">
             <thead>
                 <tr>
-                    <th class="text-center" style="width: 80px;">#</th>
                     <th> RÉFÉRENCE</th>
-                   
                     <th class="d-none d-sm-table-cell" style="width: 30%;">Client</th>
                     <th class="d-none d-sm-table-cell" style="width: 15%;">Date de devis</th>
                     <th style="width: 15%;">Montant HT</th>
@@ -23,21 +25,37 @@
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                    <td class="text-center">1</td>
-                    <td class="fw-semibold">
-                        <a href="be_pages_generic_blank.html">Ryan Flores</a>
-                    </td>
-                    <td class="d-none d-sm-table-cell">
-                        client1<em class="text-muted">@example.com</em>
-                    </td>
-                    <td class="d-none d-sm-table-cell">
-                        <span class="badge bg-info">Business</span>
-                    </td>
-                    <td>
-                        <em class="text-muted">5 days ago</em>
-                    </td>
-                </tr>
+                @forelse ($estimates as $estimate)
+                    <tr>
+                        <td class="fw-semibold">
+                            <a href="be_pages_generic_blank.html">{{ $estimate->full_number }}</a>
+                        </td>
+                        <td class="d-none d-sm-table-cell">
+                            {{ $estimate->client?->entreprise }}<em class="text-muted">@example.com</em>
+                        </td>
+                        <td class="d-none d-sm-table-cell">
+                            {{ $estimate->document_date?->format('d-m-Y') }}
+                        </td>
+                        <td class="d-none d-sm-table-cell">
+                            {{ $estimate->formated_price_ht }}
+                        </td>
+                        <td class="d-none d-sm-table-cell">
+                            {{ $estimate->formated_total_tax }}
+                        </td>
+                        <td class="d-none d-sm-table-cell">
+                            {{ $estimate->formated_price_total }}
+                        </td>
+                        <td class="d-none d-sm-table-cell">
+                            {{ $estimate->due_date?->format('d-m-Y') }}
+                        </td>
+                        <td class="d-none d-sm-table-cell">
+                           
+                        </td>
+                    </tr>
+                @empty
+                    <p>No Data</p>
+                @endforelse
+
             </tbody>
         </table>
     </div>

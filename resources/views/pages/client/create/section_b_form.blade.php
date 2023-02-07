@@ -57,7 +57,7 @@
                                 <select class="form-select @error('devis') is-invalid @enderror" id="devis"
                                     name="devis">
                                     @foreach ($devis as $item)
-                                        <option value="{{$item->id}}">{{ $item->name }}</option>
+                                        <option value="{{$item->id}}" @selected(old('devis') == $item->id)>{{ $item->name }}</option>
                                     @endforeach
 
                                 </select>
