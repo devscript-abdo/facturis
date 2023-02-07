@@ -10,13 +10,14 @@
         //Warning Message
         $('#{{$deleteBtn}}').click(function() {
             Swal.fire({
-                title: "Est-ce que vous êtes sûr ?",
-                text: "vous ne pouvez pas annuler la suppression de ce client!",
+                title: "Confirmer la suppression",
+                text: "Êtes-vous sûr de vouloir supprimer cet élément ?",
                 icon: "warning",
                 showCancelButton: true,
-                confirmButtonColor: "#34c38f",
-                cancelButtonColor: "#f46a6a",
-                confirmButtonText: "Oui, supprimer le!"
+                confirmButtonColor: "#ee2d41",
+                cancelButtonColor: "#e4e6ef",
+                confirmButtonText: "Oui, supprimer !",
+                cancelButtonText : "Non, annuler !"
             }).then(function(result) {
                 if (result.value) {
                     setTimeout(function() {
