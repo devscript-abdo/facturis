@@ -10,8 +10,7 @@
         </button>
     </div>
     <div class="block-content block-content-full">
-        <!-- DataTables init on table by adding .js-dataTable-buttons class, functionality is initialized in js/pages/be_tables_datatables.min.js which was auto compiled from _js/pages/be_tables_datatables.js -->
-        <table class="table table-bordered table-striped table-vcenter js-dataTable-buttons">
+        <table class="table table-bordered table-striped table-vcenter js-dataTable-responsive {{--js-dataTable-buttons--}}">
             <thead>
                 <tr>
                     <th> RÉFÉRENCE</th>
@@ -37,19 +36,19 @@
                             {{ $estimate->document_date?->format('d-m-Y') }}
                         </td>
                         <td class="d-none d-sm-table-cell">
-                            {{ $estimate->formated_price_ht }}
+                            {{ $estimate->formated_price_ht }}500
                         </td>
                         <td class="d-none d-sm-table-cell">
-                            {{ $estimate->formated_total_tax }}
+                            {{ $estimate->formated_total_tax }}500
                         </td>
                         <td class="d-none d-sm-table-cell">
-                            {{ $estimate->formated_price_total }}
+                            {{ $estimate->formated_price_total }}540
                         </td>
                         <td class="d-none d-sm-table-cell">
-                            {{ $estimate->due_date?->format('d-m-Y') }}
+                            {{ $estimate->due_date?->format('d-m-Y') }} nh
                         </td>
                         <td class="d-none d-sm-table-cell">
-                           
+                           ggrr
                         </td>
                     </tr>
                 @empty

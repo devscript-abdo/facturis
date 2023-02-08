@@ -33,3 +33,10 @@ if (!function_exists('isAdmin')) {
         return auth()->check() && auth()->user()->hasRole('SuperAdmin') ? true : false;
     }
 }
+
+if (!function_exists('removeCommaFromNumbers')) {
+    function removeCommaFromNumbers($number)
+    {
+        return (gettype($number) == 'string' && !empty($number)) ? str_replace(',', '', $number) : $number;
+    }
+}
