@@ -743,6 +743,7 @@ export default class Helpers {
       el.addClass('js-select2-enabled').select2({
         placeholder: el.data('placeholder') || false,
         dropdownParent: document.querySelector(el.data('container') || '#page-container'),
+        tags: true
       });
     });
   }

@@ -61,9 +61,9 @@
                                                 class="text-danger">*</span></label>
                                         <select style="width: 100%;"
                                             class="js-select2 form-select @error('client') is-invalid @enderror"
-                                            id="client" name="client" data-container="#add_estimate_modal"
-                                            data-placeholder="..." required>
-                                            <option></option>
+                                            id="clientSelectBox" name="client" 
+                                            data-container="#add_estimate_modal"   required>
+                                            
                                             @foreach ($clients as $client)
                                                 <option value="{{ $client->id }}" @selected(old('client') == $client->id)>
                                                     {{ $client->entreprise }}</option>

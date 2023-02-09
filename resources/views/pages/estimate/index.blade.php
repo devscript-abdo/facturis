@@ -15,7 +15,6 @@
         <script>
             Facturis.helpersOnLoad(['js-flatpickr', 'jq-select2']);
         </script>
-
         @if (count($errors))
             <script>
                 $(document).ready(function() {

@@ -4,5 +4,6 @@
 @once
     @push('scripts')
         <script src="{{ asset('assets/js/plugins/select2/js/select2.full.min.js') }}"></script>
+
     @endpush
 @endonce
