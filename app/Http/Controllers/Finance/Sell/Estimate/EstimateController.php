@@ -10,6 +10,7 @@ use App\Http\Requests\Document\EstimateDeleteRequest;
 use App\Http\Requests\Document\EstimateStoreRequest;
 use App\Models\Client;
 use App\Models\Finance\Estimate;
+use App\Models\Utilities\Currency;
 use App\Models\Utilities\PaymentMethod;
 use App\Models\Utilities\Tax;
 use Illuminate\Http\Request;
@@ -41,19 +42,21 @@ class EstimateController extends Controller
 
         $estimate->client()->associate($data['client'])->save();
 
-        return redirect(route('finance:sells:estimates.edit', $estimate->uuid))->with('success', "Le devis a éte crée avec success");
+        return redirect(route('app:estimates.edit', $estimate->uuid))->with('success', "Le devis a éte crée avec success");
     }
 
     public function edit(Estimate $estimate)
     {
 
         $payments = PaymentMethod::select(['id', 'name'])->get();
+        
+        $devis = Currency::select(['id', 'name'])->get();
 
         $taxes = Tax::select(['id', 'taux_percent'])->get();
 
         $estimate->load('articles');
 
-        return view('pages.estimate.edit.index', compact('estimate', 'payments', 'taxes'));
+        return view('pages.estimate.create.index', compact('estimate', 'payments', 'taxes', 'devis'));
     }
 
     public function update(ArticleStoreRequest $request, Estimate $estimate)

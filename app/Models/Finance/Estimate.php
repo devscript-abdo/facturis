@@ -50,9 +50,14 @@ class Estimate extends Model
     protected $casts = [
         'is_send' => 'boolean',
         'due_date' => 'date',
-        'document_date' => 'date',
+        'document_date' => 'date:d/m/Y',
         'has_header' => 'boolean',
     ];
+
+    public function setDocumentDateAttribute($value)
+    {
+        $this->attributes['document_date'] = Carbon::createFromFormat('d/m/Y', $value)->format('Y-m-d');
+    }
 
     public function payment(): \Illuminate\Database\Eloquent\Relations\BelongsTo
     {
@@ -73,7 +78,7 @@ class Estimate extends Model
     {
         return $this->morphMany(Article::class, 'articleable')->orderBy('created_at', 'ASC');
     }
-    
+
     public function histories(): \Illuminate\Database\Eloquent\Relations\MorphMany
     {
         return $this->morphMany(History::class, 'historyable')->orderBy('created_at', 'ASC');
@@ -129,5 +134,4 @@ class Estimate extends Model
 
         return $date->translatedFormat('d') . ' ' . $date->translatedFormat('F') . ' ' . $date->translatedFormat('Y');
     }
-
 }

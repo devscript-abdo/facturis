@@ -40,3 +40,17 @@ if (!function_exists('removeCommaFromNumbers')) {
         return (gettype($number) == 'string' && !empty($number)) ? str_replace(',', '', $number) : $number;
     }
 }
+
+
+/**
+ * Helper to only return digits, extract commas, etc.
+ * @param string|null $text
+ * @return float
+ */
+if (!function_exists('onlyNumbers')) {
+    function onlyNumbers(?string $text): float
+    {
+        if (!$text) return 0.0;
+        return (float)preg_replace("/[^0-9.-]/", '', $text);
+    }
+}

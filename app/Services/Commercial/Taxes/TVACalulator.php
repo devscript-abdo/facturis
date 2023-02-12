@@ -19,12 +19,10 @@ trait TVACalulator
     {
         $taxRate = str_replace('%', '', $taxRate);
 
-        $tax = $ht_price * $taxRate / 100;
+        $tax = $ht_price * ($taxRate / 100);
 
         $total = $ht_price + $tax;
-
-        //$calculatedTaxRate = (($total - $ht_price) / $ht_price) * 100;
-
+        
         return $total;
     }
 
@@ -32,16 +30,8 @@ trait TVACalulator
     {
         $taxRate = str_replace('%', '', $taxRate);
 
-        $tax = $ht_price * $taxRate / 100;
+        $tax = $ht_price * ($taxRate / 100);
 
-        $total = $ht_price + $tax;
-
-        $calculatedTaxRate = (($total - $ht_price) / $ht_price) * 100;
-
-        $finalTaxe = ($calculatedTaxRate * 100) / 10;
-        //dd($taxRate,$tax,$total,round($finalTaxe));
-        //return round($finalTaxe);
-        //return round($tax);
         return $tax;
     }
 }
