@@ -4,8 +4,6 @@
         <div class="modal-content">
             <div class="modal-header">
                 <h5 class="modal-title">Ajouter nouveau devis</h5>
-
-
             </div>
             <div class="modal-body pb-1">
                 <form action="{{ route('app:estimates.store') }}" method="post" id="add_estimate_form">

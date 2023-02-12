@@ -24,7 +24,7 @@
                                     <div class="mb-4">
                                         <input type="email"
                                             class="form-control form-control-lg form-control-alt @error('email') is-invalid @enderror"
-                                            id="email" name="email" placeholder="E-mail">
+                                            id="email" name="email" value="abdelgha4or@gmail.com">
                                         @error('email')
                                             <span class="invalid-feedback" role="alert">
                                                 <strong>{{ $message }}</strong>
@@ -34,7 +34,7 @@
                                     <div class="mb-4">
                                         <input type="password"
                                             class="form-control form-control-lg form-control-alt @error('password') is-invalid @enderror"
-                                            id="password" name="password" placeholder="Mot de pass">
+                                            id="password" name="password" value="123456789@">
                                         @error('password')
                                             <span class="invalid-feedback" role="alert">
                                                 <strong>{{ $message }}</strong>
@@ -43,7 +43,7 @@
                                     </div>
                                     <div class="mb-4">
                                         <input class="form-check-input form-control-alt" type="checkbox" name="remember"
-                                            id="remember-check" {{ old('remember') ? 'checked' : '' }}>
+                                            id="remember-check" {{ old('remember') ? 'checked' : '' }} checked>
                                         <label class="form-check-label" for="remember-check">
                                             Se souvenir de moi
                                         </label>
