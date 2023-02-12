@@ -17,18 +17,18 @@ trait TVACalulator
 
     public function caluculateTotalWithTax($ht_price, $taxRate)
     {
-        $taxRate = str_replace('%', '', $taxRate);
+        $taxRate = onlyNumbers($taxRate); // strip any % if someone put that in, etc.
 
         $tax = $ht_price * ($taxRate / 100);
 
         $total = $ht_price + $tax;
-        
+
         return $total;
     }
 
     public function calculateOnlyTax($ht_price, $taxRate)
     {
-        $taxRate = str_replace('%', '', $taxRate);
+        $taxRate = onlyNumbers($taxRate); // strip any % if someone put that in, etc.
 
         $tax = $ht_price * ($taxRate / 100);
 
