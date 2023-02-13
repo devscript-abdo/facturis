@@ -28,7 +28,7 @@ class EstimateStoreRequest extends FormRequest
         return [
 
             'client' => ['required', 'integer', 'exists:clients,id'],
-            'document_date' => ['required', 'date', 'date_format:d/m/Y'],
+            'document_date' => ['required', 'date_format:d/m/Y'],
         ];
     }
 

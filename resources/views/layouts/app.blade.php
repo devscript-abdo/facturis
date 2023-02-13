@@ -40,7 +40,7 @@
 
     <div id="page-container"
         @unless(request()->routeIs('admin:auth:login'))
-           class="sidebar-o sidebar-dark enable-page-overlay side-scroll page-header-fixed {{-- main-content-narrow --}}"
+           class="sidebar-o sidebar-dark enable-page-overlay side-scroll page-header-fixed  main-content-narrow"
          @endunless>
 
         @unless(request()->routeIs('admin:auth:login'))

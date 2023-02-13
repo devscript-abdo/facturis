@@ -18,8 +18,9 @@ Route::group(['prefix' => 'sells'], function () {
 
     Route::group(['prefix' => 'estimates'], function () {
         Route::get('/', [EstimateController::class, 'index'])->name('estimates');
+        Route::post('/', [EstimateController::class, 'store'])->name('estimates.store');
+
         Route::get('/create', [EstimateController::class, 'create'])->name('estimates.create');
-        Route::post('/create', [EstimateController::class, 'store'])->name('estimates.store');
 
         Route::group(['prefix' => 'estimate'], function () {
             Route::get('/{estimate}', [EstimateController::class, 'edit'])->name('estimates.edit');
